@@ -5,7 +5,7 @@ public class HelloMalang {
 	public static void main(String[] args) {
 		System.out.println("Hello Malang!!");
 		System.out.println("Hello Malang!!");
-		System.out.println("Sono Ronaldinho");
+		System.out.println("Sono Phrenqlin");
 	}
 
 }
