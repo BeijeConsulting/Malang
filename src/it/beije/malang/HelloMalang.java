@@ -6,7 +6,7 @@ public class HelloMalang {
 		System.out.println("Hello Malang!!");
 		System.out.println("Hello Malang!!");
 		for(int i=0; i<500;i++) {
-			System.out.println("Sono Phrenqlin");
+			System.out.println("Sono Phrenqlin detto anche ronaldinho");
 		}
 	}
 
