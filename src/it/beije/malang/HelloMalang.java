@@ -7,6 +7,9 @@ public class HelloMalang {
 		System.out.println(i);
 		System.out.println("Hello Malang!!");
 		System.out.println("Hello Malang!!");
+		System.out.println("Hello Malang!!");
+		
+		System.out.println("Hello Malang!!");
 	}
 
 }
