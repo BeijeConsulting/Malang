@@ -22,7 +22,8 @@ public class Operazioni {
 		else if(addendiOperazione.length == 2)
 			sottrazione = addendiOperazione[0] - addendiOperazione[1];
 		else {
-		for(int i = 0; i < addendiOperazione.length; i++)
+			sottrazione = addendiOperazione[0];
+		for(int i = 1; i < addendiOperazione.length; i++)
 			sottrazione -= addendiOperazione[i];
 		}
 		
@@ -41,7 +42,7 @@ public class Operazioni {
 			moltiplicazione *= addendiOperazione[i];
 		}
 		
-		System.out.println("La sottrazione è uguale a " + moltiplicazione);
+		System.out.println("La moltiplicazione è uguale a " + moltiplicazione);
 		
 	}
 	
@@ -60,7 +61,7 @@ public class Operazioni {
 				divisione /= addendiOperazione[i];
 		}
 		
-		System.out.println("La sottrazione è uguale a " + divisione);
+		System.out.println("La divisione è uguale a " + divisione);
 		
 	}
 	
