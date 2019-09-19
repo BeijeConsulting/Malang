@@ -47,7 +47,9 @@ public class Parallelepipedo {
 		this(1, larghezza, profondita);
 	}
 	
-	
+	public Parallelepipedo(double profondita) {
+		this(1, 1, profondita);
+	}
 	
 	
 	

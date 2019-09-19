@@ -12,6 +12,7 @@ public class MorraCinese {
 		System.out.println("Inserisci la mossa del giocatore 2");
 		String mossa2 = read.nextLine();
 		Giocatore g2 = new Giocatore(mossa2);
+		read.close();
 		confronta(g1, g2);
 	}
 	
