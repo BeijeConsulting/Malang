@@ -1,9 +1,10 @@
 package it.beije.malang;
 
-public class HelloMalang {
+public class Run {
 
 	public static void main(String[] args) {
-		System.out.println("Hello Malang!!");
+		new InitializationOrder();
+		new InitializationOrder();
 	}
 
 }
