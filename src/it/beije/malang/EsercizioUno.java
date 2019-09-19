@@ -12,14 +12,18 @@ public class EsercizioUno {
 		double operazione = sc.nextDouble();
 		
 		if(operazione == 1) {
-			
+			System.out.println("\nIl risultato dell'addizione tra operandi e' di: " + addizione(args[]));
 		}
 			
 	}
 
 
-	public static double addizione(double... n){
-
+	public static double addizione(double... n) {
+		double res;
+		for(i=0; i<(n.length - 1); i++) {
+			res += n[1];
+		}
+		return res;
 	}
 
 	public static double sottrazione(double... n){
