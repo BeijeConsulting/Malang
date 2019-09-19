@@ -64,6 +64,6 @@ public class CartaSassoForbiceLizardSpock {
 	
 	public static void main(String[] args)
 	{
-		System.out.println(getResult("carta","carta"));
+		System.out.println(getResult("spock","sasso"));
 	}
 }
