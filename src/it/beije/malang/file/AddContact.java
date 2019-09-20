@@ -23,9 +23,10 @@ public class AddContact {
 		final String firstROW="COGNOME \t NOME \t TELEFONO \t EMAIL \t";
 		bufferedWriter.write(firstROW);
 		}
+		
 		FileReader filereader = new FileReader(f);
-		PrintWriter w = new PrintWriter(new FileOutputStream(f, true));
-		BufferedWriter bufferedWriter = new BufferedWriter(w);
+		PrintWriter pw = new PrintWriter(new FileOutputStream(f, true));
+		BufferedWriter bufferedWriter = new BufferedWriter(pw);
 		System.out.print("Inserisci il cognome: ");
 		bufferedWriter.newLine();
 		bufferedWriter.write(sc.nextLine()+"\t \t ");
