@@ -1,3 +1,4 @@
+package it.beije.malang;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
