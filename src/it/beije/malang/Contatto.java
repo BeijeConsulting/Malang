@@ -35,6 +35,51 @@ public class Contatto {
 		this.email = email;
 	}
 	
+	public Contatto(String[] arr) {
+		this.nome=arr[0];
+		this.cognome=arr[1];
+		this.telefono=arr[2];
+		this.email=arr[3];
+	}
+	
+	public Contatto(Contatto contatto)
+	{
+		this.cognome=contatto.getCognome();
+		this.nome=contatto.getNome();
+		this.telefono=contatto.getTelefono();
+		this.email=contatto.getEmail();
+	}
+	
+	public Contatto() {
+		// TODO Auto-generated constructor stub
+	}
+	public String getCognomeNome() {
+		return this.cognome+" "+this.nome;
+	}
+	
+	public String makeEmail() {
+		return nome+"@"+cognome+".it";
+	}
+	
+	public String toString(int esId){
+		StringBuilder builder = new StringBuilder();
+		switch(esId) {
+			case 3:
+			case 1:
+				builder.append(cognome).append(';');
+				builder.append(nome).append(';');
+				builder.append(getCognomeNome()).append(';');
+				builder.append(email).append(';');
+				builder.append(telefono);
+				break;
+			case 2:
+				builder.append(cognome).append(';');
+				builder.append(nome).append(';');
+				builder.append(telefono).append(';');
+				builder.append(makeEmail());
+		}
+		return builder.toString();
+	}
 	
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
