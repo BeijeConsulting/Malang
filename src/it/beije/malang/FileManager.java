@@ -38,7 +38,7 @@ public class FileManager {
 	}
 	
 	public static void trasferisciColonne() throws IOException {
-		File f = new File("C:\\temp\\prova.txt");
+		File f = new File("C:\\prova_java_io\\prova.txt");
 		System.out.println("il file è presente ? " + f.exists());
 		
 		FileReader fileReader = new FileReader(f);
@@ -56,26 +56,26 @@ public class FileManager {
 		List<String[]> rows = new ArrayList<String[]>();
 		while (bufferedReader.ready()) {
 			String row = bufferedReader.readLine();
-			String[] cols = row.split(";");
-			System.out.println(Arrays.toString(cols));
-			rows.add(cols);
+			String[] cols1 = row.split(",");
+			System.out.println(Arrays.toString(cols1));
+			rows.add(cols1);
 		}
 		System.out.println("rows : " + rows.size());
 		bufferedReader.close();
-		
-		FileWriter fileWriter = new FileWriter("C:\\temp\\new_rubrica.txt");//C:\temp\new_rubrica.txt
+	
+		FileWriter fileWriter = new FileWriter("C:\\prova_java_io\\new_rubrica1.txt");//C:\temp\new_rubrica.txt
 		BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
 		
 		String firstRow ="\"COGNOME\"\t\"NOME\"\t\"TELEFONO\"\n";// "COGNOME"	"NOME"	"TELEFONO"
 		bufferedWriter.write(firstRow);
 		
-		for (String[] cols : rows) {
+		for (String[] cols1 : rows) {
 			StringBuilder row = new StringBuilder("\"");
-			row.append(cols[1]).append('"');
+			row.append(cols1[1]).append('"');
 			row.append('\t').append('"');
-			row.append(cols[0]).append('"');
+			row.append(cols1[0]).append('"');
 			row.append('\t').append('"');
-			row.append(cols[2]).append('"').append('\n');
+			row.append(cols1[2]).append('"').append('\n');
 			
 			bufferedWriter.write(row.toString());
 		}
@@ -98,7 +98,7 @@ public class FileManager {
 		Contatto contatto = null;
 		while (bufferedReader.ready()) {
 			rowns.add(bufferedReader.readLine());
-			tokenizer = new StringTokenizer(bufferedReader.readLine(), ";");
+			tokenizer = new StringTokenizer(bufferedReader.readLine(), ",");
 			contatto = new Contatto();
 			contatto.setNome(tokenizer.nextToken());
 			contatto.setCognome(tokenizer.nextToken());
@@ -124,30 +124,36 @@ public class FileManager {
 			rows1.add(cols);
 		}
 			fileReader1.close();
-			System.out.println("rows : " + rows.size());
+			System.out.println("rows : " + rows1.size());
 			System.out.println();
-		System.out.println("rows : " + rows.size());
+		System.out.println("rows : " + rows1.size());
 		bufferedReader.close();
 		
-//		FileWriter fileWriter = new FileWriter("C:\\temp\\new_rubrica.txt");//C:\temp\new_rubrica.txt
-//		BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
-//		
-//		String firstRow ="\"COGNOME\"\t\"NOME\"\t\"TELEFONO\"\n";// "COGNOME"	"NOME"	"TELEFONO"
-//		bufferedWriter.write(firstRow);
-//		
-//		for (String[] cols : rows) {
-//			StringBuilder row = new StringBuilder("\"");
-//			row.append(cols[1]).append('"');
-//			row.append('\t').append('"');
-//			row.append(cols[0]).append('"');
-//			row.append('\t').append('"');
-//			row.append(cols[2]).append('"').append('\n');
-//			
-//			bufferedWriter.write(row.toString());
-//		}
-//		
-//		bufferedWriter.close();
-//
+		FileWriter fileWriter = new FileWriter("C:\\prova_java_io\\new_rubrica.txt");//C:\temp\new_rubrica.txt
+		BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+		
+		String firstRow ="\"COGNOME\"\t\"NOME\"\t\"COGNOME NOME\"\t\"EMAIL\"\t\"TELEFONO\"\n";// "COGNOME"	"NOME"	"TELEFONO"
+		bufferedWriter.write(firstRow);
+		
+		for (String[] cols : rows1) {
+			StringBuilder row = new StringBuilder("\"");
+			row.append(cols[1]).append('"');
+			row.append('\t').append('"');
+			row.append(cols[0]).append('"');
+			row.append('\t').append('"');
+			row.append(cols[1]+ " " +cols[0]).append('"');
+			row.append('\t').append('"');
+			row.append(cols[3]).append('"');
+			row.append('\t').append('"');
+			row.append(cols[2]).append('"').append('\n');
+			
+			bufferedWriter.write(row.toString());
+		}
+	
+		bufferedWriter.close();
+		
+		FileManager.trasferisciColonne();
+		
 	}
 
 }

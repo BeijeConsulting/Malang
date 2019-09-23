@@ -4,9 +4,15 @@ public class Contatto {
 	
 	private String cognome;
 	private String nome;
+	private String cognomenome;
 	private String telefono;
 	private String email;
-
+	
+	public static int counter = 0;
+	
+	public Contatto(){
+		++counter;
+	}
 	public String getCognome() {
 		return cognome;
 	}
@@ -21,6 +27,9 @@ public class Contatto {
 		this.nome = nome;
 	}
 	
+	public String getCognomeNome() {
+		return cognome + nome;
+	}
 	public String getTelefono() {
 		return telefono;
 	}
@@ -38,10 +47,11 @@ public class Contatto {
 	
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("cognome : ").append(cognome).append('\n');
-		builder.append("nome : ").append(nome).append('\n');
-		builder.append("telefono : ").append(telefono).append('\n');
-		builder.append("email : ").append(email).append('\n');
+		builder.append("CONTATTO " + counter+'\n');
+		builder.append("\tcognome : ").append(cognome).append('\n');
+		builder.append("\tnome : ").append(nome).append('\n');
+		builder.append("\ttelefono : ").append(telefono).append('\n');
+		builder.append("\temail : ").append(email).append('\n').append('\n');
 		return builder.toString();
 	}
 }
