@@ -4,10 +4,8 @@ import java.util.*;
 public class Operazioni {
 	
 	static Scanner t = new Scanner(System.in);
-	
 	static void somma(int[] addendiOperazione) {
 		int somma = 0;
-		
 		for(int i = 0; i < addendiOperazione.length; i++)
 			somma += addendiOperazione[i];
 		
@@ -66,6 +64,8 @@ public class Operazioni {
 	}
 	
 	public static void main(String[] args) {
+		
+		
 	
 		System.out.println("Quanti elementi devono esserci?");
 		int n = t.nextInt();
