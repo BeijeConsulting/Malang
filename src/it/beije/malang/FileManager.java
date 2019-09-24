@@ -42,23 +42,23 @@ public class FileManager {
 		FileReader fileReader = new FileReader(f);
 		BufferedReader bufferedReader = new BufferedReader(fileReader);
 
-//		//leggo e carico tutto in un ArrayList di stringhe
-//		List<String> rows = new ArrayList<String>();
-//		while (bufferedReader.ready()) {
-//			rows.add(bufferedReader.readLine());
-//		}
-//		System.out.println("rows : " + rows.size());
-//		System.out.println(rows);
+		//leggo e carico tutto in un ArrayList di stringhe
+		List<String> rows = new ArrayList<String>();
+		while (bufferedReader.ready()) {
+			rows.add(bufferedReader.readLine());
+		}
+		System.out.println("rows : " + rows.size());
+		System.out.println(rows);
 
 		//leggo e carico tutto in un ArrayList di array di stringhe
-		List<String[]> rows = new ArrayList<String[]>();
+		List<String[]> rowws = new ArrayList<String[]>();
 		while (bufferedReader.ready()) {
 			String row = bufferedReader.readLine();
 			String[] cols = row.split(";");
 			System.out.println(Arrays.toString(cols));
-			rows.add(cols);
+			rowws.add(cols);
 		}
-		System.out.println("rows : " + rows.size());
+		System.out.println("rows : " + rowws.size());
 		bufferedReader.close();
 		
 		FileWriter fileWriter = new FileWriter("C:\\temp\\new_rubrica.txt");//C:\temp\new_rubrica.txt
@@ -67,7 +67,7 @@ public class FileManager {
 		String firstRow ="\"COGNOME\"\t\"NOME\"\t\"TELEFONO\"\n";// "COGNOME"	"NOME"	"TELEFONO"
 		bufferedWriter.write(firstRow);
 		
-		for (String[] cols : rows) {
+		for (String[] cols : rowws) {
 			StringBuilder row = new StringBuilder("\"");
 			row.append(cols[1]).append('"');
 			row.append('\t').append('"');
