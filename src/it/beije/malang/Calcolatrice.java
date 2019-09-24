@@ -76,8 +76,22 @@ public class Calcolatrice {
 						return 0 ;
 					}
 					else if (numeri[i] == 0){
-						System.out.println("errore");
-						return 0;
+//se metto solo il throw senza try-catch ho l'errore con l'uscita dal programma, così invece no, mi da errore, ma
+//lo riesco a gestire e il programma non si arresta del tutto, infatti così mi stampa fino all'errore, se no NO.						
+						try {
+							throw new IllegalArgumentException(			//mi da un'eccezione, mi avvisa che qualcosa non va
+										"# non puoi dividere per zero");
+						} catch (IllegalArgumentException error)		
+						{
+							System.out.println("metti un numero diverso da zero in posizione:" + i + error.getMessage());
+							//break;
+						}
+						
+						
+						
+						//throw new IllegalArgumentException(		//mi da un'eccezione, mi avvisa che qualcosa non va
+							//	"# non puoi dividere per zero");	//gli dico cosa mi deve comuicare come eccezione
+						//return 0;
 					}
 					else {
 						div = div / numeri[i];
@@ -123,13 +137,10 @@ public class Calcolatrice {
 				case 4:
 					//System.out.println("inserisci i numeri da dividere");
 					//System.out.println("premi = per avere il risultato");
-					System.out.println(Calcolatrice.Divisione(5, 0, 2, 3));	
+					System.out.println(Calcolatrice.Divisione(14, 0, 2, 0));	
 					break;
 			
 			}
-			
-			
-			
 		}
 }
 
