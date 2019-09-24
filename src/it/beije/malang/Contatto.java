@@ -44,4 +44,7 @@ public class Contatto {
 		builder.append("email : ").append(email).append('\n');
 		return builder.toString();
 	}
+	public static void main(String[] args) {
+		
+	}
 }
