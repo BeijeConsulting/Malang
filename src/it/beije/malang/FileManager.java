@@ -35,52 +35,54 @@ public class FileManager {
 		}
 	}
 	
-	public static void trasferisciColonne() throws IOException {
-		File f = new File("C:\\temp\\prova.txt");
-		System.out.println("il file è presente ? " + f.exists());
-		
-		FileReader fileReader = new FileReader(f);
-		BufferedReader bufferedReader = new BufferedReader(fileReader);
-
-//		//leggo e carico tutto in un ArrayList di stringhe
-//		List<String> rows = new ArrayList<String>();
+//	public static void trasferisciColonne() throws IOException {
+//		File f = new File("C:\\temp\\prova.txt");
+//		System.out.println("il file è presente ? " + f.exists());
+//		
+//		FileReader fileReader = new FileReader(f);
+//		BufferedReader bufferedReader = new BufferedReader(fileReader);
+//
+////		//leggo e carico tutto in un ArrayList di stringhe
+////		List<String> rows = new ArrayList<String>();
+////		while (bufferedReader.ready()) {
+////			rows.add(bufferedReader.readLine());
+////		}
+////		System.out.println("rows : " + rows.size());
+////		System.out.println(rows);
+//
+//		//leggo e carico tutto in un ArrayList di array di stringhe
+//		List<String[]> rows = new ArrayList<String[]>();
 //		while (bufferedReader.ready()) {
-//			rows.add(bufferedReader.readLine());
+//			String row = bufferedReader.readLine();
+//			String[] cols = row.split(";");
+//			System.out.println(Arrays.toString(cols));
+//			rows.add(cols);
 //		}
 //		System.out.println("rows : " + rows.size());
-//		System.out.println(rows);
-
-		//leggo e carico tutto in un ArrayList di array di stringhe
-		List<String[]> rows = new ArrayList<String[]>();
-		while (bufferedReader.ready()) {
-			String row = bufferedReader.readLine();
-			String[] cols = row.split(";");
-			System.out.println(Arrays.toString(cols));
-			rows.add(cols);
-		}
-		System.out.println("rows : " + rows.size());
-		bufferedReader.close();
-		
-		FileWriter fileWriter = new FileWriter("C:\\temp\\new_rubrica.txt");//C:\temp\new_rubrica.txt
-		BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
-		
-		String firstRow ="\"COGNOME\"\t\"NOME\"\t\"TELEFONO\"\n";// "COGNOME"	"NOME"	"TELEFONO"
-		bufferedWriter.write(firstRow);
-		
-		for (String[] cols : rows) {
-			StringBuilder row = new StringBuilder("\"");
-			row.append(cols[1]).append('"');
-			row.append('\t').append('"');
-			row.append(cols[0]).append('"');
-			row.append('\t').append('"');
-			row.append(cols[2]).append('"').append('\n');
-			
-			bufferedWriter.write(row.toString());
-		}
-		
-		bufferedWriter.close();
-
-	}
+//		bufferedReader.close();
+//		
+//		FileWriter fileWriter = new FileWriter("C:\\temp\\new_rubrica.txt");//C:\temp\new_rubrica.txt
+//		BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+//		
+//		String firstRow ="\"COGNOME\"\t\"NOME\"\t\"TELEFONO\"\n";// "COGNOME"	"NOME"	"TELEFONO"
+//		bufferedWriter.write(firstRow);
+//		
+//		for (String[] cols : rows) {
+//			StringBuilder row = new StringBuilder("\"");
+//			row.append(cols[1]).append('"');
+//			row.append('\t').append('"');
+//			row.append(cols[0]).append('"');
+//			row.append('\t').append('"');
+//			row.append(cols[2]).append('"');
+//			row.append('\t').append('"');
+//			row.append(cols[3]).append('"').append('\n');
+//			
+//			bufferedWriter.write(row.toString());
+//		}
+//		
+//		bufferedWriter.close();
+//
+//	}
 
 	public static void main(String[] args) throws IOException {
 		
@@ -100,6 +102,8 @@ public class FileManager {
 			contatto.setCognome(tokenizer.nextToken());
 			contatto.setTelefono(tokenizer.nextToken());
 			contatto.setEmail(tokenizer.nextToken());
+			contatto.setCognomeNome();
+			
 			
 			System.out.println(contatto);
 			rows.add(contatto);

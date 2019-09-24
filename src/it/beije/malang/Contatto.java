@@ -1,11 +1,11 @@
 package it.beije.malang;
-
 public class Contatto {
 	
 	private String cognome;
 	private String nome;
 	private String telefono;
 	private String email;
+	private String cognome_nome;
 
 	public String getCognome() {
 		return cognome;
@@ -34,14 +34,22 @@ public class Contatto {
 	public void setEmail(String email) {
 		this.email = email;
 	}
+	public void setCognomeNome() {
+		
+		this.cognome_nome=cognome+" "+nome;
+		
+		
+	}
 	
 	
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
 		builder.append("cognome : ").append(cognome).append('\n');
 		builder.append("nome : ").append(nome).append('\n');
+		builder.append("CognomeNome : ").append(cognome_nome).append('\n');
 		builder.append("telefono : ").append(telefono).append('\n');
 		builder.append("email : ").append(email).append('\n');
 		return builder.toString();
 	}
+	
 }
