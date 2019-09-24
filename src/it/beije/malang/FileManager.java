@@ -84,32 +84,33 @@ public class FileManager {
 //
 //	}
 
-	public static void main(String[] args) throws IOException {
+	public static void main(String[] args) {
 		
-		File f = new File("C:\\temp\\prova.txt");
-		System.out.println("il file è presente ? " + f.exists());
-		
-		FileReader fileReader = new FileReader(f);
-		BufferedReader bufferedReader = new BufferedReader(fileReader);
+		File f = new File("C:\\temp\\prova22.txt");
+		//System.out.println("il file è presente ? " + f.exists());
+		try {
+			FileReader fileReader = new FileReader(f);
+			BufferedReader bufferedReader = new BufferedReader(fileReader);
 
-		List<Contatto> rows = new ArrayList<Contatto>();
-		StringTokenizer tokenizer = null;
-		Contatto contatto = null;
-		while (bufferedReader.ready()) {
-			tokenizer = new StringTokenizer(bufferedReader.readLine(), ";");
-			contatto = new Contatto();
-			contatto.setNome(tokenizer.nextToken());
-			contatto.setCognome(tokenizer.nextToken());
-			contatto.setTelefono(tokenizer.nextToken());
-			contatto.setEmail(tokenizer.nextToken());
-			contatto.setCognomeNome();
-			
-			
-			System.out.println(contatto);
-			rows.add(contatto);
+			List<Contatto> rows = new ArrayList<Contatto>();
+			StringTokenizer tokenizer = null;
+			Contatto contatto = null;
+			while (bufferedReader.ready()) {
+				tokenizer = new StringTokenizer(bufferedReader.readLine(), ";");
+				contatto = new Contatto();
+				contatto.setNome(tokenizer.nextToken());
+				contatto.setCognome(tokenizer.nextToken());
+				contatto.setTelefono(tokenizer.nextToken());
+				contatto.setEmail(tokenizer.nextToken());
+				
+				System.out.println(contatto);
+				rows.add(contatto);
+			}
+			System.out.println("rows : " + rows.size());
+			bufferedReader.close();
+		} catch (IOException ioException) {
+			System.out.println("Il file specificato non esiste");
 		}
-		System.out.println("rows : " + rows.size());
-		bufferedReader.close();
 		
 //		FileWriter fileWriter = new FileWriter("C:\\temp\\new_rubrica.txt");//C:\temp\new_rubrica.txt
 //		BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
