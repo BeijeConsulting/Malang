@@ -8,12 +8,6 @@ public class UnionFileDiversi {
 	File f = new File("C:\\temp\\prova.txt");
 	FileReader fReader = new FileReader(f);
 	BufferedReader bReader = new BufferedReader(fReader);
-	
-	
-	Contatto contatto = new Contatto();
-	StringTokenizer tokenizer = null;
-	
-	
 	FileWriter fileWriter = new FileWriter("C:\\temp\\FileDiversiUniti.txt");
 	BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
 	String firstRow ="\"COGNOME\"\t\"NOME\"\t\"NOME COMPLETO\"\t\"EMAIL\"\t\"TELEFONO\"\n";
@@ -79,14 +73,7 @@ public class UnionFileDiversi {
 	}
 	
 	bufferedWriter.close();
-		
-	
-	
-	
-		
-		
-		
-		
+
 }
 }
 
