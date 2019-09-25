@@ -42,6 +42,6 @@ public class ProvaException {
 		finally {
 			System.out.println("finito");
 		}
-		
+		System.out.println("dopo il finally succede qualcosa?");
 	}
 }
