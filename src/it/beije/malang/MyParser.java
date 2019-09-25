@@ -36,7 +36,7 @@ public class MyParser {
 			for (int i=0; i < arrstr[1].length(); i++) {
 				char c = arrstr[1].charAt(i);
 				if (c >= '0' && c <= '9') {
-					floatpoint = (double) (c - 48) / (double) (10 * (i + 1))+floatpoint;
+					floatpoint += (c - 48) * Math.pow(10, -(i+1));
 					//System.out.println(floatpoint);
 				} else {
 					throw new IllegalArgumentException("il valore inserito non è numerico");
