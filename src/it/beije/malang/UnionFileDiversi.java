@@ -62,7 +62,7 @@ public class UnionFileDiversi {
 		nuovaRiga.append('\"');
 		nuovaRiga.append(cols[1]).append("\"").append("\t").append("\"");
 		nuovaRiga.append(cols[2]).append("\"").append("\t").append("\"");
-		nuovaRiga.append(cols[1]).append(" ").append(cols[0]).append("\"").append("\t").append("\"");
+		nuovaRiga.append(cols[1]).append(" ").append(cols[2]).append("\"").append("\t").append("\"");
 		nuovaRiga.append(cols[0]).append("\"").append("\t").append("\"");
 		nuovaRiga.append(cols[3]).append("\"").append("\n");
 		
