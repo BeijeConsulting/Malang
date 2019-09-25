@@ -11,7 +11,7 @@ public class MyParserDouble {
 			if(c >= '0' && c <= '9'){
 				result = (result * 10) + (c - 48);
 			
-			}else if(c == '.' && i != num.length()-1 && i != 0) {
+			}else if(c == '.'&& i != num.length()-1 && i != 0) {
 				decimale = parseDouble(num.substring(i+1));
 				break;
 							
@@ -42,7 +42,7 @@ public class MyParserDouble {
 
 public static void main(String[] args) {
 	
-	System.out.println(parseParteIntera("11.6"));
+	System.out.println(parseParteIntera("78675.0998897902"));
 	
 	
 	
