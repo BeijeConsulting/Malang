@@ -26,21 +26,25 @@ public class Parser {
         else
         {
         	String[] s = n.split("\\.");
-        	String s1 = s[0];
-        	String s2 = s[1];
-        	
-            if(s.length > 2)
-                throw new IllegalArgumentException("String contains multiple floating points");
-           
-            res += parseInt(s1);
+        	if(s.length != 2)
+                throw new IllegalArgumentException("Wrong string format");
+        	else {
+        		String s1 = s[0];
+            	String s2 = s[1];
+            	
+                if(s.length > 2)
+                    throw new IllegalArgumentException("String contains multiple floating points");
+               
+                res += parseInt(s1);
 
-            for(int i = 0; i < s2.length(); i++){
-                char c = s2.charAt(i);
-                if(Character.isDigit(c)) 
-                    res += (c - 48) * Math.pow(10, -(i + 1));
-                else
-                    throw new IllegalArgumentException("String contains NaN values");
-            }
+                for(int i = 0; i < s2.length(); i++){
+                    char c = s2.charAt(i);
+                    if(Character.isDigit(c)) 
+                        res += (c - 48) * Math.pow(10, -(i + 1));
+                    else
+                        throw new IllegalArgumentException("String contains NaN values");
+                }
+        	}
         }
 
         return res;
@@ -48,7 +52,7 @@ public class Parser {
 
     public static void main(String... args){
        
-    	System.out.println(parseDouble("111.399A"));
+    	System.out.println(parseDouble("399.50"));
     }
 
 }
