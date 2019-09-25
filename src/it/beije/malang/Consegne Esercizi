@@ -14,3 +14,13 @@ nel caso larghezza e/o lunghezza non vengano passati settarli automaticamente ad
 Questa classe dovrà avere un metodo per la restituzione di ogni singolo valore  larghezza, lunghezza e profondità, oltre ad un metodo getVolume() che vi restituisca il volume corretto del parallelepipedo istanziato.
 
 3. Fare una classe che dati 2 valori del gioco della MORRA (carta, forbice, sasso) risponda chi vince (giocatore 1 o 2)
+
+--- MERCOLEDI' 25
+
+due file differente di cui il primo {nome, cognome, email, telefono} e il secondo {email, cognome, nome, telefono}
+
+e trasformarli nel seguente ordine: {COGNOME, NOME, NOME_COMPLETO, EMAIL}
+
+unirli poi in un file definitivo con il cognome in ordine alfabetico
+
+---
