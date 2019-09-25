@@ -33,8 +33,12 @@ public class Contatto {
 	}
 	public void setEmail(String email) {
 		this.email = email;
+		
 	}
 	
+	public String getCognomeNome() {
+		return cognome + " " + nome;
+	}
 	
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
