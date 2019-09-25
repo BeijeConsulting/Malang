@@ -1,6 +1,6 @@
 package it.beije.malang;
 
-public class Contatto {
+public class Contatto implements Comparable<Contatto>{
 	
 	private String cognome;
 	private String nome;
@@ -61,6 +61,13 @@ public class Contatto {
 		return nome+"@"+cognome+".it";
 	}
 	
+	@Override
+    public int compareTo(Contatto contatto) {
+		String cognome=contatto.getCognome();
+		
+		return this.cognome.compareTo(cognome);
+	}
+	
 	public String toString(int esId){
 		StringBuilder builder = new StringBuilder();
 		switch(esId) {
@@ -77,6 +84,12 @@ public class Contatto {
 				builder.append(nome).append(';');
 				builder.append(telefono).append(';');
 				builder.append(makeEmail());
+			case 4:
+				builder.append(cognome).append(';');
+				builder.append(nome).append(';');
+				builder.append(getCognomeNome()).append(';');
+				builder.append(email).append(';');
+				builder.append(telefono);
 		}
 		return builder.toString();
 	}
