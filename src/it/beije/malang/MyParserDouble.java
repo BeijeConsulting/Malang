@@ -42,7 +42,7 @@ public class MyParserDouble {
 
 public static void main(String[] args) {
 	
-	System.out.println(parseParteIntera("78675.0998897902"));
+	System.out.println(parseParteIntera("78785.099882"));
 	
 	
 	
