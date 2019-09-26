@@ -6,10 +6,8 @@ public class Contatto {
 	private String nome;
 	private String telefono;
 	private String email;
-<<<<<<< HEAD
 	private String cognome_nome;
 
-=======
 	
 	public int getId() {
 		return id;
@@ -17,8 +15,6 @@ public class Contatto {
 	public void setId(int id) {
 		this.id = id;
 	}
-	
->>>>>>> refs/remotes/origin/master
 	public String getCognome() {
 		return cognome;
 	}
