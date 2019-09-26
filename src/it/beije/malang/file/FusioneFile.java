@@ -18,6 +18,7 @@ public class FusioneFile {
 		FileReader fileReader2 = new FileReader(f3);
 		BufferedReader bufferedReader = new BufferedReader(fileReader);
 		BufferedReader bufferedReader2 = new BufferedReader(fileReader2);
+		
 		FileWriter fileWriter = new FileWriter("C:\\temp\\testo4.txt");
 		fileWriter.write(bufferedReader.readLine() + " ");
 		fileWriter.write(bufferedReader2.readLine());
