@@ -12,6 +12,10 @@ import it.beije.malang.Contatto;
 
 public class Rubrica {
 
+	
+	
+	
+	
 	public static void main(String[] args) {
 		List<Contatto> contatti = new ArrayList<Contatto>();
 		
@@ -19,7 +23,7 @@ public class Rubrica {
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			
-			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/rubrica?serverTimezone=CET", "root", "beije");
+			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/malang?serverTimezone=CET", "root", "Beije06");
 			System.out.println("connection ? " + !conn.isClosed());
 			
 			Statement stmt = conn.createStatement();
@@ -28,6 +32,10 @@ public class Rubrica {
 //			int r = stmt.executeUpdate(insert);
 //			System.out.println("rows affected : " + r);
 			
+			//String insert = "insert into rubrica('cognome') values ('ago')";
+			String insert = "INSERT INTO rubrica VALUES (null, 'Rossi', 'giovanni', 'marco@rossi.it', '3471234567')";
+			int r = stmt.executeUpdate(insert);
+			System.out.println("rows affected : " + r);
 			String query = "SELECT * FROM rubrica";
 			ResultSet rs = stmt.executeQuery(query);
 			while (rs.next()) {

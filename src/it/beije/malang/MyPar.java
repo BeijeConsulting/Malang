@@ -1,7 +1,7 @@
 package it.beije.malang;
 
 public class MyPar {
-<<<<<<< HEAD
+
 
 	
 	public static int parseInt(String num) {
@@ -76,14 +76,13 @@ public class MyPar {
 
 		System.out.println(somma("450","353"));
 		
-	
+	}
 //System.out.println(parseIntero("450"));
 //System.out.println(parseDouble("345"));
 	//	System.out.println(parseIntero("925.643"));
 		
-=======
 	
-	public static int parseInt(String num) {
+	public static int parseInt1(String num) {
 		int val = 0;
 		for (int i=0; i < num.length(); i++) {
 			char c = num.charAt(i);
@@ -97,7 +96,7 @@ public class MyPar {
 		return val;
 	}
 	
-	public static double parseDouble(String num) {
+	public static double parseDouble1(String num) {
 		double val = 0;
 		
 		//....
@@ -105,7 +104,7 @@ public class MyPar {
 		return val;
 	}
 
-	public static void main(String[] args) {
+	public static void main1(String[] args) {
 		//System.out.println(parseInt("5142"));
 		
 		System.out.println(parseDouble("56"));
@@ -117,7 +116,7 @@ public class MyPar {
 //		System.out.println(parseDouble("5.6.8"));
 //		System.out.println(parseDouble(".56"));
 //		System.out.println(parseDouble("56."));
->>>>>>> refs/remotes/origin/master
+
 	}
 
 }
