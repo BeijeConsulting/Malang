@@ -2,12 +2,19 @@ package it.beije.malang;
 
 public class Contatto {
 	
+	private int id;
 	private String cognome;
 	private String nome;
 	private String telefono;
 	private String email;
 
-
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	
 	public String getCognome() {
 		return cognome;
 	}
