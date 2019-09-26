@@ -20,6 +20,9 @@ public class Rubrica {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			
 			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/malang?serverTimezone=CET", "root", "Beije08");
+
+			conn = ConnectionFactory.getConnection();
+
 			System.out.println("connection ? " + !conn.isClosed());
 			
 			Statement stmt = conn.createStatement();
