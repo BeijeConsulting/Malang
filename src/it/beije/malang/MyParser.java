@@ -17,7 +17,6 @@ public class MyParser {
 	}
 
 	public static double parseDouble(String num) {
-		double val = 0;
 		double init = 0.0;
 		double floatpoint = 0.0;
 		String[] arrstr = num.split("\\.");
