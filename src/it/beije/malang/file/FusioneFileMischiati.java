@@ -25,6 +25,8 @@ public class FusioneFileMischiati {
 		BufferedReader bufferedReader = new BufferedReader(fileReader);
 		BufferedReader bufferedReader2 = new BufferedReader(fileReader2);
 		
+		FileWriter fileWriter = new FileWriter("C:\\temp\\fusione3.txt");
+		
 		List<Contatto> rows = new ArrayList<Contatto>();
 		StringTokenizer tokenizer = null;
 		Contatto contatto = null;
@@ -37,6 +39,7 @@ public class FusioneFileMischiati {
 			contatto.setTelefono(tokenizer.nextToken());
 			contatto.setCognomeNome();
 			rows.add(contatto);
+			fileWriter.write(contatto.toString());
 		}
 		
 		List<Contatto> rows2 = new ArrayList<Contatto>();
@@ -51,14 +54,8 @@ public class FusioneFileMischiati {
 			contatto2.setTelefono(tokenizer2.nextToken());
 			contatto2.setCognomeNome();
 			rows2.add(contatto2);
+			fileWriter.write(contatto2.toString());
 		}
-		
-		
-		FileWriter fileWriter = new FileWriter("C:\\temp\\fusione3.txt");
-			
-			fileWriter.write(rows.toString());
-			fileWriter.write(rows2.toString());
-		
 		
 		bufferedReader.close();
 		bufferedReader2.close();

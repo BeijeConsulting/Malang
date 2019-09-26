@@ -22,10 +22,9 @@ public class Rubrica {
 			System.out.println("connection ? " + !conn.isClosed());
 			
 			Statement stmt = conn.createStatement();
-//			String insert = "INSERT INTO rubrica ('cognome', 'nome', 'email', 'telefono') VALUES ('Rossi', 'Marco', 'marco@rossi.it', '3471234567')";
-//			//String insert = "INSERT INTO rubrica VALUES (null, 'Rossi', 'Marco', 'marco@rossi.it', '3471234567')";
-//			int r = stmt.executeUpdate(insert);
-//			System.out.println("rows affected : " + r);
+			String insert = "INSERT INTO rubrica (cognome, nome, email, telefono) VALUES ('Rossi', 'Marco', 'marco@rossi.it', '3471234567')";
+			stmt.executeUpdate(insert);
+
 			
 			String query = "SELECT * FROM rubrica";
 			ResultSet rs = stmt.executeQuery(query);
