@@ -53,7 +53,7 @@ public class Rubrica {
 		List<String[]> rows = new ArrayList<String[]>();
 		while (bufferedReader.ready()) {
 			String row = bufferedReader.readLine();
-			String[] cols = row.split(";");
+			String[] cols = row.split("; ");
 			System.out.println(Arrays.toString(cols));
 			rows.add(cols);
 		}
@@ -74,7 +74,10 @@ public class Rubrica {
 			row.append('\t').append('"');
 			row.append(cols[2]).append('"');
 			row.append('\t').append('"');
-			row.append(cols[3]).append('"').append('\n');
+			
+//ho creato io la mail con nome@cognome.it			
+			row.append(cols[0]).append("@").append(cols[1]).append(".it").append("\n");  
+			
 			
 			bufferedWriter.write(row.toString());
 		}
