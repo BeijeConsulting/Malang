@@ -22,8 +22,8 @@ public class Rubrica {
 			System.out.println("connection ? " + !conn.isClosed());
 			
 			Statement stmt = conn.createStatement();
-			String insert = "INSERT INTO rubrica (cognome, nome, email, telefono) VALUES ('Rossi', 'Marco', 'marco@rossi.it', '3471234567')";
-			stmt.executeUpdate(insert);
+			String update = "UPDATE rubrica SET nome = 'Ugo', cognome='Pizza', email='ugopi@gmail.com', telefono='3403434250' WHERE id=6";
+			stmt.executeUpdate(update);
 
 			
 			String query = "SELECT * FROM rubrica";

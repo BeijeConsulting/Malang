@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.StringTokenizer;
 
-import it.beije.malang.Contatto;
+import it.beije.malang.file.Contatto;
 
 public class FusioneFileMischiati {
 	
@@ -35,8 +35,8 @@ public class FusioneFileMischiati {
 			contatto = new Contatto();
 			contatto.setNome(tokenizer.nextToken());
 			contatto.setCognome(tokenizer.nextToken());
-			contatto.setEmail(tokenizer.nextToken());
-			contatto.setTelefono(tokenizer.nextToken());
+			contatto.setIndirizzo(tokenizer.nextToken());
+			contatto.setNumero(tokenizer.nextToken());
 			contatto.setCognomeNome();
 			rows.add(contatto);
 			fileWriter.write(contatto.toString());
@@ -48,10 +48,10 @@ public class FusioneFileMischiati {
 		while (bufferedReader2.ready()) {
 			tokenizer2 = new StringTokenizer(bufferedReader2.readLine(), ";");
 			contatto2 = new Contatto();
-			contatto2.setEmail(tokenizer2.nextToken());
+			contatto2.setIndirizzo(tokenizer2.nextToken());
 			contatto2.setCognome(tokenizer2.nextToken());
 			contatto2.setNome(tokenizer2.nextToken());
-			contatto2.setTelefono(tokenizer2.nextToken());
+			contatto2.setNumero(tokenizer2.nextToken());
 			contatto2.setCognomeNome();
 			rows2.add(contatto2);
 			fileWriter.write(contatto2.toString());
