@@ -84,21 +84,27 @@ public class FileManager {
 
 	}
 
-	public static void main(String[] args) throws IOException {
-		
+	public static void main(String[] args) {
+		try {
 		File f = new File("C:\\prova_java_io\\prova.txt");
 		System.out.println("il file è presente ? " + f.exists());
 		//leggo tutte le righe e le carico in un arraylist di stringhe
 		FileReader fileReader = new FileReader(f);
 		BufferedReader bufferedReader = new BufferedReader(fileReader);
 		List<String> rowns = new ArrayList<String>();
+		}catch(IOException e) {}
+		File f1 = new File("C:\\temp\\prova22.txt");
+		//System.out.println("il file è presente ? " + f.exists());
+		try {
+			FileReader fileReader1 = new FileReader(f1);
+			BufferedReader bufferedReader1 = new BufferedReader(fileReader1);
 
 		List<Contatto> rows = new ArrayList<Contatto>();
 		StringTokenizer tokenizer = null;
 		Contatto contatto = null;
-		while (bufferedReader.ready()) {
-			rowns.add(bufferedReader.readLine());
-			tokenizer = new StringTokenizer(bufferedReader.readLine(), ",");
+		while (bufferedReader1.ready()) {
+			
+			tokenizer = new StringTokenizer(bufferedReader1.readLine(), ",");
 			contatto = new Contatto();
 			contatto.setNome(tokenizer.nextToken());
 			contatto.setCognome(tokenizer.nextToken());
@@ -108,13 +114,31 @@ public class FileManager {
 			System.out.println(contatto);
 			rows.add(contatto);
 		}
-		
-		System.out.println("rowns : " + rowns.size());
-		System.out.println(rowns);
-		
+			List<Contatto> rows1 = new ArrayList<Contatto>();
+			StringTokenizer tokenizer1 = null;
+			Contatto contatto1 = null;
+			while (bufferedReader1.ready()) {
+				tokenizer = new StringTokenizer(bufferedReader1.readLine(), ";");
+				contatto1 = new Contatto();
+				contatto1.setNome(tokenizer1.nextToken());
+				contatto1.setCognome(tokenizer1.nextToken());
+				contatto1.setTelefono(tokenizer1.nextToken());
+				contatto1.setEmail(tokenizer1.nextToken());
+				
+				System.out.println(contatto);
+				rows.add(contatto);
+			}
+			System.out.println("rows : " + rows.size());
+			bufferedReader1.close();
+		} catch (IOException ioException) {
+			System.out.println("Il file specificato non esiste");
+		}
+
+
+		try {
 		//leggo e carico tutto in un Arraylist di array di stringhe
-		File f1 = new File("C:\\prova_java_io\\prova.txt");
-		FileReader fileReader1 = new FileReader(f1);
+		File f2 = new File("C:\\prova_java_io\\prova.txt");
+		FileReader fileReader1 = new FileReader(f2);
 		BufferedReader bufferedReader1 = new BufferedReader(fileReader1);
 		List<String[]> rows1 = new ArrayList<String[]>();
 		while (bufferedReader1.ready()) {
@@ -127,7 +151,7 @@ public class FileManager {
 			System.out.println("rows : " + rows1.size());
 			System.out.println();
 		System.out.println("rows : " + rows1.size());
-		bufferedReader.close();
+		bufferedReader1.close();
 		
 		FileWriter fileWriter = new FileWriter("C:\\prova_java_io\\new_rubrica.txt");//C:\temp\new_rubrica.txt
 		BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
@@ -153,7 +177,7 @@ public class FileManager {
 		bufferedWriter.close();
 		
 		FileManager.trasferisciColonne();
-		
+		}catch(IOException ee) {}
 	}
 
 }
