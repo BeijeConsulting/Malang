@@ -17,39 +17,39 @@ public class Rubrica {
 		
 		Connection conn = null;
 		try {
-			Class.forName("com.mysql.cj.jdbc.Driver");
+			Class.forName("com.mysql.cj.jdbc.Driver"); //carica la classe del driver JDBC
 			
-			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/rubrica?serverTimezone=CET", "root", "beije");
+			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/malang?serverTimezone=CET", "root", "Beije007"); //crea una connessione, passando l'url, user e la PW
 			System.out.println("connection ? " + !conn.isClosed());
 			
-			Statement stmt = conn.createStatement();
-//			String insert = "INSERT INTO rubrica ('cognome', 'nome', 'email', 'telefono') VALUES ('Rossi', 'Marco', 'marco@rossi.it', '3471234567')";
-//			//String insert = "INSERT INTO rubrica VALUES (null, 'Rossi', 'Marco', 'marco@rossi.it', '3471234567')";
-//			int r = stmt.executeUpdate(insert);
-//			System.out.println("rows affected : " + r);
+			Statement stmt = conn.createStatement();//Una volta stabilita la connessione, occorre passare una istruzione.
+			String insert = "INSERT INTO rubrica (cognome, nome, email, telefono) VALUES ('Rossi', 'Marco', 'marco@rossi.it', '3471234567')";
+			//String insert = "INSERT INTO rubrica VALUES (null, 'Rossi', 'Marco', 'marco@rossi.it', '3471234567')";//I dati vengono prelevati dal database col classico meccanismo delle query.
+			int r = stmt.executeUpdate(insert);// Esecuta il querry sql passat nello statement
+			System.out.println("rows affected : " + r);
 			
-			String query = "SELECT * FROM rubrica";
-			ResultSet rs = stmt.executeQuery(query);
-			while (rs.next()) {
-				Contatto contatto = new Contatto();
-				
-				contatto.setId(rs.getInt("id"));
-				contatto.setCognome(rs.getString("cognome"));
-				contatto.setNome(rs.getString("nome"));
-				contatto.setEmail(rs.getString("email"));
-				contatto.setTelefono(rs.getString("telefono"));
-				
-				System.out.println("id : " + contatto.getId());
-				System.out.println("cognome : " + contatto.getCognome());
-				System.out.println("nome : " + contatto.getNome());
-				System.out.println("email : " + contatto.getEmail());
-				System.out.println("telefono : " + contatto.getTelefono());
-				
-				contatti.add(contatto);
-			}
-			
-			rs.close();
-			stmt.close();
+			//String query = "SELECT * FROM rubrica";
+//			ResultSet rs = stmt.executeQuery(query);
+//			while (rs.next()) {
+//				Contatto contatto = new Contatto();
+//				
+//				contatto.setId(rs.getInt("id"));
+//				contatto.setCognome(rs.getString("cognome"));
+//				contatto.setNome(rs.getString("nome"));
+//				contatto.setEmail(rs.getString("email"));
+//				contatto.setTelefono(rs.getString("telefono"));
+//				
+//				System.out.println("id : " + contatto.getId());
+//				System.out.println("cognome : " + contatto.getCognome());
+//				System.out.println("nome : " + contatto.getNome());
+//				System.out.println("email : " + contatto.getEmail());
+//				System.out.println("telefono : " + contatto.getTelefono());
+//				
+//				contatti.add(contatto);
+//			}
+//			
+//			rs.close();
+//			stmt.close();
 			
 		} catch (ClassNotFoundException cnfEx) {
 			cnfEx.printStackTrace();
@@ -63,7 +63,7 @@ public class Rubrica {
 			}
 		}
 
-		System.out.println("numero contatti : " + contatti.size());
+		//System.out.println("numero contatti : " + contatti.size());
 	}
 
 }
