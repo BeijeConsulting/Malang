@@ -53,7 +53,7 @@ public class MyParser {
 	public static void main(String[] args) {
 		//System.out.println(parseInt("5142"));
 
-		System.out.println(parseDouble("56"));
+		System.out.println(parseDouble("56."));
 		System.out.println(parseDouble("5.6"));
 		System.out.println(parseDouble("53.76"));
 		System.out.println(parseDouble("5.60"));

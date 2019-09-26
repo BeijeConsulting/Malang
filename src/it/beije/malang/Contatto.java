@@ -1,6 +1,6 @@
 package it.beije.malang;
 
-public class Contatto {
+public class Contatto implements Comparable<Contatto>{
 	
 	private String cognome;
 	private String nome;
@@ -40,12 +40,35 @@ public class Contatto {
 		return cognome + " " + nome;
 	}
 	
+	
+	
+	public Contatto(String cognome, String nome, String telefono, String email) {
+		super();
+		this.cognome = cognome;
+		this.nome = nome;
+		this.telefono = telefono;
+		this.email = email;
+	}
+	
+	public Contatto() {
+		super();
+	}
+	
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("cognome : ").append(cognome).append('\n');
-		builder.append("nome : ").append(nome).append('\n');
-		builder.append("telefono : ").append(telefono).append('\n');
-		builder.append("email : ").append(email).append('\n');
+		builder.append(cognome).append(';');
+		builder.append(nome).append(';');
+		builder.append(getCognomeNome()).append(';');
+		builder.append(email).append(';');
+		builder.append(telefono);
 		return builder.toString();
 	}
+	
+	@Override
+    public int compareTo(Contatto contatto) {
+		String cognome=contatto.getCognome();
+		
+		return this.cognome.compareTo(cognome);
+	}
+	
 }
