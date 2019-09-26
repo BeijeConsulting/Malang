@@ -33,11 +33,7 @@ public class CsvToDatabase {
 			Statement stmt = conn.createStatement();
 			
 			for (Contatto contatto:contatti) {
-				String query = "INSERT INTO rubrica (nome,cognome,telefono,email) VALUES ('"
-						+contatto.getNome()+"','"
-						+contatto.getCognome()+"','"
-						+contatto.getTelefono()+"','"
-						+contatto.getEmail()+"')";
+				String query = contatto.getInsertQuery();
 				System.out.println(query);
 				stmt.execute(query);
 			}

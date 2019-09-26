@@ -50,6 +50,14 @@ public class Contatto implements Comparable<Contatto>{
 		this.email=arr[3];
 	}
 	
+	public Contatto(int id,String cognome, String nome, String email, String telefono) {
+		this.cognome=cognome;
+		this.id=id;
+		this.nome=nome;
+		this.telefono=telefono;
+		this.email=email;
+	}
+	
 	public Contatto(Contatto contatto)
 	{
 		this.cognome=contatto.getCognome();
@@ -98,8 +106,23 @@ public class Contatto implements Comparable<Contatto>{
 				builder.append(getCognomeNome()).append(';');
 				builder.append(email).append(';');
 				builder.append(telefono);
+				break;
+			case 5:
+				builder.append(id).append(';');
+				builder.append(nome).append(';');
+				builder.append(cognome).append(';');
+				builder.append(telefono).append(';');
+				builder.append(email);
 		}
 		return builder.toString();
+	}
+	
+	public String getInsertQuery() {
+		return "INSERT INTO rubrica (nome,cognome,telefono,email) VALUES ('"
+				+nome+"','"
+				+cognome+"','"
+				+telefono+"','"
+				+email+"')";
 	}
 	
 	public String toString() {
