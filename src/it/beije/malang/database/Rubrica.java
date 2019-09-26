@@ -17,6 +17,7 @@ public class Rubrica {
 		
 		Connection conn = null;
 		try {
+			//conn = ConnectionFactory.getConnection();
 			Class.forName("com.mysql.cj.jdbc.Driver"); //carica la classe del driver JDBC
 			
 			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/malang?serverTimezone=CET", "root", "Beije007"); //crea una connessione, passando l'url, user e la PW
