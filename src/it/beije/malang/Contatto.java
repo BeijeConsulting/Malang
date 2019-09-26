@@ -7,7 +7,14 @@ public class Contatto {
 	private String nome;
 	private String telefono;
 	private String email;
+	private String età;
 	
+	public String getEtà() {
+		return età;
+	}
+	public void setEtà(String età) {
+		this.età = età;
+	}
 	public int getId() {
 		return id;
 	}
@@ -50,6 +57,7 @@ public class Contatto {
 		builder.append("nome : ").append(nome).append('\n');
 		builder.append("telefono : ").append(telefono).append('\n');
 		builder.append("email : ").append(email).append('\n');
+		builder.append("età : ").append(età).append('\n');
 		return builder.toString();
 	}
 }
