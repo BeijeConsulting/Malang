@@ -57,6 +57,7 @@ public class Contatto {
 		builder.append("CognomeNome : ").append(cognome_nome).append('\n');
 		builder.append("telefono : ").append(telefono).append('\n');
 		builder.append("email : ").append(email).append('\n');
+		builder.append("---------------------------------------- \n");
 		return builder.toString();
 	}
 	

@@ -55,13 +55,9 @@ public class FusioneFileMischiati {
 		
 		
 		FileWriter fileWriter = new FileWriter("C:\\temp\\fusione3.txt");
-		
-		for (int i=0; i<rows.size(); i++)
-		{
 			
-			fileWriter.write(contatto.toString());
-			fileWriter.write(contatto2.toString());
-		}
+			fileWriter.write(rows.toString());
+			fileWriter.write(rows2.toString());
 		
 		
 		bufferedReader.close();
