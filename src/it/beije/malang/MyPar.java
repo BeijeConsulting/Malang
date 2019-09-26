@@ -1,6 +1,6 @@
 package it.beije.malang;
 
-public class MyParser {
+public class MyPar {
 <<<<<<< HEAD
 
 	
