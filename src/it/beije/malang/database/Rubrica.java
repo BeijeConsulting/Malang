@@ -2,6 +2,7 @@ package it.beije.malang.database;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -14,36 +15,6 @@ import it.beije.malang.database.*;
 public class Rubrica {
 
 	public static void main(String[] args) {
-		
-		SQLManager conn = null;
-		
-		try {
-			conn = new SQLManager("jdbc:mysql://localhost:3306/malang?serverTimezone=CET", "root", "Beije09");
-			
-			File f = new File("C:\\Esercizi\\rubrica.txt");
-			conn.importCSV(f);
-			
-		}
-		catch (ClassNotFoundException cnfEx) {
-			cnfEx.printStackTrace();
-		} 
-		catch (SQLException sqlEx) {
-			sqlEx.printStackTrace();
-		} 
-		catch (FileNotFoundException fnfEx) {
-			fnfEx.printStackTrace();
-		} 
-		catch (IOException ioEx) {
-			ioEx.printStackTrace();
-		} 
-		finally {
-			try {
-				if (conn.getConnection() != null) conn.close();
-			} 
-			catch (SQLException ce) {
-				ce.printStackTrace();
-			}
-		}
 		
 //		List<Contact> contatti = new ArrayList<Contact>();
 //		SQLManager conn = null;
