@@ -20,7 +20,7 @@ public class filecsv {
             while ((line = br.readLine()) != null) {
                 // use comma as separator
                 String[] count = line.split(cvsSplitBy);
-                System.out.println("nome " + count[0] + " , name=" + count[1] + "]");
+                System.out.println("nome " + count[0] + " , nome=" + count[1] + "]");
             }
         } catch (FileNotFoundException e) {
             e.printStackTrace();
