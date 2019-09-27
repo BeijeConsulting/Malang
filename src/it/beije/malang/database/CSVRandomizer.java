@@ -47,24 +47,26 @@ public class CSVRandomizer {
             Collections.shuffle(surnames);
             Collections.shuffle(phones);
 
-            writer = new BufferedWriter(new FileWriter(new File("C:\\Esercizi\\generato2.csv")));
+            writer = new BufferedWriter(new FileWriter(new File("C:\\Esercizi\\corbosiero2.csv")));
             StringBuilder sb = null;
             Random random = new Random();
             
             writer.write("NAME\tSURNAME\tPHONE\tEMAIL\n");
 
-            for(int i = 0; i < 2000; i++){
+            for(int i = 0; i < 5_000_000; i++){
 
-                int c = random.nextInt(names.size());
+                int n = random.nextInt(names.size());
+                int s = random.nextInt(surnames.size());
+                int p = random.nextInt(phones.size());
                 int domainIdx = random.nextInt(DOMAINS.length);
                 
-                String name = names.get(c);
-                String surname = surnames.get(c);
+                String name = names.get(n);
+                String surname = surnames.get(s);
 
                 sb = new StringBuilder();
                 sb.append(name).append(";")
                         .append(surname).append(";")
-                        .append(phones.get(c)).append(";");
+                        .append(phones.get(p)).append(";");
                 
                 if(surname.equals(""))
                 	surname = "beije";
@@ -72,7 +74,7 @@ public class CSVRandomizer {
                 if(name.equals(""))
                 	name = surname.toLowerCase();
                 
-                sb.append(name).append("@").append(surname + ".").append(DOMAINS[domainIdx]).append(";\n");
+                sb.append(name).append("@").append(surname.toLowerCase() + ".").append(DOMAINS[domainIdx]).append(";\n");
 
                 writer.write(sb.toString());
             }
