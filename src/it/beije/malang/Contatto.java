@@ -66,7 +66,7 @@ public class Contatto implements Comparable<Contatto>{
 		StringBuilder builder = new StringBuilder();
 		builder.append(cognome).append(';');
 		builder.append(nome).append(';');
-		builder.append(getCognomeNome()).append(';');
+//		builder.append(getCognomeNome()).append(';');
 		builder.append(email).append(';');
 		builder.append(telefono);
 		return builder.toString();
