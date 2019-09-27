@@ -17,9 +17,13 @@ public class Rubrica {
 		
 		Connection conn = null;
 		try {
+<<<<<<< HEAD
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			
 			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/malang?serverTimezone=CET", "root", "lazio1900");
+=======
+			conn = ConnectionFactory.getConnection();
+>>>>>>> refs/remotes/origin/master
 			System.out.println("connection ? " + !conn.isClosed());
 			
 			Statement stmt = conn.createStatement();
@@ -28,7 +32,7 @@ public class Rubrica {
 //			String insert = "UPDATE rubrica SET telefono = 3333474  WHERE id = 5";
 			String insert = "UPDATE rubrica SET telefono = 3331709  WHERE id = 4";
 
-
+//ciao
 
 			int r = stmt.executeUpdate(insert);
 			System.out.println("rows affected : " + r);
