@@ -1,0 +1,39 @@
+1. Una classe di utilità con i metodi statici somma, sottrazione, moltiplicazione e divisione di una serie di numeri passati in input, esempi:
+somma(1,2,3,10) --> 16
+sottrazione(10, 15) --> -5
+moltiplicazione(2,4) --> 8
+divisione(10) --> 10
+
+
+2. Una classe Parallelepipedo IMMUTABILE che possa essere istanziata nei seguenti modi:
+new  Parallelepipedo(int larghezza)
+new  Parallelepipedo(int larghezza, int lunghezza) 
+new  Parallelepipedo(int larghezza , int lunghezza, int profondità) 
+nel caso larghezza e/o lunghezza non vengano passati settarli automaticamente ad 1.
+Questa classe dovrà avere un metodo per la restituzione di ogni singolo valore: larghezza, lunghezza e profondità, oltre ad un metodo getVolume() che vi restituisca il volume corretto del parallelepipedo istanziato.
+
+
+3. Fare una classe che dati 2 valori del gioco della MORRA (carta, forbice, sasso) risponda chi vince (giocatore 1 o 2)
+
+
+4. Partendo da due files differenti di cui il primo in ordine: {nome, cognome, email, telefono}
+ed il secondo in ordine: {email, cognome, nome, telefono}
+trasformarli nel seguente ordine: {COGNOME, NOME, NOME_COMPLETO, EMAIL}
+unirli poi in un file definitivo con il cognome in ordine alfabetico
+
+
+5. Connettersi ad un database MySQL e inserire contenuti in una tabella 'rubrica'.
+Ricevere in input (get) i valori del DB e scriverli in un CSV 'rubrica.csv'.
+
+
+6. Partendo dai dati nel CSV allegato, caricare 3 elenchi distinti per NOME, COGNOME e TELEFONO.
+Aggiungete in questi elenchi 10 stringhe vuote ("").
+Fatevi un array di DOMINI {"it", "com", "net"}
+A questo punto procedete con il generare alcune migliaia di combinazioni casuali di cognome-nome-email-telefono con le seguenti regole:
+- pescate a caso un elemento dall'elenco COGNOME
+- pescate a caso un elemento dall'elenco NOME
+- pescate a caso un elemento dall'elenco TELEFONO
+- generate la mail con la formula NOME@COGNOME.{dominio random}
+nel caso COGNOME == "" sostituitelo con "beije" 
+nel caso NOME == "" sostituitelo con COGNOME
+Scrivete queste combinazioni in un file CSV con ordine delle colonne deciso da voi, l'importante è che sia specificato nella prima riga.
