@@ -13,10 +13,9 @@ import it.beije.malang.Contatto;
 
 public class Rubrica {
 	public static String ins;
+	
 	public static String inserisci(String... args) throws SQLException{
-		
-		ins = "INSERT INTO rubrica ("+args[0]+", "+args[1]+", "+args[2]+", "+args[3]+") VALUES ('"+args[4]+"', '"+args[5]+"', '"+args[6]+"', '"+args[7]+"')";
-		
+		ins = "INSERT INTO rubrica ("+args[0]+", "+args[1]+", "+args[2]+", "+args[3]+", "+args[4]+") VALUES ('"+args[5]+"', '"+args[6]+"', '"+args[7]+"', '"+args[8]+"','"+args[9]+"')";
 		return ins;
 		
 	}
@@ -24,21 +23,17 @@ public class Rubrica {
 	
 	
 
-	public static void main(String[] args) throws SQLException{
+	public static void main(String[] args) {
 		List<Contatto> contatti = new ArrayList<Contatto>();
 		
 		Connection conn = null;
-		conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/malang?serverTimezone=CET", "root", "Beije04");
-		System.out.println("connection ? " + !conn.isClosed());
-		Statement stmt = conn.createStatement();
 		
-		Rubrica.inserisci("cognome", "nome", "email", "telefono", "cognome", "nome", "email", "telefono" );
-		int r = stmt.executeUpdate(ins);
-	
 		try {
-			Class.forName("com.mysql.cj.jdbc.Driver");
-			
-			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/malang?serverTimezone=CET", "root", "Beije04");
+
+			conn = ConnectionFactory.getConnection();
+			Statement stmt = conn.createStatement();
+			Rubrica.inserisci("cognome", "nome", "email", "telefono", "cognome", "nome", "email", "telefono" );
+			int r = stmt.executeUpdate(ins);
 			System.out.println("connection ? " + !conn.isClosed());
 			
 	

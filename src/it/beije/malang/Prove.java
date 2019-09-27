@@ -7,39 +7,49 @@ import java.util.*;
 
 public class Prove {
 
+	public Prove() {
+		System.out.println("bounce");
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	public static void main(String[] args) {
 		
-		Scanner sc = new Scanner(System.in);
-		System.out.println("inserisci data: giorno mese anno");
-		int giorno = sc.nextInt();
-		int mese = sc.nextInt();
-		int anno = sc.nextInt();
 		
+		new Prove();
 		
-		System.out.println(giorno);
-		System.out.println(mese);
-		System.out.println(anno);
-		
-		LocalDate date = LocalDate.of(anno, mese, giorno);
-		
-		
-		DateTimeFormatter f = DateTimeFormatter.ofPattern("MM dd yyyy");
-		System.out.println(date.format(f));
-		 
-		 
-		
-		
+//		Scanner sc = new Scanner(System.in);
+//		System.out.println("inserisci data: giorno mese anno");
+//		int giorno = sc.nextInt();
+//		int mese = sc.nextInt();
+//		int anno = sc.nextInt();
+//		
+//		
+//		System.out.println(giorno);
+//		System.out.println(mese);
+//		System.out.println(anno);
+//		
+//		LocalDate date = LocalDate.of(anno, mese, giorno);
+//		
+//		
+//		DateTimeFormatter f = DateTimeFormatter.ofPattern("MM dd yyyy");
+//		System.out.println(date.format(f));
+//		 
 
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
 		
 		 /*
 		String name = "Webby";
@@ -67,7 +77,50 @@ public class Prove {
 			 }
 			 
 		*/	 
-			 
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	private static void Prove() {
+		// TODO Auto-generated method stub
 		
 	}
 }
