@@ -13,7 +13,7 @@ import it.beije.malang.Contatto;
 public class Rubrica {
 
 	public static void main(String[] args) {
-		List<Contatto> contatti = new ArrayList<Contatto>();
+		List<Contatto> contatti = new ArrayList<Contatto>();//
 		
 		Connection conn = null;
 		try {
@@ -31,7 +31,7 @@ public class Rubrica {
 			String query = "SELECT * FROM rubrica";
 			ResultSet rs = stmt.executeQuery(query);
 			while (rs.next()) {
-				Contatto contatto = new Contatto();
+				Contatto contatto = new Contatto();//
 				
 				contatto.setId(rs.getInt("id"));
 				contatto.setCognome(rs.getString("cognome"));
