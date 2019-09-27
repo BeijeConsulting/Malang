@@ -17,20 +17,23 @@ public class Rubrica {
 		
 		Connection conn = null;
 		try {
-			//conn = ConnectionFactory.getConnection();
-			Class.forName("com.mysql.cj.jdbc.Driver"); //carica la classe del driver JDBC
-			
-			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/malang?serverTimezone=CET", "root", "Beije007"); //crea una connessione, passando l'url, user e la PW
+			conn = ConnectionFactory.getConnection();
+//			Class.forName("com.mysql.cj.jdbc.Driver"); //carica la classe del driver JDBC
+//			
+//			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/malang?serverTimezone=CET", "root", "Beije007"); //crea una connessione, passando l'url, user e la PW
 			System.out.println("connection ? " + !conn.isClosed());
 			
 			Statement stmt = conn.createStatement();//Una volta stabilita la connessione, occorre passare una istruzione.
 			String insert = "INSERT INTO rubrica (cognome, nome, email, telefono) VALUES ('Rossi', 'Marco', 'marco@rossi.it', '3471234567')";
 			//String insert = "INSERT INTO rubrica VALUES (null, 'Rossi', 'Marco', 'marco@rossi.it', '3471234567')";//I dati vengono prelevati dal database col classico meccanismo delle query.
-			int r = stmt.executeUpdate(insert);// Esecuta il querry sql passat nello statement
+			int r = stmt.executeUpdate(insert);// executeUpdate esecuta la querry sql passata nello statement
 			System.out.println("rows affected : " + r);
 			
+			// Con la preparedStatement bisogna sostituire i valori da mettere nella db con punti di domanda "?"
+			
+			/***query per la selezione. executeQuery() legge una riga alla volta come per il BufferWriter dei file quindi bisogna ciclare su di esso per la stampa di tu***/
 			//String query = "SELECT * FROM rubrica";
-//			ResultSet rs = stmt.executeQuery(query);
+//			ResultSet rs = stmt.executeQuery(query);// Per la ResultSet gli indici partono da 1
 //			while (rs.next()) {
 //				Contatto contatto = new Contatto();
 //				
