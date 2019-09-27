@@ -51,7 +51,7 @@ public class CSVRandomizer {
             StringBuilder sb = null;
             Random random = new Random();
             
-            writer.write("NAME\tSURNAME\tPHONE\tEMAIL\n");
+            writer.write("NAME;SURNAME;PHONE;EMAIL");
 
             for(int i = 0; i < 5_000_000; i++){
 
@@ -74,7 +74,7 @@ public class CSVRandomizer {
                 if(name.equals(""))
                 	name = surname.toLowerCase();
                 
-                sb.append(name).append("@").append(surname.toLowerCase() + ".").append(DOMAINS[domainIdx]).append(";\n");
+                sb.append(name).append("@").append(surname.toLowerCase() + ".").append(DOMAINS[domainIdx]);
 
                 writer.write(sb.toString());
             }
