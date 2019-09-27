@@ -1,5 +1,6 @@
 package it.beije.malang.database;
 import java.util.*;
+import java.sql.*;
 
 import it.beije.malang.Contatto;
 
@@ -11,7 +12,9 @@ public class daScanneraDb {
 
 	static Scanner t = new Scanner(System.in);
 	
+	
 	public static void main(String[] args) throws ClassNotFoundException, SQLException {
+	
 		
 		Connection conn = null;
 		conn = ConnectionToDb.getConnection();
