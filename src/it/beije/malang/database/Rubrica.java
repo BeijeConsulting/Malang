@@ -25,7 +25,7 @@ public class Rubrica {
 //			String insert = "INSERT INTO rubrica (cognome, nome, email, telefono) VALUES ('" + args[0] + "', '" + args[1] + "', '" + args[2] + "', '" + args[3] + "')";
 //			int r = stmt.executeUpdate(insert);
 			
-<<<<<<< HEAD
+/*<<<<<<< HEAD
 			String query = "SELECT * FROM rubrica";
 			ResultSet rs = stmt.executeQuery(query);
 			while (rs.next()) {
@@ -45,7 +45,7 @@ public class Rubrica {
 				
 				contatti.add(contatto);
 			}
-=======
+=======*/
 //			PreparedStatement preparedStatement = conn.prepareStatement("INSERT INTO rubrica (cognome, nome, email, telefono) VALUES (?,?,?,?)");
 //			preparedStatement.setString(1, args[0]);
 //			preparedStatement.setString(2, args[1]);
@@ -54,7 +54,7 @@ public class Rubrica {
 			PreparedStatement preparedStatement = conn.prepareStatement("UPDATE rubrica SET nome = ? WHERE id = ?");
 			preparedStatement.setString(1, args[0]);
 			preparedStatement.setInt(2, Integer.parseInt(args[1]));
->>>>>>> refs/remotes/origin/master
+
 			
 			int r = preparedStatement.executeUpdate();
 			System.out.println("rows affected : " + r);
