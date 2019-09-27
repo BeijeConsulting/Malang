@@ -1,6 +1,7 @@
 package it.beije.malang.database;
 
 import java.sql.Connection;
+
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -9,58 +10,54 @@ import java.util.ArrayList;
 import java.util.List;
 
 import it.beije.malang.Contatto;
+import it.beije.malang.database.filecsv;
 
 public class Rubrica {
+	
 
+
+	public static void main(String[] args) throws Exception {
+		filecsv file = new filecsv();
+		file.lettura();
 	
-	
-	
-	
-	public static void main(String[] args) {
 		List<Contatto> contatti = new ArrayList<Contatto>();
 		
 		Connection conn = null;
+		Statement stmt=null;
+	
 		try {
-			Class.forName("com.mysql.cj.jdbc.Driver");
+			conn=ConnectionFactory.getConnection();
+//			
+		//	String insert = "INSERT INTO rubrica VALUES (null, 'asdasdi', 'gidasdsdni', 'marco@rossi.it', '3471234567')";
 			
-			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/malang?serverTimezone=CET", "root", "Beije06");
-			System.out.println("connection ? " + !conn.isClosed());
+			stmt=conn.createStatement();
 			
-			Statement stmt = conn.createStatement();
-//			String insert = "INSERT INTO rubrica ('cognome', 'nome', 'email', 'telefono') VALUES ('Rossi', 'Marco', 'marco@rossi.it', '3471234567')";
-//			//String insert = "INSERT INTO rubrica VALUES (null, 'Rossi', 'Marco', 'marco@rossi.it', '3471234567')";
-//			int r = stmt.executeUpdate(insert);
-//			System.out.println("rows affected : " + r);
+		//	int r = stmt.executeUpdate(insert);
+		//	String query = "SELECT * FROM rubrica";
+		//	ResultSet rs = stmt.executeQuery(query);
+//			while (rs.next()) {
+//				Contatto contatto = new Contatto();
+//				contatto.setId(rs.getInt("id"));
+//				contatto.setCognome(rs.getString("cognome"));
+//				contatto.setNome(rs.getString("nome"));
+//				contatto.setEmail(rs.getString("email"));
+//				contatto.setTelefono(rs.getString("telefono"));
+//				
+//				System.out.println("id : " + contatto.getId());
+//				System.out.println("cognome : " + contatto.getCognome());
+//				System.out.println("nome : " + contatto.getNome());
+//				System.out.println("email : " + contatto.getEmail());
+//				System.out.println("telefono : " + contatto.getTelefono());
+//				contatti.add(contatto);
+//			}
+//			
+//			
+//			
+//			rs.close();
 			
-			//String insert = "insert into rubrica('cognome') values ('ago')";
-			String insert = "INSERT INTO rubrica VALUES (null, 'Rossi', 'giovanni', 'marco@rossi.it', '3471234567')";
-			int r = stmt.executeUpdate(insert);
-			System.out.println("rows affected : " + r);
-			String query = "SELECT * FROM rubrica";
-			ResultSet rs = stmt.executeQuery(query);
-			while (rs.next()) {
-				Contatto contatto = new Contatto();
-				
-				contatto.setId(rs.getInt("id"));
-				contatto.setCognome(rs.getString("cognome"));
-				contatto.setNome(rs.getString("nome"));
-				contatto.setEmail(rs.getString("email"));
-				contatto.setTelefono(rs.getString("telefono"));
-				
-				System.out.println("id : " + contatto.getId());
-				System.out.println("cognome : " + contatto.getCognome());
-				System.out.println("nome : " + contatto.getNome());
-				System.out.println("email : " + contatto.getEmail());
-				System.out.println("telefono : " + contatto.getTelefono());
-				
-				contatti.add(contatto);
-			}
-			
-			rs.close();
 			stmt.close();
 			
-		} catch (ClassNotFoundException cnfEx) {
-			cnfEx.printStackTrace();
+		
 		} catch (SQLException sqlEx) {
 			sqlEx.printStackTrace();
 		} finally {
@@ -73,5 +70,7 @@ public class Rubrica {
 
 		System.out.println("numero contatti : " + contatti.size());
 	}
+	
+	
 
 }
