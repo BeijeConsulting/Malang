@@ -28,18 +28,12 @@ public class Rubrica {
 	
 		try {
 			conn=ConnectionFactory.getConnection();
-//			
-		//	String insert = "INSERT INTO rubrica VALUES (null, 'asdasdi', 'gidasdsdni', 'marco@rossi.it', '3471234567')";
 			
-<<<<<<< HEAD
-			stmt=conn.createStatement();
-=======
-			Statement stmt = conn.createStatement();
+			//			
+		//	String insert = "INSERT INTO rubrica VALUES (null, 'asdasdi', 'gidasdsdni', 'marco@rossi.it', '3471234567')";
+		//	Statement stmt = conn.createStatement();
 //			String insert = "INSERT INTO rubrica (cognome, nome, email, telefono) VALUES ('" + args[0] + "', '" + args[1] + "', '" + args[2] + "', '" + args[3] + "')";
 //			int r = stmt.executeUpdate(insert);
->>>>>>> refs/remotes/origin/master
-			
-<<<<<<< HEAD
 		//	int r = stmt.executeUpdate(insert);
 		//	String query = "SELECT * FROM rubrica";
 		//	ResultSet rs = stmt.executeQuery(query);
@@ -62,21 +56,22 @@ public class Rubrica {
 //			
 //			
 //			rs.close();
-=======
-//			PreparedStatement preparedStatement = conn.prepareStatement("INSERT INTO rubrica (cognome, nome, email, telefono) VALUES (?,?,?,?)");
+
+			PreparedStatement preparedStatement = conn.prepareStatement("INSERT INTO rubrica (cognome, nome, email, telefono) VALUES (?,?,?,?)");
 //			preparedStatement.setString(1, args[0]);
 //			preparedStatement.setString(2, args[1]);
 //			preparedStatement.setString(3, args[2]);
 //			preparedStatement.setString(4, args[3]);
-			PreparedStatement preparedStatement = conn.prepareStatement("UPDATE rubrica SET nome = ? WHERE id = ?");
+	//		PreparedStatement preparedStatement = conn.prepareStatement("UPDATE rubrica SET nome = ? WHERE id = ?");
 			preparedStatement.setString(1, args[0]);
-			preparedStatement.setInt(2, Integer.parseInt(args[1]));
->>>>>>> refs/remotes/origin/master
-			
-<<<<<<< HEAD
-=======
-			int r = preparedStatement.executeUpdate();
-			System.out.println("rows affected : " + r);
+			preparedStatement.setString(2, args[1]);
+			preparedStatement.setString(3, args[2]);
+			preparedStatement.setString(4, args[3]);
+			preparedStatement.executeUpdate();
+		//	preparedStatement.setInt(2, Integer.parseInt(args[1]));
+
+			//int r = preparedStatement.executeUpdate();
+	//		System.out.println("rows affected : " + r);
 			
 //			String query = "SELECT * FROM rubrica";
 //			ResultSet rs = stmt.executeQuery(query);
@@ -88,7 +83,6 @@ public class Rubrica {
 //				contatto.setNome(rs.getString("nome"));
 //				contatto.setEmail(rs.getString("email"));
 //				contatto.setTelefono(rs.getString("telefono"));
-//				
 //				System.out.println("id : " + contatto.getId());
 //				System.out.println("cognome : " + contatto.getCognome());
 //				System.out.println("nome : " + contatto.getNome());
@@ -99,9 +93,8 @@ public class Rubrica {
 //			}
 //			
 //			rs.close();
->>>>>>> refs/remotes/origin/master
-			stmt.close();
-			
+			//stmt.close();
+			preparedStatement.close();
 		
 		} catch (SQLException sqlEx) {
 			sqlEx.printStackTrace();
@@ -112,10 +105,6 @@ public class Rubrica {
 				ce.printStackTrace();
 			}
 		}
-
 		System.out.println("numero contatti : " + contatti.size());
 	}
-	
-	
-
 }
