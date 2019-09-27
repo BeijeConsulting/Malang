@@ -19,14 +19,20 @@ public class Rubrica {
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			
-			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/rubrica?serverTimezone=CET", "root", "beije");
+			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/malang?serverTimezone=CET", "root", "lazio1900");
 			System.out.println("connection ? " + !conn.isClosed());
 			
 			Statement stmt = conn.createStatement();
-//			String insert = "INSERT INTO rubrica ('cognome', 'nome', 'email', 'telefono') VALUES ('Rossi', 'Marco', 'marco@rossi.it', '3471234567')";
-//			//String insert = "INSERT INTO rubrica VALUES (null, 'Rossi', 'Marco', 'marco@rossi.it', '3471234567')";
-//			int r = stmt.executeUpdate(insert);
-//			System.out.println("rows affected : " + r);
+//			String insert = "INSERT INTO rubrica (id, cognome, nome, email) VALUES ('4', 'parmendola', 'paolo', 'paolo@parmendola.it')";
+//			String insert = "UPDATE rubrica SET telefono = 3332506  WHERE id = 3";
+//			String insert = "UPDATE rubrica SET telefono = 3333474  WHERE id = 5";
+			String insert = "UPDATE rubrica SET telefono = 3331709  WHERE id = 4";
+
+
+
+			int r = stmt.executeUpdate(insert);
+			System.out.println("rows affected : " + r);
+
 			
 			String query = "SELECT * FROM rubrica";
 			ResultSet rs = stmt.executeQuery(query);
