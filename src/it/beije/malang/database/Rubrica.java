@@ -7,63 +7,85 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+import java.io.*;
 
-import it.beije.malang.Contatto;
+import it.beije.malang.database.*;
 
 public class Rubrica {
 
 	public static void main(String[] args) {
-		List<Contatto> contatti = new ArrayList<Contatto>();
 		
-		Connection conn = null;
+		SQLManager conn = null;
+		
 		try {
-			Class.forName("com.mysql.cj.jdbc.Driver");
+			conn = new SQLManager("jdbc:mysql://localhost:3306/malang?serverTimezone=CET", "root", "Beije09");
 			
-			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/rubrica?serverTimezone=CET", "root", "beije");
-			System.out.println("connection ? " + !conn.isClosed());
+			File f = new File("C:\\Esercizi\\rubrica.txt");
+			conn.importCSV(f);
 			
-			Statement stmt = conn.createStatement();
-//			String insert = "INSERT INTO rubrica ('cognome', 'nome', 'email', 'telefono') VALUES ('Rossi', 'Marco', 'marco@rossi.it', '3471234567')";
-//			//String insert = "INSERT INTO rubrica VALUES (null, 'Rossi', 'Marco', 'marco@rossi.it', '3471234567')";
-//			int r = stmt.executeUpdate(insert);
-//			System.out.println("rows affected : " + r);
-			
-			String query = "SELECT * FROM rubrica";
-			ResultSet rs = stmt.executeQuery(query);
-			while (rs.next()) {
-				Contatto contatto = new Contatto();
-				
-				contatto.setId(rs.getInt("id"));
-				contatto.setCognome(rs.getString("cognome"));
-				contatto.setNome(rs.getString("nome"));
-				contatto.setEmail(rs.getString("email"));
-				contatto.setTelefono(rs.getString("telefono"));
-				
-				System.out.println("id : " + contatto.getId());
-				System.out.println("cognome : " + contatto.getCognome());
-				System.out.println("nome : " + contatto.getNome());
-				System.out.println("email : " + contatto.getEmail());
-				System.out.println("telefono : " + contatto.getTelefono());
-				
-				contatti.add(contatto);
-			}
-			
-			rs.close();
-			stmt.close();
-			
-		} catch (ClassNotFoundException cnfEx) {
+		}
+		catch (ClassNotFoundException cnfEx) {
 			cnfEx.printStackTrace();
-		} catch (SQLException sqlEx) {
+		} 
+		catch (SQLException sqlEx) {
 			sqlEx.printStackTrace();
-		} finally {
+		} 
+		catch (FileNotFoundException fnfEx) {
+			fnfEx.printStackTrace();
+		} 
+		catch (IOException ioEx) {
+			ioEx.printStackTrace();
+		} 
+		finally {
 			try {
-				if (conn != null) conn.close();
-			} catch (SQLException ce) {
+				if (conn.getConnection() != null) conn.close();
+			} 
+			catch (SQLException ce) {
 				ce.printStackTrace();
 			}
 		}
-
-		System.out.println("numero contatti : " + contatti.size());
+		
+//		List<Contact> contatti = new ArrayList<Contact>();
+//		SQLManager conn = null;
+//		
+//		try {
+//			
+//			conn = new SQLManager("jdbc:mysql://localhost:3306/malang?serverTimezone=CET", "root", "Beije09");
+//			
+//			String query = "SELECT * FROM rubrica";
+//			ResultSet rs = conn.query(query);
+//			
+//			while (rs.next()) {
+//				Contact contact = new Contact(rs.getString("nome"), rs.getString("cognome"));
+//				
+//				contact.setId(rs.getInt("id"));
+//				contact.setEmail(rs.getString("email"));
+//				contact.setPhone(rs.getString("telefono"));
+//				
+//				contatti.add(contact);
+//				
+//				System.out.println(contact.toString());
+//			}
+//			
+//			conn.close();
+//			
+//		} 
+//		catch (ClassNotFoundException cnfEx) {
+//			cnfEx.printStackTrace();
+//		} 
+//		catch (SQLException sqlEx) {
+//			sqlEx.printStackTrace();
+//		} 
+//		finally {
+//			try {
+//				if (conn.getConnection() != null) conn.close();
+//			} 
+//			catch (SQLException ce) {
+//				ce.printStackTrace();
+//			}
+//		}
+//
+//		System.out.println("numero contatti : " + contatti.size());
 	}
 
 }
