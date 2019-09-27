@@ -63,11 +63,7 @@ public class GenerateContact {
 			int nameRandom = random.nextInt(nomi.size());
 			int surnameRandom = random.nextInt(cognomi.size());
 			int telephonRandom = random.nextInt(telefono.size());
-			int dominio = random.nextInt(3);
-			
-		//  nel caso COGNOME == "" sostituitelo con "beije" 
-		//  nel caso NOME == "" sostituitelo con COGNOME
-			
+			int dominio = random.nextInt(3);		
 			String cognome; 
 			String nome;
 			
@@ -76,19 +72,13 @@ public class GenerateContact {
 			else 
 				cognome = "beije";
 			
-			
 			if(!nomi.get(nameRandom).equals("")) {
 				nome = nomi.get(nameRandom);
 			}else {
-				if(!cognomi.get(surnameRandom).equals("")) 
-					nome = cognomi.get(surnameRandom);
-				else 
-					nome = "beije";
-				
+				nome = cognome;
 			}
 			rows.append(cognomi.get(surnameRandom));
 			rows.append(";").append(nomi.get(nameRandom));
-			
 			rows.append(";").append(telefono.get(telephonRandom)).append(";");
 			rows.append(getEmail(nome,cognome, domini[dominio])).append(";\n");
 			bufferedWriter.write(rows.toString());
@@ -96,9 +86,7 @@ public class GenerateContact {
 		}
 		
 		bufferedWriter.close();
-		
-		
-		
+
 	}
 
 }
