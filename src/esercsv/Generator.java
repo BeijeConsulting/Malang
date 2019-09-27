@@ -25,7 +25,7 @@ public class Generator {
 
 		
 		
-		String PRIMARIGA ="COGNOME  NOME  TELEFONO  EMAIL\n";
+		String PRIMARIGA ="COGNOME;NOME;TELEFONO;EMAIL\n";
 		bWriter.write(PRIMARIGA);
 		
 		StringTokenizer tokenizer = null;
@@ -70,7 +70,7 @@ public class Generator {
 			riga.append(cognome.get(cognomeRandom));
 			riga.append(";").append(nome.get(nomeRandom));
 			riga.append(";").append(telefono.get(telefonoRandom)).append(";");
-			riga.append(getEmail(nom,cog, dom[dominio])).append(";\n");
+			riga.append(getEmail(nom,cog, dom[dominio])).append("\n");
 			bWriter.write(riga.toString());
 		}
 			
