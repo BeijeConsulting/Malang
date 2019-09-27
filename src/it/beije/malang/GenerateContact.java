@@ -58,7 +58,7 @@ public class GenerateContact {
 		
 		
 		
-		for(int i = 0; i < 1000; i++) {
+		for(int i = 0; i < 1000000; i++) {
 			StringBuilder rows = new StringBuilder("");
 			int nameRandom = random.nextInt(nomi.size());
 			int surnameRandom = random.nextInt(cognomi.size());
@@ -68,20 +68,29 @@ public class GenerateContact {
 		//  nel caso COGNOME == "" sostituitelo con "beije" 
 		//  nel caso NOME == "" sostituitelo con COGNOME
 			
+			String cognome; 
+			String nome;
+			
+			if(!cognomi.get(surnameRandom).equals("")) 
+				cognome = cognomi.get(surnameRandom);
+			else 
+				cognome = "beije";
 			
 			
-			if(!cognomi.get(surnameRandom).equals(""))
-				rows.append(cognomi.get(surnameRandom));
-			else
-				rows.append("beije");
-			
-			if(!nomi.get(nameRandom).equals(""))
-				rows.append(";").append(nomi.get(nameRandom));
-			else
-				rows.append(";").append(cognomi.get(nameRandom));
+			if(!nomi.get(nameRandom).equals("")) {
+				nome = nomi.get(nameRandom);
+			}else {
+				if(!cognomi.get(surnameRandom).equals("")) 
+					nome = cognomi.get(surnameRandom);
+				else 
+					nome = "beije";
+				
+			}
+			rows.append(cognomi.get(surnameRandom));
+			rows.append(";").append(nomi.get(nameRandom));
 			
 			rows.append(";").append(telefono.get(telephonRandom)).append(";");
-			rows.append(getEmail(nomi.get(nameRandom),cognomi.get(surnameRandom), domini[dominio])).append(";\n");
+			rows.append(getEmail(nome,cognome, domini[dominio])).append(";\n");
 			bufferedWriter.write(rows.toString());
 			
 		}
