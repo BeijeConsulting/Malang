@@ -20,8 +20,7 @@ public class ProvaDatabaseManager {
 		cnfEx.printStackTrace();
 		} catch (SQLException sqlEx) {
 		sqlEx.printStackTrace();
-		} 
-		
+		} 	
 	}
 
 }

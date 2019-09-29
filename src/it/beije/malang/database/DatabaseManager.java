@@ -15,7 +15,6 @@ import java.util.ArrayList;
 import java.util.StringTokenizer;
 
 public class DatabaseManager {
-	
 	static File file;
 	static int count;
 
