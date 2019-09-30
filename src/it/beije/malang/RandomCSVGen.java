@@ -47,7 +47,7 @@ public class RandomCSVGen {
 		BufferedWriter writer=new BufferedWriter(filewriter);
 		writer.write("cognome;nome;email;telefono");
 		writer.newLine();
-		for (long i=0; i <= 100000; i++) {
+		for (int i=0; i < 5000000; i++) {
 			Contatto contattoRandom = new Contatto();
 			Random rand = new Random();
 			contattoRandom.setCognome(cognome.get(rand.nextInt(cognome.size() - 1)));

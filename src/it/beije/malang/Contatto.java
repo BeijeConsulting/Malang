@@ -1,5 +1,7 @@
 package it.beije.malang;
 
+import java.util.Random;
+
 public class Contatto implements Comparable<Contatto>{
 	
 	private int id;
@@ -68,7 +70,8 @@ public class Contatto implements Comparable<Contatto>{
 		builder.append(nome).append(';');
 //		builder.append(getCognomeNome()).append(';');
 		builder.append(email).append(';');
-		builder.append(telefono);
+		builder.append(telefono).append(';');
+		builder.append(randomString(10));
 		return builder.toString();
 	}
 	
@@ -78,5 +81,25 @@ public class Contatto implements Comparable<Contatto>{
 		
 		return this.cognome.compareTo(cognome);
 	}
+	
+	public static String randomString(int length){
+		Random rand = new Random();
+		StringBuffer tempStr = new StringBuffer();
+		tempStr.append("");
+		for (int i = 0; i < length; i++) {
+		int c = rand.nextInt(122 - 48) + 48;
+		if((c >= 58 && c <= 64) || (c >= 91 && c <= 96)){
+		i--;
+		continue;
+		}
+		tempStr.append((char)c);
+
+		}
+		return tempStr.toString();
+		}
+	
+//	public static void main(String[] args) {
+//		System.out.println(randomString(10));
+//	}
 	
 }

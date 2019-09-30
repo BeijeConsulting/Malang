@@ -14,5 +14,5 @@ public class Giocatore {
 		super();
 		this.giocata = giocata;
 	}
-	
+
 }
