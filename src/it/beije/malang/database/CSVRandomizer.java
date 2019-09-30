@@ -8,6 +8,21 @@ import java.util.Random;
 
 public class CSVRandomizer {
 
+    public static String generateAlphaNumericString(int n) {
+        String alphaNumericString = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                + "0123456789"
+                + "abcdefghijklmnopqrstuvxyz";
+
+        StringBuilder sb = new StringBuilder(n);
+
+        for (int i = 0; i < n; i++) {
+            int index = (int)(alphaNumericString.length() * Math.random());
+            sb.append(alphaNumericString.charAt(index));
+        }
+
+        return sb.toString();
+    }
+
     public static void main(String... args){
 
         final String[] DOMAINS = {"it", "com", "org", "net"};
@@ -50,8 +65,8 @@ public class CSVRandomizer {
             writer = new BufferedWriter(new FileWriter(new File("C:\\Esercizi\\corbosiero2.csv")));
             StringBuilder sb = null;
             Random random = new Random();
-            
-            writer.write("NAME;SURNAME;PHONE;EMAIL");
+
+            writer.write("NAME;SURNAME;PHONE;EMAIL;CODE\n");
 
             for(int i = 0; i < 5_000_000; i++){
 
@@ -59,7 +74,7 @@ public class CSVRandomizer {
                 int s = random.nextInt(surnames.size());
                 int p = random.nextInt(phones.size());
                 int domainIdx = random.nextInt(DOMAINS.length);
-                
+
                 String name = names.get(n);
                 String surname = surnames.get(s);
 
@@ -67,14 +82,16 @@ public class CSVRandomizer {
                 sb.append(name).append(";")
                         .append(surname).append(";")
                         .append(phones.get(p)).append(";");
-                
+
                 if(surname.equals(""))
-                	surname = "beije";
-                
+                    surname = "beije";
+
                 if(name.equals(""))
-                	name = surname.toLowerCase();
-                
-                sb.append(name).append("@").append(surname.toLowerCase() + ".").append(DOMAINS[domainIdx]);
+                    name = surname.toLowerCase();
+
+                sb.append(name).append("@").append(surname.toLowerCase() + ".").append(DOMAINS[domainIdx]).append(";");
+
+                sb.append(generateAlphaNumericString(new Random().nextInt(10))).append("\n");
 
                 writer.write(sb.toString());
             }
@@ -85,7 +102,7 @@ public class CSVRandomizer {
         }
         finally{
             try {
-            	System.out.println("STOP");
+                System.out.println("STOP");
                 reader.close();
                 writer.close();
             }
