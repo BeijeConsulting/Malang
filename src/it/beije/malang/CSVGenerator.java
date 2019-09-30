@@ -8,6 +8,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class CSVGenerator {
 	private ArrayList<String> names=new ArrayList<>();
@@ -56,23 +57,53 @@ public class CSVGenerator {
 		return builder.toString();
 	}
 	
-	public void generateRandomCSV(String output,int num) throws IOException {
+	private String buildString(String name, String surname,String phone, String domain, char[] rand) {
+		StringBuilder builder=new StringBuilder();
+		builder.append(name).append(";");
+		builder.append(surname).append(";");
+		builder.append(makeEmail(name,surname,domain)).append(";");
+		builder.append(phone).append(";");
+		builder.append(rand);
+		return builder.toString();
+	}
+	
+	public void generateRandomCSV(String output,long num) throws IOException {
 		generateRandomCSV(new File(output), num);
 	}
 	
-	public void generateRandomCSV(File output,int num) throws IOException {
+	public void generateRandomCSV(File output,long num) throws IOException {
 		if (!output.exists()) {
 			output.createNewFile();
 		}
 		BufferedWriter writer=new BufferedWriter(new FileWriter(output));
 		Random randomizer=new Random();
-		for (int i=0;i<num;i++) {
+		writer.write("nome;cognome;email;telefono");
+		
+		for (long i=0;i<num;i++) {
+			writer.newLine();
 			int nameindex=randomizer.nextInt(names.size());
 			int surnameindex=randomizer.nextInt(surnames.size());
 			int phoneindex=randomizer.nextInt(phones.size());
 			int domainindex=randomizer.nextInt(DOMAINS.length);
-			writer.write(buildString(names.get(nameindex),surnames.get(surnameindex),phones.get(phoneindex),DOMAINS[domainindex]));
-			writer.newLine();
+			int length=randomizer.nextInt(11);
+			if (length==0)
+				length++;
+			char [] rand=new char[length];
+			for (int j=0;j<length;j++)
+			{
+				switch(randomizer.nextInt(3)) 
+				{
+					case 0:
+						rand[j]=(char) ThreadLocalRandom.current().nextInt(48, 58);
+						break;
+					case 1:
+						rand[j]=(char) ThreadLocalRandom.current().nextInt(65, 91);
+						break;
+					case 2:
+						rand[j]=(char) ThreadLocalRandom.current().nextInt(97, 123);
+				}
+			}
+			writer.write(buildString(names.get(nameindex),surnames.get(surnameindex),phones.get(phoneindex),DOMAINS[domainindex],rand));
 		}
 		writer.close();
 	}
