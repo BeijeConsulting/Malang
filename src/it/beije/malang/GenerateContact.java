@@ -12,8 +12,8 @@ import java.util.*;
 //- pescate a caso un elemento dall'elenco NOME
 //- pescate a caso un elemento dall'elenco TELEFONO
 //- generate la mail con la formula NOME@COGNOME.{dominio random}
-//  nel caso COGNOME == "" sostituitelo con "beije" 
-//  nel caso NOME == "" sostituitelo con COGNOME
+//nel caso COGNOME == "" sostituitelo con "beije" 
+//nel caso NOME == "" sostituitelo con COGNOME
 //Scrivete queste combinazioni in un file CSV con ordine delle colonne deciso da voi, l'importante è che sia specificato nella prima riga.
 
 public class GenerateContact {
@@ -32,10 +32,10 @@ public class GenerateContact {
 		File f = new File("C:\\temp\\generato.csv");
 		FileReader fileReader = new FileReader(f);
 		BufferedReader bufferedReader = new BufferedReader(fileReader);
-		FileWriter fileWriter = new FileWriter("C:\\temp\\new_generate.csv");//C:\temp\new_rubrica.txt
+		FileWriter fileWriter = new FileWriter("C:\\temp\\new_generate_uno.csv");//C:\temp\new_rubrica.txt
 		BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
 		
-		String firstRow ="\"COGNOME\"\t\"NOME\"\t\"TELEFONO\"\t\"EMAIL\"\n";
+		String firstRow ="\"COGNOME\";\"NOME\";\"TELEFONO\";\"EMAIL\"\n";
 		bufferedWriter.write(firstRow);
 		StringTokenizer tokenizer = null;
 		
@@ -56,9 +56,7 @@ public class GenerateContact {
 			telefono.add("");
 		}
 		
-		
-		
-		for(int i = 0; i < 1000000; i++) {
+		for(int i = 0; i < 5000000; i++) {
 			StringBuilder rows = new StringBuilder("");
 			int nameRandom = random.nextInt(nomi.size());
 			int surnameRandom = random.nextInt(cognomi.size());
@@ -80,7 +78,7 @@ public class GenerateContact {
 			rows.append(cognomi.get(surnameRandom));
 			rows.append(";").append(nomi.get(nameRandom));
 			rows.append(";").append(telefono.get(telephonRandom)).append(";");
-			rows.append(getEmail(nome,cognome, domini[dominio])).append(";\n");
+			rows.append(getEmail(nome,cognome, domini[dominio])).append("\n");
 			bufferedWriter.write(rows.toString());
 			
 		}
