@@ -15,7 +15,13 @@ public class Mammifero extends Vertebrato{
 	}
 	@Override
 	public void mangiare() {
-		// TODO Auto-generated method stub
+		if(this.isVegetariano() == true && this.isCarnivoro() == true) {
+			System.out.println("Onnivoro");
+		} else if (this.isVegetariano() == true) {
+			System.out.println("Vegetariano");
+		}else if (this.isCarnivoro() == true) {
+			System.out.println("Carnivoro");
+		}else System.out.println("Me magno l'aria");
 		
 	}
 
