@@ -58,7 +58,7 @@ public class GeneratoreRandom {
 			random.add(row);
 		}
 		
-		for (int i=0;i<5_000_000;i++) {
+		for (int i=0;i<500_000;i++) {
 		casuale = (int)(Math.random()*310);
 		
 		if  (cognome.get(casuale)=="") 

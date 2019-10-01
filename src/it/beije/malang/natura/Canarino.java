@@ -8,17 +8,6 @@ public class Canarino extends Volatile {
 		c.volare();
 		c.respirare();
 	}
-	@Override
-	public void volare() {
-		System.out.println("Il canarino puo' volare");
-
-	}
-
-	@Override
-	public void respirare() {
-		System.out.println("Il canarino respira dal naso");
-
-	}
 
 	@Override
 	public void mangiare() {

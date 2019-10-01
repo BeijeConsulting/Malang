@@ -10,17 +10,6 @@ public class Gatto extends Mammifero {
 		g.respirare();
 	}
 
-	@Override
-	public void partorire() {
-		System.out.println("Il gatto è un mammifero e quindi partorisce");
-
-	}
-
-	@Override
-	public void respirare() {
-		System.out.println("Il gatto respira con il naso");
-
-	}
 
 	@Override
 	public void mangiare() {

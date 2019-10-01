@@ -19,17 +19,17 @@ public class GeneratoreRandomDue {
 		ArrayList <String> telefono = new ArrayList<>();
 		ArrayList <String> indirizzo = new ArrayList<>();
 		
-		File f = new File ("C:\\temp\\vittorio1.csv");
+		File f = new File ("C:\\temp\\Generato2.csv");
 		FileReader fileReader = new FileReader(f);
 		BufferedReader bufferedReader = new BufferedReader(fileReader);
 		StringTokenizer tokenizer = null;
 		while (bufferedReader.ready()) {
 			
 			tokenizer = new StringTokenizer(bufferedReader.readLine(), ";");
-			nome.add(tokenizer.nextToken());
 			cognome.add(tokenizer.nextToken());
-			indirizzo.add(tokenizer.nextToken());
+			nome.add(tokenizer.nextToken());
 			telefono.add(tokenizer.nextToken());
+			indirizzo.add(tokenizer.nextToken());
 			
 		}
 		
