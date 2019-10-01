@@ -19,7 +19,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FromDbToCsv {
-	public static void main(String[] args) {
+	public  void fromDbToCsv() {
 		ArrayList<Contatto> contatti = new ArrayList<Contatto>();
 		Connection conn = null;
 		
@@ -48,7 +48,7 @@ public class FromDbToCsv {
 			BufferedWriter bufferedWriter1 = new BufferedWriter(new FileWriter("C:\\prova_java_io\\rubrica2.txt"));
 			bufferedWriter1.write("Rubrica dei contatti\n");
 				
-			String firstRow ="COGNOME;NOME;COGNOME NOME;EMAIL;TELEFONO";// "COGNOME"	"NOME"	"TELEFONO"
+			String firstRow ="COGNOME;NOME;COGNOME NOME;EMAIL;TELEFONO\n";// "COGNOME"	"NOME"	"TELEFONO"
 			bufferedWriter1.write(firstRow);
 				
 				for (Contatto cols : contatti) {
@@ -82,6 +82,10 @@ public class FromDbToCsv {
 				ce.printStackTrace();
 			}
 		}
+	}
+	public static void main(String[] args) {
+		FromDbToCsv esporta = new FromDbToCsv();
+		esporta.fromDbToCsv();
 	}
 
 }

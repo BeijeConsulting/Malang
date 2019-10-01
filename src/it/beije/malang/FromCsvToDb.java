@@ -19,11 +19,13 @@ import java.util.List;
 
 public class FromCsvToDb {
 	
-ArrayList<Contatto> rows = new ArrayList<Contatto>();
 
-	public ArrayList<Contatto> fromCsvToDb() throws IOException {
+
+	public void fromCsvToDb() throws IOException {
 		File f = new File("C:\\prova_java_io\\prova.txt");
 		System.out.println("il file è presente ? " + f.exists());
+		
+		ArrayList<Contatto> rows = new ArrayList<Contatto>();
 		
 		FileReader fileReader = new FileReader(f);
 		BufferedReader bufferedReader = new BufferedReader(fileReader);
@@ -38,23 +40,15 @@ ArrayList<Contatto> rows = new ArrayList<Contatto>();
 			contatto.setTelefono(tokenizer.nextToken());
 			contatto.setEmail(tokenizer.nextToken());
 			
-			//System.out.println(contatto);
+			
 			rows.add(contatto);
 		}
 		System.out.println("rows : " + rows.size());
 		bufferedReader.close();
-		return rows;
-	}
-
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		ArrayList<Contatto> contatti = new ArrayList<Contatto>();
 		
-		FromCsvToDb leggi = new FromCsvToDb();
-		Connection conn = null;
+Connection conn = null;
 		
 		try {
-			contatti = leggi.fromCsvToDb();
 			
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			
@@ -62,16 +56,15 @@ ArrayList<Contatto> rows = new ArrayList<Contatto>();
 			System.out.println("connection ? " + !conn.isClosed());
 			
 			Statement stmt = conn.createStatement();
-//			String insert = "INSERT INTO rubrica ('', 'nome', 'email', 'telefono') VALUES ('Rossi', 'Marco', 'marco@rossi.it', '3471234567')";
-			for (Contatto cols : contatti) {
+//			String insert = "INSERT INTO rubrica (cognome, nome, email, telefono) VALUES ('Rossi', 'Marco', 'marco@rossi.it', '3471234567')";
+			for (Contatto cols : rows) {
 				String insert = "INSERT INTO rubrica VALUES (null,'"+cols.getCognome()+"','"+cols.getNome()+"', '"+cols.getEmail()+"','"+cols.getTelefono()+"')";
 				int r = stmt.executeUpdate(insert);
 				System.out.println("rows affected : " + r);
 			
 			}			
 			stmt.close();
-		} catch (IOException ioe) {
-			ioe.printStackTrace();	
+		
 		} catch (ClassNotFoundException cnfEx) {
 			cnfEx.printStackTrace();
 		} catch (SQLException sqlEx) {
@@ -83,8 +76,14 @@ ArrayList<Contatto> rows = new ArrayList<Contatto>();
 				ce.printStackTrace();
 			}
 		}
+		
+	}
 
-		System.out.println("numero contatti : " + contatti.size());
+	public static void main(String[] args) throws IOException {
+		// TODO Auto-generated method stub
+		
+		FromCsvToDb importa = new FromCsvToDb();
+		importa.fromCsvToDb();
 	}
 
 }
