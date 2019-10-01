@@ -27,8 +27,7 @@ public class Cane extends Mammifero {
 		System.out.println("Il cane mangia i croccantini");
 	}
 	public void setEta(int eta) {
-		double eta1 = (double) eta;
-		super.setEta(eta1);
+		super.setEta(eta);
 		
 	}
 	
