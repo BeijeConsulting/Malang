@@ -77,7 +77,7 @@ public class CSVGenerator {
 		}
 		BufferedWriter writer=new BufferedWriter(new FileWriter(output));
 		Random randomizer=new Random();
-		writer.write("nome;cognome;email;telefono");
+		writer.write("nome;cognome;email;telefono;random");
 		
 		for (long i=0;i<num;i++) {
 			writer.newLine();
