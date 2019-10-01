@@ -11,6 +11,10 @@ public abstract class Mammiferi extends Animale {
 	public void mangiare() {
 		
 	}
+	
+
+	
+	
 	}
 	
 	

@@ -1,7 +1,7 @@
 package it.beije.malang.natura;
 
 public class Leone extends Mammiferi {
-static double annoleone;
+
 	
 	public void mangiare() {
 		System.out.println("I leoni mangiano con i denti");
@@ -12,34 +12,18 @@ static double annoleone;
 	}
 
 	public static void main(String[] args) {
-			
+				
 		Leone l= new Leone();
-		//annoleone=l.getEta();
+		
+		
+		l.setEta(5);
+		l.mangiare();
+		l.respirare();
 		System.out.println(l.getEta());
 		
 	}
 	
-	
-//	@Override
-//	public void setEta() {
-//		// TODO Auto-generated method stub
-//		
-//	}
-	
-	
-	
-//	public int anni() {
-//		
-//		annoleone=getEta();
-//		
-//		return annoleone;
-//		}
-	
-//	
-//public Leone() {
-//	//super.getEta();
-//	
-//}
+
 	
 
 }
