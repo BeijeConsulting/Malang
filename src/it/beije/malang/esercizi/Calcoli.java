@@ -74,6 +74,7 @@ public class Calcoli {
 		
 		}
 		sc.nextInt();
+		sc.close();
 	}
 
 }
