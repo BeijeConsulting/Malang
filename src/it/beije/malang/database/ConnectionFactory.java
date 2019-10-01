@@ -10,7 +10,7 @@ public class ConnectionFactory {
 		Connection conn = null;
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/rubrica?serverTimezone=CET", "root", "beije");
+			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/malang?serverTimezone=CET", "root", "lazio1900");
 		} catch (ClassNotFoundException cnfEx) {
 			cnfEx.printStackTrace();
 			throw cnfEx;
