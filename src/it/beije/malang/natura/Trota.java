@@ -11,7 +11,7 @@ public class Trota extends Pesce {
 
 	@Override
 	public void respirare() {
-		System.out.println("respiro come una trota, ammesso che essa sia chiamata respirazione?");
+		System.out.println("respiro come una trota, ammesso che essa venga chiamata respirazione?");
 		
 	}
 
