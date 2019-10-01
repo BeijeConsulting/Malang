@@ -31,9 +31,12 @@ public class EseContatti {
 		}
 		bufferedReader.close();
 		
-		FileWriter fileWriter = new FileWriter("C:\\temp\\prova2.txt");
+//		FileWriter fileWriter = new FileWriter("C:\\temp\\prova2.txt");
 		String firstRow = "\"COGNOME\"\t\"NOME\"\t\"TELEFONO\"\t\"E-MAIL\"\n";
-		BufferedWriter writer = new BufferedWriter(fileWriter);
+//		BufferedWriter writer = new BufferedWriter(fileWriter);
+		
+		BufferedWriter writer = new BufferedWriter(new FileWriter("C:\\temp\\prova2.txt"));
+		
 		writer.write(firstRow);
 		for(String[] row : rows) {
 			
