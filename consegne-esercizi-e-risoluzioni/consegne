@@ -37,3 +37,8 @@ A questo punto procedete con il generare alcune migliaia di combinazioni casuali
 nel caso COGNOME == "" sostituitelo con "beije" 
 nel caso NOME == "" sostituitelo con COGNOME
 Scrivete queste combinazioni in un file CSV con ordine delle colonne deciso da voi, l'importante è che sia specificato nella prima riga.
+
+
+7. Fare almeno 3 classi abstract che estendono 'Animale'.
+In ciascuna decidere se implementare uno dei metodi astratti, e per ciascuno di esse fare almeno una concrete class più una quarta a scelta.
+Fare un 'getEta' e un 'setEta' che prendano double.
