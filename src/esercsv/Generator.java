@@ -27,7 +27,7 @@ public class Generator {
 		FileReader fileReader = new FileReader(file1);
 		BufferedReader bReader = new BufferedReader(fileReader);
 		
-		FileWriter fileWriter = new FileWriter("C:/prova/5milioni1.csv");
+		FileWriter fileWriter = new FileWriter("C:/prova/5milioni2.csv");
 		BufferedWriter bWriter = new BufferedWriter(fileWriter);
 		
 
@@ -52,14 +52,14 @@ public class Generator {
 		bReader.close();
 
 
-		for(int i = 0; i < 1000; i++) {
+		for(int i = 0; i < 5000000; i++) {
 			StringBuilder riga = new StringBuilder("");
 			
 			int nomeRandom = random.nextInt(nome.size());
 			int cognomeRandom = random.nextInt(cognome.size());
 			int telefonoRandom = random.nextInt(telefono.size());
 			int dominio = random.nextInt(3);
-			int rand = random.nextInt(21);
+		// 	int rand = random.nextInt(21);
 			
 			String cog;
 			String nom;
