@@ -16,7 +16,7 @@ public class Algebra {
 	    int y = number[1];//numero molt
 	    int z = x*y;// moltiplicazione*/
 	    
-	    int z=number[0]; // moltiplicazione
+	    int z=number[0]; // moltiplicazione		
 	    for (int i=1;i<number.length;i++)
 	        z=z*number[i];
 	        
