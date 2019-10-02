@@ -5,7 +5,8 @@ public abstract class Mammiferi extends Animale {
 
 	
 	public void respirare(){
-	//	System.out.println("il mammifero respira con i polmoni");
+		System.out.println("i mammiferi respirano con il naso");
+
 	}
 	
 	public void mangiare() {
@@ -17,6 +18,4 @@ public abstract class Mammiferi extends Animale {
 	
 	}
 	
-	
-//	public abstract void setEta();
-//}
+
