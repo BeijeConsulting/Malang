@@ -47,12 +47,11 @@ public class Myconvert {
 		   
 		    	
 		    	
-		    	System.out.println(val1+val);
-		    	
+		    }
 		    	
 		   
 		    	
-		    	
+			}	
 		    	
 		    	
 		    		
