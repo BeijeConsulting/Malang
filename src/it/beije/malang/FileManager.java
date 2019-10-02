@@ -61,7 +61,7 @@ public class FileManager {
 		System.out.println("rows : " + rows.size());
 		bufferedReader.close();
 		
-		FileWriter fileWriter = new FileWriter("C:\\temp\\new_rubrica.txt");//C:\temp\new_rubrica.txt
+		FileWriter fileWriter = new FileWriter("C:\\temp\\prova1.txt");//C:\temp\new_rubrica.txt
 		BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
 		
 		String firstRow ="\"COGNOME\"\t\"NOME\"\t\"TELEFONO\"\n";// "COGNOME"	"NOME"	"TELEFONO"
@@ -84,7 +84,7 @@ public class FileManager {
 
 	public static void main(String[] args) {
 		
-		File f = new File("C:\\temp\\prova22.txt");
+		File f = new File("C:\\temp\\prova.txt");
 		//System.out.println("il file è presente ? " + f.exists());
 		try {
 			FileReader fileReader = new FileReader(f);
