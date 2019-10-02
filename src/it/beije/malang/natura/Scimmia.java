@@ -1,6 +1,6 @@
 package it.beije.malang.natura;
 
-public class Scimmia extends Mammifero{
+public class Scimmia extends Mammifero implements Onnivoro{
 	
 	
 
@@ -42,6 +42,16 @@ public class Scimmia extends Mammifero{
 		else {
 			return null;
 		}
+	}
+
+	@Override
+	public void mangiaCarne() {
+		
+	}
+
+	@Override
+	public void mangiaErba() {
+		
 	}
 
 }

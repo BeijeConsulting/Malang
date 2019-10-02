@@ -12,23 +12,25 @@ public class CSVGrouper {
 	
 	public static class GroupRecord {
 		
-		public ArrayList<String> emails = new ArrayList<>();
+		public StringBuilder emails = new StringBuilder();
 		public String name;
 		public String surname;
+		
+		public GroupRecord(String name, String surname, String email) {
+			this.name = name;
+			this.surname = surname;
+			emails.append(email + ",");
+		}
 		
 		public void addMail(String email) throws Exception {
 			if(email == null || email.equals(""))
 				throw new Exception();
 			else
-				emails.add(email);
+				emails.append(email + ",");
 		}
 		
 		public String emailsToString() {
-			StringBuilder sb = new StringBuilder();
-			for(String s : emails) {
-				sb.append(s).append(",");
-			}
-			return sb.length() == 0 ? "" : sb.deleteCharAt(sb.length() - 1).toString();
+			return emails.length() == 0 ? "" : emails.deleteCharAt(emails.length() - 1).toString();
 		}
 		
 	}
@@ -51,8 +53,9 @@ public class CSVGrouper {
                 if(phone.equals(""))
                 	continue;
   
-                if(!rubrica.containsKey(phone)) 
-                    rubrica.put(phone, new GroupRecord());
+                if(!rubrica.containsKey(phone)) { 
+                    rubrica.put(phone, new GroupRecord(row[0], row[1], row[3]));
+                }
                 else {
                     rubrica.get(phone).addMail(row[3]);
                     rubrica.get(phone).name = row[0];
@@ -60,14 +63,10 @@ public class CSVGrouper {
                 }
             }
             
-            StringBuilder emails = null;
             for (Map.Entry<String, GroupRecord> entry : rubrica.entrySet()) {
-            	emails = new StringBuilder();
             	GroupRecord record = entry.getValue();
-                
-                writer.write("\n");
                 writer.write(entry.getKey() + ";" + record.emailsToString() + ";" +
-                		record.name + ";" + record.surname + "\n");
+                		record.name + ";" + record.surname + "\n\n");
             }
 
         } catch (IOException e) {
