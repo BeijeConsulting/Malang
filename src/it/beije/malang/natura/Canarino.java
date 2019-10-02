@@ -4,15 +4,11 @@ public class Canarino extends Volatile {
 
 	public static void main (String... args) {
 		Canarino c = new Canarino();
-		c.mangiare();
+		System.out.println("Sono un canarino, appartengo ai volatili e: ");
+		c.mangiaTutto();
 		c.volare();
 		c.respirare();
 	}
 
-	@Override
-	public void mangiare() {
-		System.out.println("Il canarino mangia i vermi");
-
 	}
 
-}

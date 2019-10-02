@@ -1,6 +1,6 @@
 package it.beije.malang.natura;
 
-public abstract class Animale {
+public abstract class Animale implements Onnivoro {
 	
 	private double eta;
 	public double getEta() {
@@ -11,7 +11,13 @@ public abstract class Animale {
 		this.eta = eta;
 	}
 	
+	public void mangiaCarne() {
+		System.out.println("Sono carnivoro");
+	}
+	
+	public void mangiaErba() {
+		System.out.println("Sono erbivoro");
+	}
+	
 	public abstract void respirare();
-	public abstract void mangiare();
-
 }
