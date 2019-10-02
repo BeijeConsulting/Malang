@@ -1,11 +1,8 @@
 package it.beije.malang.natura;
 
-public class Leone extends Mammiferi {
+public class Leone extends Mammiferi implements Carnivoro {
 
 	
-//	public void mangiare() {
-//		System.out.println("I leoni mangiano con i denti");
-//	}
 	public void mangiare() {}
 	public void respirare() {
 		System.out.println("il leone respira con i polmoni");
@@ -25,6 +22,13 @@ public class Leone extends Mammiferi {
 		System.out.println(l.getEta());
 		
 	}
+	
+	@Override
+	public void mangiaCarne() {
+		System.out.println("sto mangiando solo la carne");
+		
+	}
+	
 	
 
 	
