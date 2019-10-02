@@ -1,8 +1,6 @@
 package it.beije.malang;
 
-
 import java.io.File;
-
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -39,26 +37,18 @@ import java.util.Random;
 			BufferedReader bufferedReader = new BufferedReader(fileReader);
 
 
-			//leggo e carico tutto in un ArrayList di array di stringhe
-			List<String[]> rows = new ArrayList<String[]>();
+			StringTokenizer tokenizer = null;
 			while (bufferedReader.ready()) {
-				String row = bufferedReader.readLine();
-				String[] cols = row.split(";");
-				//System.out.println(Arrays.toString(cols));
-				rows.add(cols);
-			}
-			//System.out.println("rows : " + rows.size());
-			bufferedReader.close();
-
-
-
-			for (String[] cols : rows) {
-				StringBuilder row = new StringBuilder("\"");
-				row.append(cols[2]).append('"').append("\n");
+				String line = bufferedReader.readLine();
+				System.out.println(line.split(";"));
 				
-				bufferedWriter.write(row.toString());
+				
 			}
+			
+			bufferedReader.close();
 			bufferedWriter.close();
+
+
 			}
 	}		
 	

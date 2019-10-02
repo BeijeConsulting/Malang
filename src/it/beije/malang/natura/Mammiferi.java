@@ -1,14 +1,14 @@
 package it.beije.malang.natura;
 
-public abstract class Animale {
+
+public abstract class Mammiferi extends Animale {
 	
-	private double eta;
-	public double getEta() {
-		return eta;
-	}
+	private int eta;
+
 	public void setEta(double eta) {
-		this.eta = eta;
+		super.setEta(eta);
 	}
+	
 	
 	public abstract void respirare();
 	public abstract void mangiare();
