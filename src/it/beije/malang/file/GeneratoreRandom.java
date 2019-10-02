@@ -42,7 +42,7 @@ public class GeneratoreRandom {
 		
 		File f2 = new File("C:\\temp\\Generato2.csv");
 		FileWriter fileWriter = new FileWriter(f2);
-		final String FIRST_ROW= "COGNOME;NOME;TELEFONO;EMAIL;RANDOM \n";
+		final String FIRST_ROW= "COGNOME;NOME;EMAIL;TELEFONO;RANDOM \n";
 		fileWriter.write(FIRST_ROW);
 		
 		int casuale=0;
@@ -58,7 +58,7 @@ public class GeneratoreRandom {
 			random.add(row);
 		}
 		
-		for (int i=0;i<500_000;i++) {
+		for (int i=0;i<5_000_000;i++) {
 		casuale = (int)(Math.random()*310);
 		
 		if  (cognome.get(casuale)=="") 
@@ -74,10 +74,11 @@ public class GeneratoreRandom {
 		fileWriter.write("\""+nome.get(casuale).toString()+"\""+";");
 		String nome1 = nome.get(casuale);
 		
-		casuale = (int)(Math.random()*310);
-		fileWriter.write("\""+telefono.get(casuale).toString()+"\""+";");
 		String email=GeneratoreRandom.getEmail(nome1, cognome1);
 		fileWriter.write("\""+email+"\""+";");
+		
+		casuale = (int)(Math.random()*310);
+		fileWriter.write("\""+telefono.get(casuale).toString()+"\""+";");
 		
 		casuale = (int)(Math.random()*310);
 		fileWriter.write("\""+random.get(casuale).toString()+"\""+"\n");

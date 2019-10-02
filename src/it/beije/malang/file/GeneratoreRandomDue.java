@@ -5,76 +5,52 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.StringTokenizer;
+import java.util.HashMap;
 
 
 public class GeneratoreRandomDue {
 	
 	
 	public static void main(String[] args) throws IOException {
+		HashMap<String,Record> mappa = new HashMap<String,Record>();
 		
-		ArrayList <String> nome = new ArrayList<>();
-		ArrayList <String> cognome = new ArrayList<>();
-		ArrayList <String> telefono = new ArrayList<>();
-		ArrayList <String> indirizzo = new ArrayList<>();
 		
+
 		File f = new File ("C:\\temp\\Generato2.csv");
 		FileReader fileReader = new FileReader(f);
 		BufferedReader bufferedReader = new BufferedReader(fileReader);
-		StringTokenizer tokenizer = null;
 		while (bufferedReader.ready()) {
-			
-			tokenizer = new StringTokenizer(bufferedReader.readLine(), ";");
-			cognome.add(tokenizer.nextToken());
-			nome.add(tokenizer.nextToken());
-			telefono.add(tokenizer.nextToken());
-			indirizzo.add(tokenizer.nextToken());
-			
+			String arr[]=bufferedReader.readLine().split(";");
+			if (!mappa.containsKey(arr[3]))
+			{
+			Record r = new Record();
+			r.cognome=arr[1];
+			r.nome=arr[0];
+			r.addEmail(arr[2]);
+			mappa.put(arr[3], r);
+			}
+			else
+			{
+			mappa.get(arr[3]).addEmail(arr[2]);
+			mappa.get(arr[3]).nome=arr[0];
+			mappa.get(arr[3]).cognome=arr[1];
+			}
 		}
 		
 		
 		bufferedReader.close();
 
-		for (int i=0;i<telefono.size();i++)
-		{
-			for (int j=i+1;j<telefono.size();j++)
-			{
-			if (telefono.get(i).equals(telefono.get(j)))
-			{
-				indirizzo.set(i,indirizzo.get(i).concat("|").concat(indirizzo.get(j)));
-				nome.set(i, nome.get(j));
-				cognome.set(i, cognome.get(j));
-				 
-				nome.remove(j);
-				cognome.remove(j);
-				 
-				telefono.remove(j);
-			}
-			else
-			{
-				telefono.set(j, telefono.get(j));
-				indirizzo.set(j,indirizzo.get(j));
-				nome.set(j, nome.get(j));
-				cognome.set(j, cognome.get(j));
-				 
-			}
-			}
-		}
-		
 		File f2 = new File("C:\\temp\\Generato3.csv");
 		FileWriter fileWriter = new FileWriter(f2);
-		final String FIRST_ROW= "TELEFONO;COGNOME;NOME;EMAIL;RANDOM \n";
+		final String FIRST_ROW= "TELEFONO;COGNOME;NOME;EMAIL \n";
 		fileWriter.write(FIRST_ROW);
 		
 		
-		for (int i=0;i<telefono.size();i++) {
-		
-		fileWriter.write(telefono.get(i).toString()+";");
-		fileWriter.write(cognome.get(i).toString()+";");
-		fileWriter.write(nome.get(i).toString()+";");
-		fileWriter.write(indirizzo.get(i)+"\n");
-		 
+		for(HashMap.Entry<String, Record> entry : mappa.entrySet()) {
+		    String key = entry.getKey();
+		    Record value = entry.getValue();
+		    
+		    fileWriter.write(key + ";" + value.nome + ";" + value.cognome + ";" + value.allMail() + "\n \n");
 
 		
 		}
