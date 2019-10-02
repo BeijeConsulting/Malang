@@ -10,6 +10,10 @@ public abstract class Animale {
 		this.eta = eta;
 	}
 	
+	public void setEta(double eta) {
+		this.eta = eta;
+	}
+	
 	public abstract void respirare();
 	public abstract void mangiare();
 
