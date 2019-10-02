@@ -20,7 +20,7 @@ public class ContactShake {
 		
 		List<String> telefoni = new ArrayList<String>();
 		List<String> mail = new ArrayList<String>();
-		List<Integer> indexUsati = new ArrayList<Integer>();
+		
 		List<String[]> rows = new ArrayList<String[]>();
 		
 		
@@ -41,12 +41,6 @@ public class ContactShake {
 		FileWriter fileWriter = new FileWriter(fW);
 		BufferedWriter bWriter = new BufferedWriter(fileWriter);
 		
-		
-		
-		for(int i = 0; i < telefoni.size(); i++) {
-	
-		
-		}
 		
 	}
 

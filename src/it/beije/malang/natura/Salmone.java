@@ -12,7 +12,7 @@ public class Salmone extends Pesci {
 	}
 	
 	public void setEta(int eta) {
-		super.setEta((double)eta);
+		super.setEta(eta);
 	}
 
 	public static void main(String[] args) {
