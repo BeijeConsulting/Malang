@@ -9,7 +9,7 @@ public class Contatti {
 	private String nome;
 
 	private String telefono;
-	private ArrayList<String> email;
+	private ArrayList<String> email = new ArrayList<String>();
 		
 
 	public static int counter = 0;
