@@ -6,9 +6,6 @@ public abstract class Animale {
 	public double getEta() {
 		return eta;
 	}
-	public void setEta(double eta) {
-		this.eta = eta;
-	}
 	
 	public void setEta(double eta) {
 		this.eta = eta;
