@@ -2,6 +2,8 @@ package it.beije.malang.natura;
 
 public interface Erbivoro {
 	
-	void mangiaErba();
+	default void mangiaErba() {
+		System.out.println("tua madre");
+	}
 
 }

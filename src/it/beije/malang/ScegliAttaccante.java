@@ -18,7 +18,7 @@ public class ScegliAttaccante {
 		int n3;
 		do {
 			n3 = ronaldinho.nextInt(4);
-		}while(n3==n1  | n3==n1);
+		}while(n3==n2  | n3==n1);
 		System.out.println(lista[n3]);
 		String[] x;
 		x=lista;
