@@ -22,20 +22,28 @@ public class Rubrica {
 			System.out.println("connection ? " + !conn.isClosed());
 			
 			Statement stmt = conn.createStatement();
-//			String insert = "INSERT INTO rubrica (cognome, nome, email, telefono) VALUES ('" + args[0] + "', '" + args[1] + "', '" + args[2] + "', '" + args[3] + "')";
-//			int r = stmt.executeUpdate(insert);
+			String insert = "INSERT INTO rubrica (cognome, nome, email, telefono) VALUES ("
+			+"'prete'," + "'giulia'," + "'giulia@gmail.com '," + "'3214578912');";
 			
+			String insert1 = "INSERT INTO rubrica (cognome, nome, email, telefono) VALUES ("
+					+"'galbiati'," + "'marta'," + "'marta@gmail.com '," + "'3214578912');";
+			 
+			
+			int r = stmt.executeUpdate(insert );
+			int r2 =stmt.executeUpdate(insert1);
 //			PreparedStatement preparedStatement = conn.prepareStatement("INSERT INTO rubrica (cognome, nome, email, telefono) VALUES (?,?,?,?)");
 //			preparedStatement.setString(1, args[0]);
 //			preparedStatement.setString(2, args[1]);
 //			preparedStatement.setString(3, args[2]);
 //			preparedStatement.setString(4, args[3]);
-			PreparedStatement preparedStatement = conn.prepareStatement("UPDATE rubrica SET nome = ? WHERE id = ?");
-			preparedStatement.setString(1, args[0]);
-			preparedStatement.setInt(2, Integer.parseInt(args[1]));
-			
-			int r = preparedStatement.executeUpdate();
-			System.out.println("rows affected : " + r);
+	//		PreparedStatement preparedStatement = conn.prepareStatement("INSERT INTO rubrica (cognome, nome, email, telefono) VALUES (?,?,?,?)");
+			//preparedStatement.setString(1, "giulia");
+			//preparedStatement.setInt(2, Integer.parseInt(args[1]));
+			//preparedStatement.setString(2, args[0]);
+			//preparedStatement.setString(3, args[1]);
+			//preparedStatement.setString(4, args[3]);
+			//int r = preparedStatement.executeUpdate();
+			  //System.out.println("rows affected : " + r)
 			
 //			String query = "SELECT * FROM rubrica";
 //			ResultSet rs = stmt.executeQuery(query);
@@ -72,7 +80,7 @@ public class Rubrica {
 			}
 		}
 
-		System.out.println("numero contatti : " + contatti.size());
+		//System.out.println("numero contatti : " + contatti.size());
 	}
 
 }
