@@ -12,14 +12,38 @@ public class CSVGrouper {
 	
 	public static class GroupRecord {
 		
-		public StringBuilder emails = new StringBuilder();
-		public String name;
-		public String surname;
+		private String phone;
+		private StringBuilder emails = new StringBuilder();
+		private String name;
+		private String surname;
 		
-		public GroupRecord(String name, String surname, String email) {
+		public GroupRecord(String phone, String name, String surname, String email) {
+			this.phone = phone;
 			this.name = name;
 			this.surname = surname;
 			emails.append(email + ",");
+		}
+		
+		public String getName() {
+			return name;
+		}
+		
+		public void setName(String name) {
+			if(name.equals("") || name == null)
+				this.name = "";
+			else
+				this.name = name;
+		}
+		
+		public String getSurname() {
+			return surname;
+		}
+		
+		public void setSurname(String surname) {
+			if(surname.equals("") || surname == null)
+				this.surname = "";
+			else
+				this.surname = surname;
 		}
 		
 		public void addMail(String email) throws Exception {
@@ -54,7 +78,7 @@ public class CSVGrouper {
                 	continue;
   
                 if(!rubrica.containsKey(phone)) { 
-                    rubrica.put(phone, new GroupRecord(row[0], row[1], row[3]));
+                    rubrica.put(phone, new GroupRecord(row[2], row[0], row[1], row[3]));
                 }
                 else {
                     rubrica.get(phone).addMail(row[3]);

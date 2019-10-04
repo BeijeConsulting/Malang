@@ -64,7 +64,7 @@ public class ParserContatto {
 	}
 
 	public static void main(String[] args) {
-		readFile("C:\\BeijeDisk\\temp\\contatti.xml");
+		readFile("C:\\Esercizi\\contatti.xml");
 	}
 
 }
