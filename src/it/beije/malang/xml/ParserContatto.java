@@ -11,7 +11,6 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 
-import it.beije.malang.Contatto;
 
 
 public class ParserContatto {
@@ -46,10 +45,10 @@ public class ParserContatto {
 	        	c.setCognome(cognome);
 	        	NodeList emails = e.getElementsByTagName("email");
 	        	String email = emails.item(0).getTextContent();
-	        	c.setEmail(email);
+	        	c.setIndirizzo(email);
 	        	NodeList telefoni = e.getElementsByTagName("telefono");
 	        	String telefono = telefoni.item(0).getTextContent();
-	        	c.setTelefono(telefono);
+	        	c.setNumero(telefono);
 
 	        	contatti.add(c);
 	        }
@@ -59,12 +58,11 @@ public class ParserContatto {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
 		return contatti;
 	}
 
 	public static void main(String[] args) {
-		readFile("C:\\BeijeDisk\\temp\\contatti.xml");
+		readFile("C:\\temp\\contatti.xml");
 	}
 
 }

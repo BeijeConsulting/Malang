@@ -1,5 +1,7 @@
 package it.beije.malang.file;
 
+ 
+
 public class Contatto {
 		
 					private String nome;
@@ -46,15 +48,4 @@ public class Contatto {
 						this.indirizzo = this.nome+"@"+this.cognome+".IT";
 					}
 					
-					@Override
-					public String toString() {
-						StringBuilder builder = new StringBuilder();
-						builder.append(cognome).append(';');
-						builder.append(nome).append(';');
-						builder.append(cognomeNome).append(';');
-						builder.append(numero).append(';');
-						builder.append(indirizzo).append('\n');
-						return builder.toString();
-					}
-
 }
