@@ -7,9 +7,34 @@ import java.util.*;
 
 public class Prove {
 
-	public Prove() {
-		System.out.println("bounce");
-	}
+	
+	
+	
+	
+	
+	
+	public class Bird {
+		public String getName() {
+		return "Unknown";
+		}
+		public void displayInformation() {
+		System.out.println("The bird name is: "+getName());
+		}
+		}
+		public class Peacock extends Bird {
+		public String getName() {
+		return "Peacock";
+		}
+		}
+		public static void main(String[] args) {
+	//	Bird bird = new Bird();
+	//	bird.displayInformation();
+			int arr[] = new int[5];
+			arr = new int[] {1,2,3,4};
+			int x = arr[0]-- /arr[0]*arr[4];
+			System.out.println(x);
+		}
+		
 	
 	
 	
@@ -27,10 +52,11 @@ public class Prove {
 	
 	
 	
-	public static void main(String[] args) {
+	
+	
+//	public static void main(String[] args) {
 		
 		
-		new Prove();
 		
 //		Scanner sc = new Scanner(System.in);
 //		System.out.println("inserisci data: giorno mese anno");
@@ -119,9 +145,6 @@ public class Prove {
 
 
 
-	private static void Prove() {
-		// TODO Auto-generated method stub
-		
-	}
-}
+
+
 

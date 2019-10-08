@@ -1,9 +1,13 @@
 package it.beije.malang.natura;
 
 
-public  class PesceRosso extends Pesci {
+public  class PesceRosso extends Pesci implements Erbivoro {
 	
 
+	public void mangiaErba() {
+		System.out.println("mangia erba");
+	}	
+	
 	public void setEta(double eta) {
 		super.setEta(eta);
 	}
@@ -25,7 +29,7 @@ public  class PesceRosso extends Pesci {
 		pesceRosso.mangiare();
 		pesceRosso.acqua();
 		
-
+		pesceRosso.mangiaErba();
 	}
 		
 

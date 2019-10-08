@@ -14,6 +14,8 @@ import org.w3c.dom.NodeList;
 import it.beije.malang.Contatto;
 
 
+//PER LEGGERE XML
+
 public class ParserContatto {
 
 	public static List<Contatto> readFile(String pathFile) {
@@ -50,11 +52,12 @@ public class ParserContatto {
 	        	NodeList telefoni = e.getElementsByTagName("telefono");
 	        	String telefono = telefoni.item(0).getTextContent();
 	        	c.setTelefono(telefono);
-
+	        	//System.out.println(email);
 	        	contatti.add(c);
 	        }
 	        
-        	System.out.println(contatti.size());			
+        	//System.out.println(contatti.size());
+        
 	        
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -64,7 +67,7 @@ public class ParserContatto {
 	}
 
 	public static void main(String[] args) {
-		readFile("C:\\BeijeDisk\\temp\\contatti.xml");
+		readFile("C:\\temp\\utenti.xml");
 	}
 
 }

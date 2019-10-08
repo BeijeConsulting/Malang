@@ -10,8 +10,12 @@ import java.io.IOException;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 import java.util.StringTokenizer;
+
+import com.sun.xml.internal.ws.api.pipe.NextAction;
+
 import java.util.Random;
 
 	public class telefoni {
@@ -36,21 +40,29 @@ import java.util.Random;
 			FileReader fileReader = new FileReader(f);
 			BufferedReader bufferedReader = new BufferedReader(fileReader);
 
-
-			StringTokenizer tokenizer = null;
-			while (bufferedReader.ready()) {
+			
+			List<String> appoggio = new ArrayList<String>();
+			
+			for(int i = 0; i < f.length(); i++) {
 				String line = bufferedReader.readLine();
-				System.out.println(line.split(";"));
+			String [] riga = line.split(";");
+			String numero = riga[3];
+			
+//				if() {
+//					
+//				}
+			 }
+			
 				
 				
-			}
+			
 			
 			bufferedReader.close();
 			bufferedWriter.close();
 
 
 			}
-	}		
+			
 	
-		
+	}	
 
