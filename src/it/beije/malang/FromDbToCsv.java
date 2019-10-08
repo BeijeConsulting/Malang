@@ -19,7 +19,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FromDbToCsv {
-	public  void fromDbToCsv() {
+	public  ArrayList<Contatto> ReadDb() {
 		ArrayList<Contatto> contatti = new ArrayList<Contatto>();
 		Connection conn = null;
 		
@@ -44,9 +44,27 @@ public class FromDbToCsv {
 				
 				contatti.add(contatto);
 			}
+			stmt.close();
+		} catch (SQLException sqlEx) {
+			sqlEx.printStackTrace();
+	
+		} catch (ClassNotFoundException cnfEx) {
+				cnfEx.printStackTrace();
 			
-			BufferedWriter bufferedWriter1 = new BufferedWriter(new FileWriter("C:\\prova_java_io\\rubrica2.txt"));
-			bufferedWriter1.write("Rubrica dei contatti\n");
+		} finally {
+			try {
+				if (conn != null) conn.close();
+			} catch (SQLException ce) {
+				ce.printStackTrace();
+				}
+			}
+
+		return contatti;
+	}
+		
+	public void  WriteCsv(ArrayList<Contatto> contatti) throws IOException {
+		BufferedWriter bufferedWriter1 = new BufferedWriter(new FileWriter("C:\\prova_java_io\\rubrica2.txt"));
+		bufferedWriter1.write("Rubrica dei contatti\n");
 				
 			String firstRow ="COGNOME;NOME;COGNOME NOME;EMAIL;TELEFONO\n";// "COGNOME"	"NOME"	"TELEFONO"
 			bufferedWriter1.write(firstRow);
@@ -68,24 +86,13 @@ public class FromDbToCsv {
 
 				bufferedWriter1.close();	
 			
-			stmt.close();
-		} catch (IOException ioe) {
-			ioe.printStackTrace();	
-		} catch (ClassNotFoundException cnfEx) {
-			cnfEx.printStackTrace();
-		} catch (SQLException sqlEx) {
-			sqlEx.printStackTrace();
-		} finally {
-			try {
-				if (conn != null) conn.close();
-			} catch (SQLException ce) {
-				ce.printStackTrace();
-			}
-		}
-	}
-	public static void main(String[] args) {
+			
+		} 
+	public static void main(String[] args) throws IOException {
 		FromDbToCsv esporta = new FromDbToCsv();
-		esporta.fromDbToCsv();
+		ArrayList<Contatto> contatti = new ArrayList<Contatto>();
+		contatti = esporta.ReadDb();
+		esporta.WriteCsv(contatti);
 	}
 
 }

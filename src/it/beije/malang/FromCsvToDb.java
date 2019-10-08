@@ -19,13 +19,13 @@ import java.util.List;
 
 public class FromCsvToDb {
 	
+ArrayList<Contatto> rows = new ArrayList<Contatto>();
 
-
-	public void fromCsvToDb() throws IOException {
+	public ArrayList<Contatto> ReadCsv() throws IOException {
 		File f = new File("C:\\prova_java_io\\prova.txt");
 		System.out.println("il file è presente ? " + f.exists());
 		
-		ArrayList<Contatto> rows = new ArrayList<Contatto>();
+		
 		
 		FileReader fileReader = new FileReader(f);
 		BufferedReader bufferedReader = new BufferedReader(fileReader);
@@ -45,8 +45,10 @@ public class FromCsvToDb {
 		}
 		System.out.println("rows : " + rows.size());
 		bufferedReader.close();
-		
-Connection conn = null;
+		return rows;
+	}	
+	public void WriteDb(ArrayList<Contatto> contatto)  throws Exception {	
+		Connection conn = null;
 		
 		try {
 			
@@ -78,12 +80,14 @@ Connection conn = null;
 		}
 		
 	}
-
-	public static void main(String[] args) throws IOException {
+	
+	public static void main(String[] args) throws Exception {
 		// TODO Auto-generated method stub
 		
 		FromCsvToDb importa = new FromCsvToDb();
-		importa.fromCsvToDb();
+		ArrayList<Contatto> contatti = new ArrayList<Contatto>();
+		contatti = importa.ReadCsv();
+		importa.WriteDb(contatti);
 	}
 
 }
