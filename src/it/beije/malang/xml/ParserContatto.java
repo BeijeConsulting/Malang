@@ -33,11 +33,15 @@ public class ParserContatto {
 			System.out.println("contatto num : " + nodeList.getLength());
 			
 			Element e = null;
+			
+			
+			
 	        for (int i = 0; i < nodeList.getLength(); i++) {
 	        	e = (Element)nodeList.item(i);
 	        	//System.out.println(e.getTagName());
 
 	        	Contatto c = new Contatto();
+	        	
 	        	NodeList nomi = e.getElementsByTagName("nome");
 	        	String nome = nomi.item(0).getTextContent();
 	        	c.setNome(nome);
@@ -64,7 +68,8 @@ public class ParserContatto {
 	}
 
 	public static void main(String[] args) {
-		readFile("C:\\BeijeDisk\\temp\\contatti.xml");
+		readFile("C://Users/Padawan06/Desktop/contatti.xml");
+		
 	}
 
 }
