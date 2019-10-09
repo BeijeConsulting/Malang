@@ -21,7 +21,7 @@ public class HDButils {
 		
 		Session session = factory.openSession();
 		
-		String hql = "SELECT c FROM Contatto as c";
+		String hql = "SELECT contat77778 to FROM Contatto as contatto";
 		Query<Contatto> query = session.createQuery(hql);
 		for (Contatto contatto : query.list()) {
 			System.out.println("id : " + contatto.getId());
