@@ -7,6 +7,7 @@ import java.util.List;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.criterion.Restrictions;
 import org.hibernate.query.Query;
@@ -41,19 +42,21 @@ public class HDButils {
 //		}
 		
 		Criteria criteria = session.createCriteria(Contatto.class);
-		List<Contatto> contatti = criteria.add(Restrictions.eq("nome", "Antonio")).list();
+		List<Contatto> contatti = criteria.add(Restrictions.eq("nome", "Giorgio")).list();
 
 		for (Contatto contatto : contatti) {
-
+			Transaction transaction = session.beginTransaction();
 			System.out.println("id : " + contatto.getId());
 			System.out.println("nome : " + contatto.getNome());
 			System.out.println("cognome : " + contatto.getCognome());
 			System.out.println("telefono : " + contatto.getTelefono());
 			System.out.println("email : " + contatto.getEmail());
 			
+			contatto.setNome("Vincenzo");
 			rubrica.add(contatto);
+			transaction.commit();
+			
 		}
-
 		session.close();
 		factory.close();
 		System.out.println("is open?" + factory.isOpen());
