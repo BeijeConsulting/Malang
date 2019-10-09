@@ -1,14 +1,13 @@
 package it.beije.malang;
 
-public class Prova {
 
+interface Mammal extends Mam { public default String getName() { return null; } }
+
+interface Mam { public default String getName() { return null; } }
+
+abstract class Otter implements Mammal{
 	
-
-
 	
-	public static void main(String[] args) {
-		
-
-	}
-
+	
+	
 }
