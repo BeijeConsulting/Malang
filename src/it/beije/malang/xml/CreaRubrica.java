@@ -18,20 +18,21 @@ import org.w3c.dom.Element;
 
 public class CreaRubrica {
 
-	public static void main(String argv[]) {
+	
+	public static void main(String args[]) {
 
 		try {
 
 			DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
 			DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
-
+			
 			// root elements
 			Document doc = docBuilder.newDocument();
-			Element rootElement = doc.createElement("company");
+			Element rootElement = doc.createElement("Contatti");
 			doc.appendChild(rootElement);
-
+			
 			// staff elements
-			Element staff = doc.createElement("Staff");
+			Element staff = doc.createElement("Contatto");
 			rootElement.appendChild(staff);
 
 			// set attribute to staff element
@@ -43,23 +44,23 @@ public class CreaRubrica {
 			// staff.setAttribute("id", "1");
 
 			// firstname elements
-			Element firstname = doc.createElement("firstname");
-			firstname.appendChild(doc.createTextNode("yong"));
+			Element firstname = doc.createElement("nome");
+			firstname.appendChild(doc.createTextNode("Letizia"));
 			staff.appendChild(firstname);
 
 			// lastname elements
-			Element lastname = doc.createElement("lastname");
-			lastname.appendChild(doc.createTextNode("mook kim"));
+			Element lastname = doc.createElement("cognome");
+			lastname.appendChild(doc.createTextNode("Mangano"));
 			staff.appendChild(lastname);
 
 			// nickname elements
-			Element nickname = doc.createElement("nickname");
-			nickname.appendChild(doc.createTextNode("mkyong"));
+			Element nickname = doc.createElement("telefono");
+			nickname.appendChild(doc.createTextNode("3404263555"));
 			staff.appendChild(nickname);
 
 			// salary elements
-			Element salary = doc.createElement("salary");
-			salary.appendChild(doc.createTextNode("100000"));
+			Element salary = doc.createElement("email");
+			salary.appendChild(doc.createTextNode("letiziamangano1@icloud.com"));
 			staff.appendChild(salary);
 			
 			
@@ -68,7 +69,7 @@ public class CreaRubrica {
 			TransformerFactory transformerFactory = TransformerFactory.newInstance();
 			Transformer transformer = transformerFactory.newTransformer();
 			DOMSource source = new DOMSource(doc);
-			StreamResult result = new StreamResult(new File("C:\\BeijeDisk\\temp\\filetest.xml"));
+			StreamResult result = new StreamResult(new File("C:\\temp\\filetest.xml"));
 
 			// Output to console for testing
 			//StreamResult result = new StreamResult(System.out);

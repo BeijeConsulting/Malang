@@ -21,6 +21,7 @@ public class HDButils {
 		
 		Session session = factory.openSession();
 		
+		//non si può utilizzare *; Per selezionare tutto bisogna fare la SELECT *nome_tabella*
 		String hql = "SELECT c FROM Contatto as c";
 		Query<Contatto> query = session.createQuery(hql);
 		for (Contatto contatto : query.list()) {

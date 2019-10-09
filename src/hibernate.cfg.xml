@@ -24,7 +24,7 @@
       </property>
       
       <property name = "hibernate.connection.password">
-         beije
+         Padawan13
       </property>
       
       <!-- List of XML mapping files -->
@@ -32,3 +32,4 @@
       
    </session-factory>
 </hibernate-configuration>
+      
