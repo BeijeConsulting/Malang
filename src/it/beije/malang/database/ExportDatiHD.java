@@ -1,7 +1,6 @@
 package it.beije.malang.database;
 
 import java.io.File;
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.xml.parsers.DocumentBuilder;
@@ -28,8 +27,6 @@ public class ExportDatiHD {
 	
 	public static void main(String argv[]) throws Exception {
 		try {
-		
-		List <Contatto> rubrica = new ArrayList<>();
 		
 		Configuration configuration = new Configuration();
 		configuration = configuration.configure();
