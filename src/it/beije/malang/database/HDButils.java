@@ -2,8 +2,7 @@ package it.beije.malang.database;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.cfg.Configuration;
-import org.hibernate.query.Query;
+import org.hibernate.cfg.Configuration;import org.hibernate.query.Query;
 
 import it.beije.malang.Contatto;
 

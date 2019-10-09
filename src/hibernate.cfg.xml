@@ -24,7 +24,7 @@
       </property>
       
       <property name = "hibernate.connection.password">
-         beije
+         Beije14
       </property>
       
       <!-- List of XML mapping files -->
