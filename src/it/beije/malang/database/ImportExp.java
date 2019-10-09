@@ -52,7 +52,7 @@ public class ImportExp{
 					contatto.setNome(tokenizer.nextToken());
 					contatto.setCognome(tokenizer.nextToken());
 					contatto.setTelefono(tokenizer.nextToken());
-					contatto.setEtà(tokenizer.nextToken());
+//					contatto.setEtà(tokenizer.nextToken());
 	
 					
 					System.out.println(contatto);
@@ -64,7 +64,7 @@ public class ImportExp{
 					preparedStatement.setString(2, contatto.getNome());
 					preparedStatement.setString(3, CreaMailDaFile.CreaMail());
 					preparedStatement.setString(4, contatto.getTelefono());
-					preparedStatement.setString(5, contatto.getEtà());
+//					preparedStatement.setString(5, contatto.getEtà());
 					int r = preparedStatement.executeUpdate();
 				}
 				
@@ -141,7 +141,7 @@ public class ImportExp{
 			contatto.setNome(rs.getString("nome"));
 			contatto.setEmail(rs.getString("email"));
 			contatto.setTelefono(rs.getString("telefono"));
-			contatto.setEtà(rs.getString("età"));
+//			contatto.setEtà(rs.getString("età"));
 			
 //			System.out.println("id : " + contatto.getId());
 //			System.out.println("cognome : " + contatto.getCognome());
@@ -160,7 +160,7 @@ public class ImportExp{
 						row.append(contatto.getNome()).append("; ");
 						row.append(contatto.getEmail()).append("; ");
 						row.append(contatto.getTelefono()).append("; ");
-						row.append(contatto.getEtà()).append("\n");
+//						row.append(contatto.getEtà()).append("\n");
 						
 						bufferedWriter.write(row.toString());
 						

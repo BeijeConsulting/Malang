@@ -1,5 +1,7 @@
 package it.beije.malang.database;
 
+import java.sql.Connection;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
@@ -11,6 +13,9 @@ import it.beije.malang.Contatto;
 public class HDButils {
 	
 	public static void main(String argv[]) throws Exception {
+		
+		Connection conn = null;
+		conn = ConnectionFactory.getConnection();
 		
 		Configuration configuration = new Configuration();
 		configuration = configuration.configure();
@@ -29,10 +34,12 @@ public class HDButils {
 			System.out.println("cognome : " + contatto.getCognome());
 			System.out.println("telefono : " + contatto.getTelefono());
 			System.out.println("email : " + contatto.getEmail());
+			System.out.println("età ;" + contatto.getEtà());
 		}
 		
 		session.close();
 		factory.close();
+		conn.close();
 		System.out.println("is open?" + factory.isOpen());
 	}
 }

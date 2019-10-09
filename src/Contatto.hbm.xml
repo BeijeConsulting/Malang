@@ -16,6 +16,7 @@
       <property name = "nome" column = "nome" type = "string"/>
       <property name = "telefono" column = "telefono" type = "string"/>
       <property name = "email" column = "email" type = "string"/>
+     
       
    </class>
 </hibernate-mapping>
