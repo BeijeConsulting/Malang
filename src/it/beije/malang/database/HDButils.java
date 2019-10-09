@@ -7,6 +7,7 @@ import org.hibernate.query.Query;
 
 import it.beije.malang.Contatto;
 
+import org.hibernate.Criteria;
 
 public class HDButils {
 	
@@ -30,6 +31,8 @@ public class HDButils {
 			System.out.println("telefono : " + contatto.getTelefono());
 			System.out.println("email : " + contatto.getEmail());
 		}
+		
+		
 		
 		session.close();
 		factory.close();

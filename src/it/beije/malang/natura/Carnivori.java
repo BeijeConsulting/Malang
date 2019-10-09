@@ -6,6 +6,7 @@ public abstract class Carnivori extends Animale{
 	//estensione classe astratta animale
 		
 		private String lunghCanini;
+		
 		public String getLunghCanini() {
 			return lunghCanini;
 		}

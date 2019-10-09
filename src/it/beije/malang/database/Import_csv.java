@@ -42,7 +42,6 @@ public class Import_csv {
 				System.out.println(text.replace(";", " ") +"\t"  + "\n");
 				String nomi[] = text.split(";");
 	 
-				
 				//PreparedStatement preparedStatement = conn.prepareStatement("INSERT INTO rubrica (id, cognome, nome, email, telefono) VALUES (?,?,?,?,?)");
 				PreparedStatement preparedStatement = conn.prepareStatement("INSERT INTO lazio ( nome, cognome, squadra, ruolo, numero) VALUES (?,?,?,?,?)");
 
@@ -52,7 +51,6 @@ public class Import_csv {
 				preparedStatement.setString(3, nomi[2]);
 				preparedStatement.setString(4, nomi[3]);
 				preparedStatement.setString(5, nomi[4]);
-								
 			
 			int r = preparedStatement.executeUpdate();
 			System.out.println("rows affected : " + r);

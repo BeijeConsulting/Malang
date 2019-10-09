@@ -5,6 +5,7 @@ package it.beije.malang.natura;
 public abstract class Animale {
 	
 	private double eta;
+	
 	public double getEta() {
 		return eta;
 	}
