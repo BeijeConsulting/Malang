@@ -31,6 +31,8 @@ public class HDButils {
 		Session session = factory.openSession();
 		
 		
+		Transaction transaction = session.beginTransaction();
+		
 //		String hql = "SELECT c FROM Contatto as c";
 //		Query<Contatto> query = session.createQuery(hql);
 //		for (Contatto contatto : query.list()) {
@@ -41,22 +43,37 @@ public class HDButils {
 //			System.out.println("email : " + contatto.getEmail());
 //		}
 		
-		Criteria criteria = session.createCriteria(Contatto.class);
-		List<Contatto> contatti = criteria.add(Restrictions.eq("nome", "Giorgio")).list();
 
-		for (Contatto contatto : contatti) {
-			Transaction transaction = session.beginTransaction();
-			System.out.println("id : " + contatto.getId());
-			System.out.println("nome : " + contatto.getNome());
-			System.out.println("cognome : " + contatto.getCognome());
-			System.out.println("telefono : " + contatto.getTelefono());
-			System.out.println("email : " + contatto.getEmail());
-			
-			contatto.setNome("Vincenzo");
-			rubrica.add(contatto);
-			transaction.commit();
-			
-		}
+		Criteria criteria = session.createCriteria(Contatto.class);
+		List<Contatto> contatti = criteria.add(Restrictions.eq("nome", "Matteo")).list();
+
+		
+//		Criteria criteria = session.createCriteria(Contatto.class);
+//		List<Contatto> contatti = criteria.list();//.add(Restrictions.eq("nome", "pippo"))
+//
+//		for (Contatto contatto : contatti) {
+//			System.out.println("id : " + contatto.getId());
+//			System.out.println("nome : " + contatto.getNome());
+//			System.out.println("cognome : " + contatto.getCognome());
+//			System.out.println("telefono : " + contatto.getTelefono());
+//			System.out.println("email : " + contatto.getEmail());
+//			
+//			if (contatto.getNome().equals("Giuseppe")) {
+//				contatto.setCognome("Rossi");
+//			}
+//		}
+		
+		Contatto contatto = new Contatto();
+		contatto.setNome("Fiorenza");
+		contatto.setCognome("Riccio");
+		contatto.setEmail("fiore@riccio.it");
+		contatto.setTelefono("34556616");
+
+		System.out.println("id : " + contatto.getId());
+		session.save(contatto);
+		System.out.println("id : " + contatto.getId());
+		
+		transaction.commit();
 		session.close();
 		factory.close();
 		System.out.println("is open?" + factory.isOpen());
