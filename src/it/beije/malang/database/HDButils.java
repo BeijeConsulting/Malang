@@ -13,7 +13,7 @@ public class HDButils {
 	public static void main(String argv[]) throws Exception {
 		
 		Configuration configuration = new Configuration();
-		configuration = configuration.configure();
+		configuration = configuration.configure().setProperty("hibernate.show_sql", "false");;
 		
 		SessionFactory factory = configuration.buildSessionFactory();
 		
