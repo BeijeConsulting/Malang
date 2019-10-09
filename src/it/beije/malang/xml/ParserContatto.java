@@ -45,10 +45,10 @@ public class ParserContatto {
 	        	c.setCognome(cognome);
 	        	NodeList emails = e.getElementsByTagName("email");
 	        	String email = emails.item(0).getTextContent();
-	        	c.setIndirizzo(email);
+	        	c.setEmail(email);
 	        	NodeList telefoni = e.getElementsByTagName("telefono");
 	        	String telefono = telefoni.item(0).getTextContent();
-	        	c.setNumero(telefono);
+	        	c.setTelefono(telefono);
 
 	        	contatti.add(c);
 	        }

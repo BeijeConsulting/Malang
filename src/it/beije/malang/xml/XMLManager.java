@@ -59,8 +59,8 @@ public class XMLManager {
 			String[] array = new String[4];
 			array[0] = dati.get(i).getCognome();
 			array[1] = dati.get(i).getNome();
-			array[2] = dati.get(i).getIndirizzo();
-			array[3] = dati.get(i).getNumero();
+			array[2] = dati.get(i).getEmail();
+			array[3] = dati.get(i).getTelefono();
 			int k=1;
 			for (int j=0;j<array.length;j++)
 			{

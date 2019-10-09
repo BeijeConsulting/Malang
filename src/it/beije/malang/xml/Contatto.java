@@ -3,10 +3,12 @@ package it.beije.malang.xml;
 public class Contatto {
 	
 	private int id;
-	private String nome;
 	private String cognome;
-	private String numero;
-	private String indirizzo;
+	private String nome;
+	private String telefono;
+	private String email;
+	private String cognome_nome;
+
 	
 	public int getId() {
 		return id;
@@ -14,41 +16,49 @@ public class Contatto {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public String getNome() {
-		return nome;
-	}
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
 	public String getCognome() {
 		return cognome;
 	}
 	public void setCognome(String cognome) {
 		this.cognome = cognome;
 	}
-	public String getNumero() {
-		return numero;
+	
+	public String getNome() {
+		return nome;
 	}
-	public void setNumero(String numero) {
-		this.numero = numero;
-	}
-	public String getIndirizzo() {
-		return indirizzo;
-	}
-	public void setIndirizzo(String indirizzo) {
-		this.indirizzo = indirizzo;
-	}
-	public void setIndirizzo(String nome,String cognome) {
-		this.indirizzo = this.nome+"@"+this.cognome+".IT";
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
 	
-	@Override
+	public String getTelefono() {
+		return telefono;
+	}
+	public void setTelefono(String telefono) {
+		this.telefono = telefono;
+	}
+	
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	public void setCognomeNome() {
+		
+		this.cognome_nome=cognome+" "+nome;
+		
+		
+	}
+	
+	
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append(cognome).append(';');
-		builder.append(nome).append(';');
-		builder.append(indirizzo).append(';');
-		builder.append(numero).append('\n');
+		builder.append("cognome : ").append(cognome).append('\n');
+		builder.append("nome : ").append(nome).append('\n');
+		builder.append("CognomeNome : ").append(cognome_nome).append('\n');
+		builder.append("telefono : ").append(telefono).append('\n');
+		builder.append("email : ").append(email).append('\n');
+		builder.append("---------------------------------------- \n");
 		return builder.toString();
 	}
 	

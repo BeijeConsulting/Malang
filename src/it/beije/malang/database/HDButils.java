@@ -63,17 +63,6 @@ public class HDButils {
 //			}
 //		}
 		
-		Contatto contatto = new Contatto();
-		contatto.setNome("Fiorenza");
-		contatto.setCognome("Riccio");
-		contatto.setEmail("fiore@riccio.it");
-		contatto.setTelefono("34556616");
-
-		System.out.println("id : " + contatto.getId());
-		session.save(contatto);
-		System.out.println("id : " + contatto.getId());
-		
-		transaction.commit();
 		session.close();
 		factory.close();
 		System.out.println("is open?" + factory.isOpen());
