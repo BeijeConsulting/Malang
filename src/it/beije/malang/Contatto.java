@@ -7,12 +7,12 @@ public class Contatto {
 	private String nome;
 	private String telefono;
 	private String email;
-	private String età;
+	private int età;
 	
-	public String getEtà() {
+	public int getEtà() {
 		return età;
 	}
-	public void setEtà(String età) {
+	public void setEtà(int età) {
 		this.età = età;
 	}
 	public int getId() {

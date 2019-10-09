@@ -20,6 +20,7 @@
          
       </property>
       
+<<<<<<< HEAD
       <property name = "hibernate.connection.username">
          root
       </property>
@@ -27,6 +28,10 @@
       <property name = "hibernate.connection.password">
          Beije04
       </property>
+=======
+      <property name = "hibernate.connection.username">root</property>
+      <property name = "hibernate.connection.password">beije</property>
+>>>>>>> refs/remotes/origin/master
       
       <!-- List of XML mapping files -->
       <mapping resource = "Contatto.hbm.xml"/>
