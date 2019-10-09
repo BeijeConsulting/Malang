@@ -19,13 +19,8 @@
          jdbc:mysql://localhost:3306/malang?serverTimezone=CET
       </property>
       
-      <property name = "hibernate.connection.username">
-         root
-      </property>
-      
-      <property name = "hibernate.connection.password">
-         beije
-      </property>
+      <property name = "hibernate.connection.username">root</property>
+      <property name = "hibernate.connection.password">beije</property>
       
       <!-- List of XML mapping files -->
       <mapping resource = "Contatto.hbm.xml"/>
