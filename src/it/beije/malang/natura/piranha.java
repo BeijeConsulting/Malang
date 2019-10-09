@@ -11,9 +11,16 @@ public class piranha implements Erbivoro, Onnivoro {
 
 	public void mangiaErba() {
 	
-		System.out.println("alucni piranha sono erbivori");
+		System.out.println("alcuni piranha sono erbivori");
 	}
 	
+	public void  Velocità() {
+		System.out.println("il piranha è veloce");
+		
+	}
 	
+	}
 
-}
+
+
+
