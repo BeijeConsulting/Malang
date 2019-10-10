@@ -30,9 +30,13 @@
 
       
       <!-- List of XML mapping files -->
+<<<<<<< HEAD
     <!--  <mapping resource = "Contatto.hbm.xml"/>-->
       
       
+=======
+      <!-- mapping resource = "Contatto.hbm.xml"/ -->
+>>>>>>> refs/remotes/origin/master
       
    </session-factory>
 </hibernate-configuration>

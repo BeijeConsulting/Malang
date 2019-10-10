@@ -10,8 +10,12 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+<<<<<<< HEAD
 import it.beije.malang.Contatto;
 import it.beije.malang.database.filecsv;
+=======
+import it.beije.malang.database.entities.Contatto;
+>>>>>>> refs/remotes/origin/master
 
 public class Rubrica {
 	
