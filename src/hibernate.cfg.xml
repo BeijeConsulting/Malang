@@ -23,7 +23,7 @@
       <property name = "hibernate.connection.password">beije</property>
       
       <!-- List of XML mapping files -->
-      <mapping resource = "Contatto.hbm.xml"/>
+      <!-- mapping resource = "Contatto.hbm.xml"/ -->
       
    </session-factory>
 </hibernate-configuration>
