@@ -19,7 +19,7 @@ import org.w3c.dom.Attr;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
-import it.beije.malang.Contatto;
+import it.beije.malang.database.entities.Contatto;
 
 
 public class ExportDatiHDTwo {

@@ -12,7 +12,8 @@ import org.hibernate.cfg.Configuration;
 import org.hibernate.criterion.Restrictions;
 import org.hibernate.query.Query;
 
-import it.beije.malang.Contatto;
+import it.beije.malang.database.entities.Contatto;
+import it.beije.malang.database.entities.Utente;
 
 
 public class HDButils {
@@ -22,7 +23,8 @@ public class HDButils {
 		List <Contatto> rubrica = new ArrayList<>();
 		
 		Configuration configuration = new Configuration();
-		configuration = configuration.configure();
+		configuration = configuration.configure().addAnnotatedClass(Contatto.class);
+						configuration.configure().addAnnotatedClass(Utente.class);
 		
 		SessionFactory factory = configuration.buildSessionFactory();
 		
@@ -45,7 +47,7 @@ public class HDButils {
 		
 
 		Criteria criteria = session.createCriteria(Contatto.class);
-		List<Contatto> contatti = criteria.add(Restrictions.eq("nome", "Matteo")).list();
+		List<Contatto> contatti = criteria.list();
 
 		
 //		Criteria criteria = session.createCriteria(Contatto.class);

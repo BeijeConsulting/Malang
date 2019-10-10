@@ -16,7 +16,7 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 
-import it.beije.malang.Contatto;
+import it.beije.malang.database.entities.Contatto;
 
 
 public class ImportDatiHD {

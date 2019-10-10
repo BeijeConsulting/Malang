@@ -3,7 +3,7 @@
 <hibernate-configuration>
    <session-factory>
    
-      <property name="hbm2ddl.auto">validate</property>
+      <property name="hbm2ddl.auto">update</property>
       
       <property name = "hibernate.dialect">
          org.hibernate.dialect.MySQLDialect
@@ -29,7 +29,6 @@
 
       
       <!-- List of XML mapping files -->
-      <mapping resource = "Contatto.hbm.xml"/>
-      
+            
    </session-factory>
 </hibernate-configuration>
