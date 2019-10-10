@@ -1,6 +1,6 @@
 package it.beije.malang.xml;
+import it.beije.malang.database.entities.Contatto;
 
-import it.beije.malang.xml.Contatto;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;

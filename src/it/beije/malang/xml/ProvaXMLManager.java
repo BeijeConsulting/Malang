@@ -1,11 +1,10 @@
 package it.beije.malang.xml;
-
+import it.beije.malang.database.entities.Contatto;
 //import java.io.File;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-
 public class ProvaXMLManager {
 	
 	public static void main(String... args) throws ClassNotFoundException, SQLException, IOException {
