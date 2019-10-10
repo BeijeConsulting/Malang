@@ -13,6 +13,9 @@ import org.hibernate.criterion.Restrictions;
 import org.hibernate.query.Query;
 
 import it.beije.malang.database.entities.Contatto;
+
+import it.beije.malang.database.entities.Indirizzo;
+
 import it.beije.malang.database.entities.Utente;
 
 
@@ -23,9 +26,15 @@ public class HDButils {
 		List <Contatto> rubrica = new ArrayList<>();
 		
 		Configuration configuration = new Configuration();
+
 		configuration = configuration.configure().addAnnotatedClass(Contatto.class);
 						configuration.configure().addAnnotatedClass(Utente.class);
-		
+
+		configuration = configuration.configure()
+				.addAnnotatedClass(Contatto.class)
+				.addAnnotatedClass(Utente.class)
+				.addAnnotatedClass(Indirizzo.class);
+
 		SessionFactory factory = configuration.buildSessionFactory();
 		
 		System.out.println("is open?" + factory.isOpen());
