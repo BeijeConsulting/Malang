@@ -1,7 +1,5 @@
 package it.beije.malang.database;
 
-import java.sql.Connection;
-
 import java.util.Iterator;
 import java.util.List;
 
@@ -20,9 +18,6 @@ public class HDButils {
 	
 	public static void main(String argv[]) throws Exception {
 		
-		Connection conn = null;
-		conn = ConnectionFactory.getConnection();
-		
 		Configuration configuration = new Configuration();
 		configuration = configuration.configure();
 		
@@ -33,7 +28,6 @@ public class HDButils {
 		Session session = factory.openSession();
 		Transaction transaction = session.beginTransaction();
 		
-
 		String hql = "SELECT c FROM Contatto as c";
 		Query<Contatto> query = session.createQuery(hql);
 		for (Contatto contatto : query.list()) {
@@ -42,19 +36,8 @@ public class HDButils {
 			System.out.println("cognome : " + contatto.getCognome());
 			System.out.println("telefono : " + contatto.getTelefono());
 			System.out.println("email : " + contatto.getEmail());
-			System.out.println("età ;" + contatto.getEtà());
+			System.out.println("età :" + contatto.getEtà());
 		}
-
-//		String hql = "SELECT c FROM Contatto as c";
-//		Query<Contatto> query = session.createQuery(hql);
-//		for (Contatto contatto : query.list()) {
-//			System.out.println("id : " + contatto.getId());
-//			System.out.println("nome : " + contatto.getNome());
-//			System.out.println("cognome : " + contatto.getCognome());
-//			System.out.println("telefono : " + contatto.getTelefono());
-//			System.out.println("email : " + contatto.getEmail());
-//		}
-
 		
 //		Criteria criteria = session.createCriteria(Contatto.class);
 //		List<Contatto> contatti = criteria.list();//.add(Restrictions.eq("nome", "pippo"))
@@ -71,21 +54,22 @@ public class HDButils {
 //			}
 //		}
 		
-		Contatto contatto = new Contatto();
-		contatto.setNome("Fiorenza");
-		contatto.setCognome("Riccio");
-		contatto.setEmail("fiore@riccio.it");
-		contatto.setTelefono("34556616");
-		contatto.setEtà(28);
-
-		System.out.println("id : " + contatto.getId());
-		session.save(contatto);
-		System.out.println("id : " + contatto.getId());
+//		Contatto contatto = new Contatto();
+//		contatto.setNome("Fiorenza");
+//		contatto.setCognome("Riccio");
+//		contatto.setEmail("fiore@riccio.it");
+//		contatto.setTelefono("34556616");
+//
+//		System.out.println("id : " + contatto.getId());
+//		session.save(contatto);
+//		System.out.println("id : " + contatto.getId());
 		
 		transaction.commit();
 		session.close();
 		factory.close();
-		conn.close();
 		System.out.println("is open?" + factory.isOpen());
+		
+		
 	}
 }
+

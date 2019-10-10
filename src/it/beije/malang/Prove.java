@@ -29,10 +29,20 @@ public class Prove {
 		public static void main(String[] args) {
 	//	Bird bird = new Bird();
 	//	bird.displayInformation();
-			int arr[] = new int[5];
-			arr = new int[] {1,2,3,4};
-			int x = arr[0]-- /arr[0]*arr[4];
-			System.out.println(x);
+			
+//			int arr[] = new int[5];
+//			arr = new int[] {1,2,3,4};
+//			int x = arr[0]-- /arr[0]*arr[4];
+//			System.out.println(x);
+//			
+			
+//			for (int i = 0; i < 10;) {
+//				i = i++;
+//				System.out.println("prova");
+//			}
+			
+	
+			
 		}
 		
 	

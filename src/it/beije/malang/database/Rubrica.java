@@ -33,7 +33,7 @@ public class Rubrica {
 
 			conn = ConnectionFactory.getConnection();
 			Statement stmt = conn.createStatement();
-			Rubrica.inserisci("cognome", "nome", "email", "telefono", "cognome", "nome", "email", "telefono" );
+			Rubrica.inserisci("cognome", "nome", "email", "telefono","età", "cognome", "nome", "email", "telefono", null );
 			int inser = stmt.executeUpdate(ins);
 			System.out.println("connection ? " + !conn.isClosed());
 			

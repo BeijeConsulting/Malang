@@ -22,10 +22,6 @@ public class XmlDb{
 //		System.out.println(utente);
 	}
 
-//sono proveee
-	
-	
-
 
 public static ArrayList<Contatto> salvaInArray(String pathFile) {
 		
@@ -102,12 +98,5 @@ public static void daArrayADb(String pathFile) {
 
 
 }
-
-
-
-
-
-
-
 
 }
