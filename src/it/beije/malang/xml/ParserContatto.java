@@ -2,6 +2,7 @@ package it.beije.malang.xml;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import javax.xml.parsers.DocumentBuilder;
@@ -64,7 +65,7 @@ public class ParserContatto {
 	}
 
 	public static void main(String[] args) {
-		readFile("C:\\temp\\contatti.xml");
-	}
-
+		//readFile("C:\\temp\\contatti.xml");
+		double a = 10;
+}
 }
