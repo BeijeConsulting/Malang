@@ -19,8 +19,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FromDbToCsv {
-	public  ArrayList<Contatto> ReadDb() {
-		ArrayList<Contatto> contatti = new ArrayList<Contatto>();
+	public  List<Contatto> readDb() {
+		List<Contatto> contatti = new ArrayList<Contatto>();
 		Connection conn = null;
 		
 		try {
@@ -62,7 +62,7 @@ public class FromDbToCsv {
 		return contatti;
 	}
 		
-	public void  WriteCsv(ArrayList<Contatto> contatti) throws IOException {
+	public void  writeCsv(List<Contatto> contatti) throws IOException {
 		BufferedWriter bufferedWriter1 = new BufferedWriter(new FileWriter("C:\\prova_java_io\\rubrica2.txt"));
 		bufferedWriter1.write("Rubrica dei contatti\n");
 				
@@ -90,9 +90,9 @@ public class FromDbToCsv {
 		} 
 	public static void main(String[] args) throws IOException {
 		FromDbToCsv esporta = new FromDbToCsv();
-		ArrayList<Contatto> contatti = new ArrayList<Contatto>();
-		contatti = esporta.ReadDb();
-		esporta.WriteCsv(contatti);
+		List<Contatto> contatti = new ArrayList<Contatto>();
+		contatti = esporta.readDb();
+		esporta.writeCsv(contatti);
 	}
 
 }
