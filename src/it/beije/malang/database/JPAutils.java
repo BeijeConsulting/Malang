@@ -1,12 +1,14 @@
 package it.beije.malang.database;
 
 import java.io.IOException;
+import java.util.HashSet;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
 import it.beije.malang.database.entities.Contatto;
+import it.beije.malang.database.entities.Indirizzo;
 import it.beije.malang.database.entities.Utente;
 import it.beije.malang.database.entities.Indirizzo;
 
@@ -18,9 +20,17 @@ public class JPAutils {
 		EntityManager entityManager = factory.createEntityManager();
 		
 		int id = 1;
-		Contatto c = entityManager.find(Contatto.class, id);
+		Utente u = entityManager.find(Utente.class, id);
 
-		System.out.println("Contatto : " + c.getNome());
+		System.out.println("Utente : " + u.getNome());
+		System.out.println("Utente indirizzi : " + u.getIndirizzi());
+		for (Indirizzo i : u.getIndirizzi()) {
+			System.out.println("id : " + i.getId());
+			System.out.println("cap : " + i.getCap());
+			System.out.println("citta : " + i.getCitta());
+			System.out.println("prov : " + i.getProvincia());
+		}
+
 
 /*		Utente u = new Utente();
 		u.setCognome("Ferulli");
@@ -33,10 +43,29 @@ public class JPAutils {
 		entityManager.persist(u);
 		System.out.println("Utente id : " + u.getId());
 		entityManager.getTransaction().commit();
+
+////		Utente u = new Utente();
+////		u.setCognome("Ferulli");
+////		u.setNome("Marina3");
+////		u.setEmail("marina3@ferulli.it");
+////		
+//		Indirizzo indirizzo = new Indirizzo();
+//		indirizzo.setCap("20100");
+//		indirizzo.setCitta("Milano");
+//		indirizzo.setProvincia("MI");
+//		indirizzo.setTelefono("23224");
+//						
+//		entityManager.getTransaction().begin();
+//
+//		System.out.println("Utente id : " + u.getId());
+//		entityManager.persist(u);
+//		System.out.println("Utente id : " + u.getId());
+//		entityManager.getTransaction().commit();
+
 	
 		entityManager.close();
 */
-		int id1 = 3;
+/*		int id1 = 3;
 		Utente u1 = entityManager.find(Utente.class, id1);
 		
 		Indirizzo i = new Indirizzo();
@@ -53,7 +82,7 @@ public class JPAutils {
 		entityManager.getTransaction().commit();
 	
 		entityManager.close();
-
+*/
 	}
 	
 }
