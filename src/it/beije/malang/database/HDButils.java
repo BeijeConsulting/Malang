@@ -11,7 +11,9 @@ import org.hibernate.cfg.Configuration;
 import org.hibernate.criterion.Restrictions;
 import org.hibernate.query.Query;
 
-import it.beije.malang.Contatto;
+import it.beije.malang.database.entities.Contatto;
+import it.beije.malang.database.entities.Indirizzo;
+import it.beije.malang.database.entities.Utente;
 
 
 public class HDButils {
@@ -19,7 +21,10 @@ public class HDButils {
 	public static void main(String argv[]) throws Exception {
 		
 		Configuration configuration = new Configuration();
-		configuration = configuration.configure();
+		configuration = configuration.configure()
+				.addAnnotatedClass(Contatto.class)
+				.addAnnotatedClass(Utente.class)
+				.addAnnotatedClass(Indirizzo.class);
 		
 		SessionFactory factory = configuration.buildSessionFactory();
 		
