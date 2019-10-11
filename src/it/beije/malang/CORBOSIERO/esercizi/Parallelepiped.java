@@ -1,4 +1,4 @@
-package it.beije.malang.es1;
+package it.beije.malang.CORBOSIERO.esercizi;
 
 public class Parallelepiped {
 

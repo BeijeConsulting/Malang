@@ -12,8 +12,19 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.StringTokenizer;
 
+import it.beije.malang.database.entities.Contatto;
+
 public class FileManager {
 	
+	/**
+	 * Questo metodo fa bal .... 
+	 * asdasdasdas
+	 * asdasdasdasd
+	 * asdasdasd
+	 * @param pathOrig
+	 * @param pathCopia
+	 * @throws IOException
+	 */
 	public static void copiaFile(String pathOrig, String pathCopia) throws IOException {
 		File orig = new File(pathOrig);
 		File copia = new File(pathCopia);
