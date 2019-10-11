@@ -17,20 +17,33 @@ public class JPAutils {
 		EntityManagerFactory factory = Persistence.createEntityManagerFactory("Malang");
 		EntityManager entityManager = factory.createEntityManager();
 		
-		int id = 1;
+		int id = 2;
+		
 		Contatto c = entityManager.find(Contatto.class, id);
 
 		System.out.println("Contatto : " + c.getNome());
 
-		Utente u = new Utente();
-		u.setCognome("Ferulli");
-		u.setNome("Marina2");
-		u.setEmail("marina2@ferulli.it");
+		Contatto u = new Contatto();
+		u.setCognome("evvai");
+		u.setNome("prova");
+		u.setEmail("funziona@molto.it");
+		
+		Contatto m = new Contatto();
+		m.setCognome("prova");
+		m.setNome("funziona");
+		m.setEmail("funziona@la prova.it");
+		
+		Contatto n = new Contatto();
+		n.setCognome("marco");
+		n.setNome("cacciapuoti");
+		n.setEmail("cacciapuoti@marco.it");
 		
 		entityManager.getTransaction().begin();
 
 		System.out.println("Utente id : " + u.getId());
 		entityManager.persist(u);
+		entityManager.persist(m);
+		entityManager.persist(n);
 		System.out.println("Utente id : " + u.getId());
 		entityManager.getTransaction().commit();
 	
