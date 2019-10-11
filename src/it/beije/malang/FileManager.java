@@ -14,6 +14,9 @@ import java.util.*;
 
 import java.util.StringTokenizer;
 
+
+import it.beije.malang.database.entities.Contatto;
+
 public class FileManager {
 	
 	public static void copiaFile(String pathOrig, String pathCopia) throws IOException {

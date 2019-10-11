@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-import it.beije.malang.Contatto;
+import it.beije.malang.database.entities.Contatto;
 
 public class Rubrica {
 

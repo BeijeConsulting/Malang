@@ -16,6 +16,7 @@ import javax.xml.transform.stream.StreamResult;
 import org.w3c.dom.Attr;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
+import it.beije.malang.database.entities.Contatto;
 
 public class FromDbToXml {
 	public void writeXml(List<Contatto> cont) {
@@ -31,7 +32,7 @@ public class FromDbToXml {
 			Element rootElement = doc.createElement("contatti");
 			doc.appendChild(rootElement);
 			
-		
+			for(int i=0;i<cont.size();i++) {
 
 			// staff elements
 			Element contatto = doc.createElement("contatto");
@@ -40,27 +41,26 @@ public class FromDbToXml {
 			// set attribute to staff element
 
 			// shorten way
-			// staff.setAttribute("id", "1");
+			 //staff.setAttribute("id", "");
 
 			// firstname elements
 			Element nome = doc.createElement("nome");
-			nome.appendChild(doc.createTextNode(cont.get(0).getNome()));
+			nome.appendChild(doc.createTextNode(cont.get(i).getNome()));
 			
 			contatto.appendChild(nome);
-			System.out.println("<<<<<<<<<<<<<<<<<<<<<<<<questo è:"+contatto);
 			//lastname elements
 			Element cognome = doc.createElement("cognome");
-			cognome.appendChild(doc.createTextNode(cont.get(0).getCognome()));
+			cognome.appendChild(doc.createTextNode(cont.get(i).getCognome()));
 			contatto.appendChild(cognome);
 
 			// nickname elements
 			Element email = doc.createElement("email");
-			email.appendChild(doc.createTextNode(cont.get(0).getEmail()));
+			email.appendChild(doc.createTextNode(cont.get(i).getEmail()));
 			contatto.appendChild(email);
 
 			// salary elements
 			Element telefono = doc.createElement("telefono");
-			telefono.appendChild(doc.createTextNode(cont.get(0).getTelefono()));
+			telefono.appendChild(doc.createTextNode(cont.get(i).getTelefono()));
 			contatto.appendChild(telefono);
 
 
@@ -69,13 +69,14 @@ public class FromDbToXml {
 			TransformerFactory transformerFactory = TransformerFactory.newInstance();
 			Transformer transformer = transformerFactory.newTransformer();
 			DOMSource source = new DOMSource(doc);
-			//StreamResult result = new StreamResult(new File("C:\\prova_java_io\\rubrica3.xml"));
+			StreamResult result = new StreamResult(new File("C:\\prova_java_io\\rubrica3.xml"));
+			
 
 			//Output to console for testing
-			StreamResult result = new StreamResult(System.out);
+			//StreamResult result = new StreamResult(System.out);
 
 			transformer.transform(source, result);
-
+			}
 			System.out.println("File saved!");
 
 		} catch (ParserConfigurationException pce) {
