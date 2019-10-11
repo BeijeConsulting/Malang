@@ -1,6 +1,7 @@
 package it.beije.malang.database.entities;
 
-import java.util.Set;
+
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -32,15 +33,9 @@ public class Utente {
 	
 	@OneToMany
 	@JoinColumn(name = "id_utente")
-	private Set<Indirizzo> indirizzi;
+	private List<Indirizzo> indirizzi;
 	
-	
-	public Set<Indirizzo> getIndirizzi() {
-		return indirizzi;
-	}
-	public void setIndirizzi(Set<Indirizzo> indirizzi) {
-		this.indirizzi = indirizzi;
-	}
+
 	public int getId() {
 		return id;
 	}
@@ -67,6 +62,13 @@ public class Utente {
 	}
 	public void setEmail(String email) {
 		this.email = email;
+	}
+	
+	public List<Indirizzo> getIndirizzi() {
+		return indirizzi;
+	}
+	public void setIndirizzi(List<Indirizzo> indirizzi) {
+		this.indirizzi = indirizzi;
 	}
 	
 }

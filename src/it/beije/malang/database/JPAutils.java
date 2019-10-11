@@ -1,6 +1,7 @@
 package it.beije.malang.database;
 
 import java.io.IOException;
+import java.util.HashSet;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -18,21 +19,13 @@ public class JPAutils {
 		EntityManagerFactory factory = Persistence.createEntityManagerFactory("Malang");
 		EntityManager entityManager = factory.createEntityManager();
 		
+
 		int id = 3;
+
 		Utente u = entityManager.find(Utente.class, id);
 
 		System.out.println("Utente : " + u.getNome());
-		System.out.println("Indirizzi :" + u.getIndirizzi());
-		
-		for (Indirizzo indirizzi : u.getIndirizzi())
-		{
-			System.out.println("ID: " + indirizzi.getId());
-			System.out.println("CITTA: " + indirizzi.getCitta());
-			System.out.println("PROVINCIA: " + indirizzi.getProvincia());
-			System.out.println("CAP: " + indirizzi.getCap());
-			System.out.println("INDIRIZZO: " + indirizzi.getIndirizzo());
-			System.out.println("TELEFONO: " + indirizzi.getTelefono());
-		}
+
 
 //		Utente u = new Utente();
 //		u.setCognome("Ferulli");
@@ -45,7 +38,33 @@ public class JPAutils {
 		entityManager.persist(u);
 		entityManager.getTransaction().commit();
 		System.out.println("Utente id : " + u.getId());
-	
+
+		System.out.println("Utente indirizzi : " + u.getIndirizzi());
+		for (Indirizzo i : u.getIndirizzi()) {
+			System.out.println("id : " + i.getId());
+			System.out.println("cap : " + i.getCap());
+			System.out.println("citta : " + i.getCitta());
+			System.out.println("prov : " + i.getProvincia());
+		}
+
+////		Utente u = new Utente();
+////		u.setCognome("Ferulli");
+////		u.setNome("Marina3");
+////		u.setEmail("marina3@ferulli.it");
+////		
+//		Indirizzo indirizzo = new Indirizzo();
+//		indirizzo.setCap("20100");
+//		indirizzo.setCitta("Milano");
+//		indirizzo.setProvincia("MI");
+//		indirizzo.setTelefono("23224");
+//						
+//		entityManager.getTransaction().begin();
+//
+//		System.out.println("Utente id : " + u.getId());
+//		entityManager.persist(u);
+//		System.out.println("Utente id : " + u.getId());
+//		entityManager.getTransaction().commit();
+
 		entityManager.close();
 
 	}
