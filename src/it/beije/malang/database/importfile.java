@@ -43,7 +43,7 @@ public static ArrayList<Contatto> salvaInArray(String pathFile) {
 					contatto = new Contatto();
 					contatto.setNome(tokenizer.nextToken());
 					contatto.setCognome(tokenizer.nextToken());
-					contatto.setTelefono(tokenizer.nextToken());
+					//contatto.setTelefono(tokenizer.nextToken());
 					contatto.setEmail(tokenizer.nextToken());
 	
 					utente.add(contatto);
