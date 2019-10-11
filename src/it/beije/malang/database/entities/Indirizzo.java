@@ -5,6 +5,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 
@@ -19,6 +21,10 @@ public class Indirizzo {
 	
 	@Column(name = "id_utente")
 	private int idUtente;
+	
+//	@ManyToOne
+//	@JoinColumn(name = "id_utente")
+//	private Utente utente;
 	
 	@Column(name = "provincia", columnDefinition = "char")
 	private String provincia;
