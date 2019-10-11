@@ -27,42 +27,50 @@ import it.beije.malang.database.entities.Utente;
 public class HDButils {
 	public static void main(String argv[]) throws Exception {
 		
-		Configuration configuration = new Configuration();
-		configuration = configuration.configure()
-				.addAnnotatedClass(Contatto.class)
-				.addAnnotatedClass(Utente.class)
-				.addAnnotatedClass(Indirizzo.class);
+//		Configuration configuration = new Configuration();
+//		configuration = configuration.configure()
+//				.addAnnotatedClass(Contatto.class)
+//				.addAnnotatedClass(Utente.class)
+//				.addAnnotatedClass(Indirizzo.class);
 		
-		SessionFactory factory = configuration.buildSessionFactory();
-		System.out.println("is open?" + factory.isOpen());
-		Session session = factory.openSession();
-		Transaction transaction = session.beginTransaction();
-	    Configuration cfg = new Configuration();
-	    cfg.configure("hibernate.cfg.xml");
-
-    	Criteria criteria = session.createCriteria(Indirizzo.class);
-		List<Indirizzo> indirizzo = criteria.list();
-		
-			Indirizzo ind =new Indirizzo();
-			ind.setId(2);
-			ind.setIdUtente(1);
-			ind.setCap("21020");
-			ind.setCitta("Varese");
-			ind.setIndirizzo("via prova");
-			ind.setProvincia("va");
-			ind.setTelefono("34026498");
-			session.save(ind);
-			
-			
-			
-			
-			transaction.commit();
-			session.close();
-			factory.close();
-			System.out.println("is open?" + factory.isOpen());
+//		SessionFactory factory = configuration.buildSessionFactory();
+//		System.out.println("is open?" + factory.isOpen());
+//		Session session = factory.openSession();
+//		Transaction transaction = session.beginTransaction();
+//	    Configuration cfg = new Configuration();
+//	    cfg.configure("hibernate.cfg.xml");
+//
+//    	Criteria criteria = session.createCriteria(Indirizzo.class);
+//		List<Indirizzo> indirizzo = criteria.list();
+//		
+//			Indirizzo ind =new Indirizzo();
+//			ind.setId(2);
+//			ind.setIdUtente(1);
+//			ind.setCap("21020");
+//			ind.setCitta("Varese");
+//			ind.setIndirizzo("via prova");
+//			ind.setProvincia("va");
+//			ind.setTelefono("34026498");
+//			session.save(ind);
+//			
+//			
+//			
+//			
+//			transaction.commit();
+//			session.close();
+//			factory.close();
+//			System.out.println("is open?" + factory.isOpen());
 		    	
 		    }		
 }
+
+
+
+
+
+
+//metodi vecchi per sceivere su db con in criteria 
+
 //
 
 //String hql = "SELECT c FROM Contatto as c";
