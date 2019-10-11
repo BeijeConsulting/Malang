@@ -11,6 +11,7 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 
+import it.beije.malang.FromCsvToDb;
 import it.beije.malang.database.entities.Contatto;
 
 
@@ -50,7 +51,7 @@ public class ParserContatto {
 	        	NodeList telefoni = e.getElementsByTagName("telefono");
 	        	String telefono = telefoni.item(0).getTextContent();
 	        	c.setTelefono(telefono);
-
+	        	System.out.println(c.toString());
 	        	contatti.add(c);
 	        }
 	        
@@ -63,8 +64,23 @@ public class ParserContatto {
 		return contatti;
 	}
 
-	public static void main(String[] args) {
-		readFile("C:\\BeijeDisk\\temp\\contatti.xml");
+	public static void main(String[] args) throws Exception {
+		try {
+			List<Contatto> contatti =new ArrayList<>();
+			
+			File f = new File("C:\\prova_java_io\\contatti.xml");
+			contatti= readFile("C:\\prova_java_io\\contatti.xml");
+			
+			FromCsvToDb importa = new FromCsvToDb();
+			importa.WriteDb(contatti);
+			System.out.println("il file è presente ? " + f.exists());
+			System.out.println("ho finito");
+			
+		
+	} catch (Exception e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
 	}
 
+	}
 }

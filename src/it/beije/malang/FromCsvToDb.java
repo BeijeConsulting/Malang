@@ -16,12 +16,15 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+import it.beije.malang.database.entities.Contatto;
 
 public class FromCsvToDb {
 	
-ArrayList<Contatto> rows = new ArrayList<Contatto>();
+	
 
-	public ArrayList<Contatto> ReadCsv() throws IOException {
+	public List<Contatto> ReadCsv() throws IOException {
+		List<Contatto> rows = new ArrayList<>();
+		
 		File f = new File("C:\\prova_java_io\\prova.txt");
 		System.out.println("il file è presente ? " + f.exists());
 		
@@ -47,7 +50,7 @@ ArrayList<Contatto> rows = new ArrayList<Contatto>();
 		bufferedReader.close();
 		return rows;
 	}	
-	public void WriteDb(ArrayList<Contatto> contatto)  throws Exception {	
+	public void WriteDb(List<Contatto> contatto)  throws Exception {	
 		Connection conn = null;
 		
 		try {
@@ -59,8 +62,8 @@ ArrayList<Contatto> rows = new ArrayList<Contatto>();
 			
 			Statement stmt = conn.createStatement();
 //			String insert = "INSERT INTO rubrica (cognome, nome, email, telefono) VALUES ('Rossi', 'Marco', 'marco@rossi.it', '3471234567')";
-			for (Contatto cols : rows) {
-				String insert = "INSERT INTO rubrica VALUES (null,'"+cols.getCognome()+"','"+cols.getNome()+"', '"+cols.getEmail()+"','"+cols.getTelefono()+"')";
+			for (Contatto cols : contatto) {
+				String insert = "INSERT INTO rubrica VALUES (null,'"+cols.getCognome()+"','"+cols.getNome()+"', '"+cols.getEmail()+"','"+cols.getTelefono()+"');";
 				int r = stmt.executeUpdate(insert);
 				System.out.println("rows affected : " + r);
 			
@@ -85,7 +88,7 @@ ArrayList<Contatto> rows = new ArrayList<Contatto>();
 		// TODO Auto-generated method stub
 		
 		FromCsvToDb importa = new FromCsvToDb();
-		ArrayList<Contatto> contatti = new ArrayList<Contatto>();
+		List<Contatto> contatti = new ArrayList<Contatto>();
 		contatti = importa.ReadCsv();
 		importa.WriteDb(contatti);
 	}
