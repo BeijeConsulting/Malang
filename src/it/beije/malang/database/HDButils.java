@@ -66,5 +66,8 @@ public class HDButils {
 		session.close();
 		factory.close();
 		System.out.println("is open?" + factory.isOpen());
+
+
 	}
+
 }
