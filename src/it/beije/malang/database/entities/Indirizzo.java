@@ -90,15 +90,5 @@ public class Indirizzo {
 }
 
 
-// create table indirizzi (
-//		id integer not null auto_increment,
-//        id_utente integer not null,
-//	    citta varchar(100),
-//	    provincia char(2),
-//	    cap char(5),
-//        indirizzo varchar(255),
-//        telefono varchar(15) null,
-//	    primary key (id),
-//        foreign key (id_utente) references utenti(id)
-//	)
+
 

@@ -1,7 +1,6 @@
 package it.beije.malang.database;
 
 import java.sql.Connection;
-
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -10,12 +9,8 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-<<<<<<< HEAD
-import it.beije.malang.Contatto;
-import it.beije.malang.database.filecsv;
-=======
 import it.beije.malang.database.entities.Contatto;
->>>>>>> refs/remotes/origin/master
+
 
 public class Rubrica {
 	
@@ -29,7 +24,7 @@ public class Rubrica {
 		
 		Connection conn = null;
 		Statement stmt=null;
-	
+
 		try {
 			conn=ConnectionFactory.getConnection();
 			

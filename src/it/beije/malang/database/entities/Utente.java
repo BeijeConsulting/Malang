@@ -58,10 +58,4 @@ public class Utente {
 }
 
 
-// create table utenti (
-//		id integer not null auto_increment,
-//	    cognome varchar(255),
-//	    email varchar(255),
-//	    nome varchar(255),
-//	    primary key (id)
-//	)
+
