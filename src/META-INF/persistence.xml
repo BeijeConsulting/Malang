@@ -6,5 +6,13 @@
 	<class>it.beije.malang.database.entities.Contatto</class>
 	<class>it.beije.malang.database.entities.Utente</class>
 	
+	
+	<properties>
+	
+	<property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect"/>
+	<property name="" value=""/>
+	</properties>
+	
+	
 	</persistence-unit>
 </persistence>
