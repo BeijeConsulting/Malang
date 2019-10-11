@@ -27,9 +27,6 @@ public class HDButils {
 		
 		Configuration configuration = new Configuration();
 
-		configuration = configuration.configure().addAnnotatedClass(Contatto.class);
-						configuration.configure().addAnnotatedClass(Utente.class);
-
 		configuration = configuration.configure()
 				.addAnnotatedClass(Contatto.class)
 				.addAnnotatedClass(Utente.class)
