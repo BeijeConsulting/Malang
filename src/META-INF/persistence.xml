@@ -13,3 +13,4 @@
 		</properties>
 	</persistence-unit>
 </persistence> 
+<!-- configurazione di JPA -->

@@ -17,11 +17,11 @@ public class JPAutils {
 		EntityManagerFactory factory = Persistence.createEntityManagerFactory("Malang");
 		EntityManager entityManager = factory.createEntityManager();
 		
-		int id = 1;
+		int id = 2;// stampo a video il nome dell ID che corrisponde
 		Contatto c = entityManager.find(Contatto.class, id);
 
 		System.out.println("Contatto : " + c.getNome());
-
+         
 		Utente u = new Utente();
 		u.setCognome("Ferulli");
 		u.setNome("Marina2");
