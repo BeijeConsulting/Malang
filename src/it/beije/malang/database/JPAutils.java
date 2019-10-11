@@ -17,7 +17,7 @@ public class JPAutils {
 		EntityManagerFactory factory = Persistence.createEntityManagerFactory("Malang");
 		EntityManager entityManager = factory.createEntityManager();
 		
-		int id = 2;// stampo a video il nome dell ID che corrisponde
+		int id = 2;// stampo a video il nome dell ID che corrisponde tab.rubrica
 		Contatto c = entityManager.find(Contatto.class, id);
 
 		System.out.println("Contatto : " + c.getNome());
