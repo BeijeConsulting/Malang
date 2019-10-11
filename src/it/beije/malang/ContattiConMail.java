@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class ContattiConMail {
+
 	public static void main(String[] args) throws IOException {
 		File f = new File("C:\\temp\\prova3.txt");
 		FileReader fileReader = new FileReader(f);
@@ -48,8 +49,7 @@ public class ContattiConMail {
 		}
 		writer.close();
 		
-		
-		
+//	
 	}
 }
 
