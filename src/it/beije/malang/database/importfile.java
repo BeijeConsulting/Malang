@@ -17,7 +17,7 @@ import it.beije.malang.database.ConnectionFactory;
 
 public class importfile{
 	public static void main(String[] args) {
-		daArrayADb("C:\\temp\\rubrica.txt");
+		DaArrayADb("C:\\temp\\rubrica.txt");
 //		salvaInArray("C:\\temp\\rubrica.txt");
 //		System.out.println(utente);
 	}
@@ -66,7 +66,7 @@ public static ArrayList<Contatto> salvaInArray(String pathFile) {
 
 
 	
-public static void daArrayADb(String pathFile) {
+public static void DaArrayADb(String pathFile) {
 
 	Connection conn = null;
 	

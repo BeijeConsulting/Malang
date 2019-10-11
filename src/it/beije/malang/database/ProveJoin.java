@@ -31,8 +31,8 @@ public class ProveJoin {
 	public static void main(String argv[]) throws Exception {
 		
 		// PROVA A USARE IL METODO CHE FA LE DUE COSE SEPARATAMENTE E NON QUESTO
-		importareFile("C:\\temp\\casuali.txt");
-		
+		//importareFile("C:\\temp\\casuali.txt");
+		DaArrayADb();
 	}
 	
 public static void importareFile(String percorso) {
