@@ -1,5 +1,4 @@
 package it.beije.malang.database.entities;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -13,7 +12,6 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "indirizzi")
 public class Indirizzo {
-
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name = "id")
@@ -21,20 +19,19 @@ public class Indirizzo {
 	
 	@Column(name = "id_utente")
 	private int idUtente;
-	
+
 //	@ManyToOne
 //	@JoinColumn(name = "id_utente")
 //	private Utente utente;
-	
+
 	@Column(name = "provincia", columnDefinition = "char")
 	private String provincia;
-	
+
 	@Column(name = "citta")
 	private String citta;
 	
 	@Column(name = "cap", columnDefinition = "char")
 	private String cap;
-
 	@Column(name = "indirizzo")
 	private String indirizzo;
 	
@@ -92,8 +89,6 @@ public class Indirizzo {
 	}
 	
 }
-
-
 // create table indirizzi (
 //		id integer not null auto_increment,
 //        id_utente integer not null,
@@ -105,4 +100,3 @@ public class Indirizzo {
 //	    primary key (id),
 //        foreign key (id_utente) references utenti(id)
 //	)
-

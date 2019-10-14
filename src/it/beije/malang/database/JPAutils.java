@@ -18,27 +18,12 @@ public class JPAutils {
 		
 		EntityManagerFactory factory = Persistence.createEntityManagerFactory("Malang");
 		EntityManager entityManager = factory.createEntityManager();
+
+		int id = 1;
 		
-
-		int id = 3;
-
 		Utente u = entityManager.find(Utente.class, id);
 
 		System.out.println("Utente : " + u.getNome());
-
-
-//		Utente u = new Utente();
-//		u.setCognome("Ferulli");
-//		u.setNome("Marina2");
-//		u.setEmail("marina2@ferulli.it");
-//		
-		entityManager.getTransaction().begin();
-
-		System.out.println("Utente id : " + u.getId());
-		entityManager.persist(u);
-		entityManager.getTransaction().commit();
-		System.out.println("Utente id : " + u.getId());
-
 		System.out.println("Utente indirizzi : " + u.getIndirizzi());
 		for (Indirizzo i : u.getIndirizzi()) {
 			System.out.println("id : " + i.getId());
@@ -47,11 +32,11 @@ public class JPAutils {
 			System.out.println("prov : " + i.getProvincia());
 		}
 
-////		Utente u = new Utente();
-////		u.setCognome("Ferulli");
-////		u.setNome("Marina3");
-////		u.setEmail("marina3@ferulli.it");
-////		
+//		Utente u = new Utente();
+//		u.setCognome("Ferulli");
+//		u.setNome("Marina3");
+//		u.setEmail("marina3@ferulli.it");
+//		
 //		Indirizzo indirizzo = new Indirizzo();
 //		indirizzo.setCap("20100");
 //		indirizzo.setCitta("Milano");

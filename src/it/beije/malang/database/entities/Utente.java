@@ -1,6 +1,5 @@
 package it.beije.malang.database.entities;
 
-
 import java.util.List;
 
 import javax.persistence.Column;
@@ -16,7 +15,6 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "utenti")
 public class Utente {
-
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name = "id")
@@ -27,14 +25,13 @@ public class Utente {
 	
 	@Column(name = "nome")
 	private String nome;
-
 	@Column(name = "email")
 	private String email;
-	
+
 	@OneToMany
 	@JoinColumn(name = "id_utente")
 	private List<Indirizzo> indirizzi;
-	
+
 
 	public int getId() {
 		return id;
@@ -63,16 +60,15 @@ public class Utente {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	
+
 	public List<Indirizzo> getIndirizzi() {
 		return indirizzi;
 	}
 	public void setIndirizzi(List<Indirizzo> indirizzi) {
 		this.indirizzi = indirizzi;
 	}
-	
-}
 
+}
 
 // create table utenti (
 //		id integer not null auto_increment,
