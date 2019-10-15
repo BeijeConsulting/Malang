@@ -1,15 +1,20 @@
 package it.beije.malang.CORBOSIERO;
 
-import java.io.*;
-import java.nio.*;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
-public class Esercizi {
-	
-	/***				FILES						***/
+public class FileManager {
 	public static void copyFile(File original, File copy) throws IOException {
 		FileReader fileReader = new FileReader(original);
 		FileWriter fileWriter = new FileWriter(copy);
@@ -125,23 +130,4 @@ public class Esercizi {
 		return readFileAsRowList(f, " ");
 	}
 	
-	
-	
-	/***				DATABASE					***/
-	public static void upload(List<String> row) {
-		
-	}
-	
-	/***				XML							***/
-	
-	
-	/***				HIBERNATE					***/
-	
-	
-	/***				JPA							***/
-
-	public static void main(String[] args) {
-		
-	}
-
 }
