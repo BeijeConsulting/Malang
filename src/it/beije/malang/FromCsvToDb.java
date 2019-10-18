@@ -22,10 +22,10 @@ public class FromCsvToDb {
 	
 	
 
-	public List<Contatto> ReadCsv() throws IOException {
+	public static List<Contatto> ReadCsv() throws IOException {
 		List<Contatto> rows = new ArrayList<>();
 		
-		File f = new File("C:\\prova_java_io\\prova.txt");
+		File f = new File("C:\\prova_java_io\\rubrica2.txt");
 		System.out.println("il file è presente ? " + f.exists());
 		
 		

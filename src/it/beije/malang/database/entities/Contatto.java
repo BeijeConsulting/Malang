@@ -28,6 +28,10 @@ public class Contatto {
 	@Column(name="email")
 	private String email;
 	
+	public Contatto() {
+		
+	}
+	
 	public int getId() {
 		return id;
 	}

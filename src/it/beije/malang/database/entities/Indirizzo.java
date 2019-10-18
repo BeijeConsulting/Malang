@@ -22,9 +22,9 @@ public class Indirizzo {
 	@Column(name = "id_utente")
 	private int idUtente;
 	
-//	@ManyToOne
-//	@JoinColumn(name = "id_utente")
-//	private Utente utente;
+	@ManyToOne
+	@JoinColumn(name = "id_utente")
+	private Utente utente;
 	
 	@Column(name = "provincia", columnDefinition = "char")
 	private String provincia;
@@ -40,6 +40,10 @@ public class Indirizzo {
 	
 	@Column(name = "telefono")
 	private String telefono;
+	
+	public Indirizzo() {
+		
+	}
 	
 	
 	public int getId() {

@@ -34,9 +34,10 @@ public class ParserContatto {
 			System.out.println("contatto num : " + nodeList.getLength());
 			
 			Element e = null;
+			
 	        for (int i = 0; i < nodeList.getLength(); i++) {
 	        	e = (Element)nodeList.item(i);
-	        	//System.out.println(e.getTagName());
+	        	System.out.println(e);
 
 	        	Contatto c = new Contatto();
 	        	NodeList nomi = e.getElementsByTagName("nome");

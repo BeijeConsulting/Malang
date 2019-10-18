@@ -19,7 +19,7 @@ public class JPAutils {
 		EntityManagerFactory factory = Persistence.createEntityManagerFactory("Malang");
 		EntityManager entityManager = factory.createEntityManager();
 		
-		int id = 1;
+		int id = 3;
 		Utente u = entityManager.find(Utente.class, id);
 
 		System.out.println("Utente : " + u.getNome());
@@ -30,7 +30,7 @@ public class JPAutils {
 			System.out.println("citta : " + i.getCitta());
 			System.out.println("prov : " + i.getProvincia());
 		}
-
+			entityManager.close();
 
 /*		Utente u = new Utente();
 		u.setCognome("Ferulli");

@@ -34,6 +34,9 @@ public class Utente {
 	@JoinColumn(name = "id_utente")
 	private List<Indirizzo> indirizzi;
 	
+	public Utente() {
+		
+	}
 	
 	public int getId() {
 		return id;

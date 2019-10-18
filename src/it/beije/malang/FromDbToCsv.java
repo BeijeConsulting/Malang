@@ -17,6 +17,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+import it.beije.malang.database.entities.Contatto;
 
 public class FromDbToCsv {
 	public  List<Contatto> readDb() {
@@ -62,7 +63,7 @@ public class FromDbToCsv {
 		return contatti;
 	}
 		
-	public void  writeCsv(List<Contatto> contatti) throws IOException {
+	public static void  writeCsv(List<Contatto> contatti) throws IOException {
 		BufferedWriter bufferedWriter1 = new BufferedWriter(new FileWriter("C:\\prova_java_io\\rubrica2.txt"));
 		bufferedWriter1.write("Rubrica dei contatti\n");
 				
