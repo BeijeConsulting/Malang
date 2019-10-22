@@ -19,7 +19,7 @@ import it.beije.malang.database.entities.Contatto;
 
 public class ParserContatto {
 
-	public static List<Contatto> readFile(String pathFile) {
+	public static List<Contatto> readFileXML(String pathFile) {
 		List<Contatto> contatti = new ArrayList<Contatto>();
 
 		try {
@@ -66,7 +66,7 @@ public class ParserContatto {
 		return contatti;
 	}
 	public static void main(String[] args) {
-		List<Contatto>contatti = readFile("C:\\BeijeDisk\\temp\\contatti.xml");
+		List<Contatto>contatti = readFileXML("C:\\BeijeDisk\\temp\\contatti.xml");
 		Connection conn = null;
 		try {
  
