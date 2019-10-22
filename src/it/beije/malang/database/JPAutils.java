@@ -18,7 +18,6 @@ public class JPAutils {
 		
 		EntityManagerFactory factory = Persistence.createEntityManagerFactory("Malang");
 		EntityManager entityManager = factory.createEntityManager();
-
 		int id = 1;
 		
 		Utente u = entityManager.find(Utente.class, id);
