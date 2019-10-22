@@ -8,7 +8,11 @@ public class Tester {
 	public static void main(String[] args) {
 		
 		Oca oca = OcaFactory.getOca("Vittorio", "Luoni");
+		
 		System.out.println(oca);
+		
+		
+	
 	}
 
 }

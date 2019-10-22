@@ -21,6 +21,7 @@ public class Oca {
 		this.cognome = cognome;
 	}
 	
+	@Override
 	public String toString() {
 		return nome + " " + cognome + " sta studiando per la certificazione OCA";
 	}
