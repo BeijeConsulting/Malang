@@ -35,7 +35,9 @@ public class ProveJoin {
 		
 		//importareFile("C:\\temp\\casuali.txt");
 		
-		DaArrayADb("C:\\temp\\indirizzi.txt");
+		//DaArrayADb("C:\\temp\\indirizzi.txt");
+		
+		
 	}
 	
 //public static void importareFile(String percorso) {
@@ -120,6 +122,7 @@ public static ArrayList<Indirizzo> salvaInArray(String pathFile) {
 					tokenizer = new StringTokenizer(bufferedReader.readLine(), ";");
 					indirizzo = new Indirizzo();
 					
+					indirizzo.setIdUtente(Integer.parseInt(tokenizer.nextToken()));
 					indirizzo.setCitta(tokenizer.nextToken());
 					indirizzo.setProvincia(tokenizer.nextToken());
 					indirizzo.setCap(tokenizer.nextToken());
@@ -146,37 +149,36 @@ public static ArrayList<Indirizzo> salvaInArray(String pathFile) {
 			return utente;		
 }	
 	
-	public static void DaArrayADb(String pathFile) {
+public static void DaArrayADb(String pathFile) {
 
-		Connection conn = null;
+	Connection conn = null;
+	
+	try {
 		
-		try {
+		conn = ConnectionFactory.getConnection();
+				
+		Statement stmt = conn.createStatement();
+		
+		for (Indirizzo cols : ProveJoin.salvaInArray(pathFile)) {
 			
-			conn = ConnectionFactory.getConnection();
-					
-			Statement stmt = conn.createStatement();
-			
-			for (Indirizzo cols : salvaInArray(pathFile)) {
-			
-			String insert =  "INSERT INTO indirizzi VALUES (null, null ,'"+cols.getCitta()+"','"+cols.getProvincia()+"', '"+cols.getCap()+"', '"+ cols.getIndirizzo() +"','"+cols.getTelefono()+"'";
+		String insert =  "INSERT INTO indirizzi VALUES (null, '"+cols.getIdUtente()+"','"+cols.getCitta()+"', '"+cols.getProvincia()+"','"+cols.getCap()+"', '"+cols.getIdUtente()+"', '"+cols.getTelefono()+"' )";
 
-			int r = stmt.executeUpdate(insert);
-
-			
-			System.out.println("rows affected : " + r);
-			
-			}
-			conn.close();
-		}catch(ClassNotFoundException CNFExc) {
-			
-			System.out.println("classe non trovata");
-		}catch(SQLException SQLExc) {
-			
-			System.out.println("SQLExc");
+		int r = stmt.executeUpdate(insert);
+		
+		System.out.println("rows affected : " + r);
+		
 		}
-
-
+		conn.close();
+	}catch(ClassNotFoundException CNFExc) {
+		
+		System.out.println("classe non trovata");
+	}catch(SQLException SQLExc) {
+		
+		System.out.println("SQLExc");
 	}
+
+
+}
 	
 }
 

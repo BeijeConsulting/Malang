@@ -7,26 +7,22 @@ import java.util.*;
 
 public class Prove {
 
-	
-	
-	
-	
-	
-	
-	public class Bird {
-		public String getName() {
-		return "Unknown";
-		}
-		public void displayInformation() {
-		System.out.println("The bird name is: "+getName());
-		}
-		}
-		public class Peacock extends Bird {
-		public String getName() {
-		return "Peacock";
-		}
-		}
 		public static void main(String[] args) {
+			
+			LocalDateTime d = LocalDateTime.of(2015, 5, 10, 11, 22, 33);
+			Period p = Period.of(1, 2, 3);
+			d = d.minus(p);
+			DateTimeFormatter f = DateTimeFormatter.ofLocalizedDateTime(FormatStyle.SHORT);
+			System.out.println(d.format(f));
+			
+		//	System.out.println("ciaocome stai".endsWith("e stai"));
+			
+			StringBuilder a = new StringBuilder("ciao");
+			StringBuilder c = a.append(2);
+			System.out.println(a.equals(c));
+			}
+			
+			
 	//	Bird bird = new Bird();
 	//	bird.displayInformation();
 			
@@ -39,7 +35,7 @@ public class Prove {
 //			for (int i = 0; i < 10;) {
 //				i = i++;
 //				System.out.println("prova");
-//			}
+
 			
 	
 			
@@ -115,29 +111,6 @@ public class Prove {
 		*/	 
 	
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-	}
 
 
 
