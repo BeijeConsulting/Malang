@@ -11,7 +11,7 @@ import it.beije.malang.Contatto;
 
 public class ConnectionToDb {
 	
-	static Connection getConnection() throws ClassNotFoundException, SQLException{
+	 public static Connection getConnection() throws ClassNotFoundException, SQLException{
 		Connection conn = null;
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
