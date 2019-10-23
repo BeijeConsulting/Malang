@@ -20,6 +20,9 @@ public class Prove {
 			StringBuilder a = new StringBuilder("ciao");
 			StringBuilder c = a.append(2);
 			System.out.println(a.equals(c));
+			//mi da NumberFormatExc, vuole solo stringhe di interi
+			int x = Integer.parseInt("12.24");
+			System.out.println(x);
 			}
 			
 			
