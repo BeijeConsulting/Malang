@@ -7,9 +7,9 @@ public class Algebra {
 	   
 	    int somma= 0; //
 	    
-	    int [] numeri ={1, 2, 3, 10 };//ARRAY ADDIZIONE
+	    int [] numeri ={1, 2, 3, 10,30 };//ARRAY ADDIZIONE
 	    int [] number = {10,2,4,2};//ARRAY MOLTIPLICAZIONE
-	    int [] number1 ={10, 15,};//ARRAY SOTTRAZIONE
+	    int [] number1 ={15, 10,3};//ARRAY SOTTRAZIONE
 	    int [] number2 = {30,10, 3};//DIVISIONE
 	    
 	    /*int x = number[0];//numero molt

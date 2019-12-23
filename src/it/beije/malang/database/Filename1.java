@@ -16,7 +16,7 @@ package it.beije.malang.database;
 			   for (int i=0 ; i<string.length; i++) { //prima dimensione  array
 				   for (int j=0;j<string[i].length;j++)// seconda dimensione array
 					   s+=string[i][j];
-				   System.out.println(s);
+				   System.out.println(s+"\t");
 				   s=""; // resetta
 				   
 				   

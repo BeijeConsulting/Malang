@@ -32,9 +32,9 @@ public class JPAutils {
 		System.out.println("Contatto : " + c.getNome());
          
 		Utente u1 = new Utente();
-		u.setCognome("Ferulli");
-		u.setNome("Marina2");
-		u.setEmail("marina2@ferulli.it");
+		u.setCognome("Verdi");
+		u.setNome("paolino");
+		u.setEmail("paolo1@ferulli.it");
 		
 		entityManager.getTransaction().begin();
 

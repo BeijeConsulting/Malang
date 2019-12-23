@@ -105,4 +105,3 @@ public class Indirizzo {
 //	    primary key (id),
 //        foreign key (id_utente) references utenti(id)
 //	)
-

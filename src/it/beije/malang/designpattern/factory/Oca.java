@@ -2,7 +2,6 @@ package it.beije.malang.designpattern.factory;
 
 public class Oca {
 	
-	Oca() {}
 	
 	private String nome = null;
 	private String cognome = null;

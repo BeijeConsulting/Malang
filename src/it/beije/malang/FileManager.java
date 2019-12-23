@@ -38,7 +38,7 @@ public class FileManager {
 	}
 	
 	public static void trasferisciColonne() throws IOException {
-		File f = new File("C:\\temp\\prova.txt");
+		File f = new File("C:\\temp\\Prova.txt");
 		System.out.println("il file è presente ? " + f.exists());
 		
 		FileReader fileReader = new FileReader(f);

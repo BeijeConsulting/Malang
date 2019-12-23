@@ -18,8 +18,9 @@ public class ConnectionFactory {
 			sqlEx.printStackTrace();
 			throw sqlEx;
 		}
-			
+		System.out.println("ok");
 		return conn;
+		
 	}
 	
 	
